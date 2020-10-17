@@ -1,1 +1,0 @@
-<jsp:include page="home/home.jsp"/>
