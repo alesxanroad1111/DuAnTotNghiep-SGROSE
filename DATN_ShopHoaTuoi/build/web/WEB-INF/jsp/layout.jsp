@@ -28,113 +28,139 @@
         <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
     </head>
     <body>
-        <header id="header"><!--header-->
-            <div class="header_top"><!--header_top-->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="contactinfo">
-                                <ul class="nav nav-pills">
-                                    <li><a href="#"><i class="fa fa-phone"></i> +84 829 069 648</a></li>
-                                    <li><a href="#"><i class="fa fa-envelope"></i> sgrose@gmail.com</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="social-icons pull-right">
-                                <ul class="nav navbar-nav">
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><!--/header_top-->
+        <header id="header">
+		<!--header-->
+		<div class="header_top">
+			<!--header_top-->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="contactinfo">
+							<ul class="nav nav-pills">
+								<li><a href=""><i class="fa fa-phone"></i> +84 829 069 648</a></li>
+								<li><a href=""><i class="fa fa-envelope"></i> sgrose@gmail.com</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="social-icons pull-right">
+							<ul class="nav navbar-nav">
+								<li><a href=""><i class="fa fa-facebook"></i></a></li>
+								<li><a href=""><i class="fa fa-twitter"></i></a></li>
+								<li><a href=""><i class="fa fa-linkedin"></i></a></li>
+								<li><a href=""><i class="fa fa-dribbble"></i></a></li>
+								<li><a href=""><i class="fa fa-google-plus"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--/header_top-->
 
-            <div class="header-middle"><!--header-middle-->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4 clearfix">
-                            <div class="logo pull-left">
-                                <a href="index.html"><img src="images/home/" alt="LOGO_SHOP" /></a>
-                            </div>
-                        </div>
-                        <div class="col-md-8 clearfix">
-                            <div class="shop-menu clearfix pull-right">
-                                <ul class="nav navbar-nav">
-                                    <li><a href=""><i class="fa fa-user"></i> Account</a></li>
-                                    <li><a href=""><i class="fa fa-star"></i> Wishlist</a></li>
-                                    <li><a href="checkout.htm"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-                                    <li><a href="cart.htm"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-                                    <li><a href="login.htm"><i class="fa fa-lock"></i> Login</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><!--/header-middle-->
+		<div class="header-middle">
+			<!--header-middle-->
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 clearfix">
+						<div class="logo pull-left">
+							<a href="index.html"><img src="images/shop/logo.jpg" alt="Logo_shop"
+									style="height: 80px; width: 80px;" /></a>
+						</div>
+						<div class="btn-group pull-right clearfix">
+							<div class="btn-group">
+								<button type="button" class="btn btn-default dropdown-toggle usa"
+									data-toggle="">
+									VIETNAM
+								</button>
+							</div>
 
-            <div class="header-bottom"><!--header-bottom-->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-9">
-                            <div class="navbar-header">
-                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                                    <span class="sr-only">Toggle navigation</span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                </button>
-                            </div>
-                            <div class="mainmenu pull-left">
-                                <ul class="nav navbar-nav collapse navbar-collapse">
-                                    <li><a href="index.html" class="active">Home</a></li>
-                                    <li class="dropdown"><a href="#">Hoa Tươi<i class="fa fa-angle-down"></i></a>
-                                        <ul role="menu" class="sub-menu">
-                                            <li><a href="">Hoa....</a></li>
-                                            <li><a href="">Hoa....</a></li> 
-                                            <li><a href="">Hoa....</a></li> 
-                                            <li><a href="">Hoa....</a></li>
-                                            <li><a href="">Hoa....</a></li> 
-                                            <li><a href="">Hoa....</a></li>
-                                            <li><a href="">Hoa....</a></li>
-                                            <li><a href="">Hoa....</a></li> 
-                                            <li><a href="">Hoa....</a></li>
-                                        </ul>
-                                    </li> 
-                                    <li class="dropdown"><a href="#">Chủ Đề Hoa<i class="fa fa-angle-down"></i></a>
-                                        <ul role="menu" class="sub-menu">
-                                            <li><a href="">Hoa Sinh Nhật</a></li>
-                                            <li><a href="">Hoa Sinh Nhật</a></li>
-                                            <li><a href="">Hoa Sinh Nhật</a></li>
-                                            <li><a href="">Hoa Sinh Nhật</a></li>
-                                            <li><a href="">Hoa Sinh Nhật</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"><a href="#">Hoa Kèm Quà Tặng<i class="fa fa-angle-down"></i></a>
-                                        <ul role="menu" class="sub-menu">
-                                            <li><a href="">Socola</a></li>
-                                            <li><a href="">Gấu Bông</a></li>
-                                            <li><a href="">Giỏ Bánh</a></li>
-                                            <li><a href="">Giỏ Trái Cây</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="search_box pull-right">
-                                <input type="text" placeholder="Search"/>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><!--/header-bottom-->
-        </header><!--/header-->
+							<div class="btn-group">
+								<button type="button" class="btn btn-default dropdown-toggle usa"
+									data-toggle="">
+									VNĐ
+								</button>
+								
+							</div>
+						</div>
+					</div>
+					<div class="col-md-8 clearfix">
+						<div class="shop-menu clearfix pull-right">
+							<ul class="nav navbar-nav">
+								<li><a href=""><i class="fa fa-user"></i> Account</a></li>
+								<li><a href="#"><i class="fa fa-crosshairs"></i> Checkout</a></li>
+								<li><a href="#"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+								<li><a href="#"><i class="fa fa-lock"></i> Login</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--/header-middle-->
+
+		<div class="header-bottom">
+			<!--header-bottom-->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-9">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse"
+								data-target=".navbar-collapse">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+						</div>
+						<div class="mainmenu pull-left">
+							<ul class="nav navbar-nav collapse navbar-collapse">
+								<li><a href="index.html">Home</a></li>
+								<li><a href="contact-us.html">Giới thiệu</a></li>
+								<li class="dropdown"><a href="#">Hoa tươi<i class="fa fa-angle-down"></i></a>
+									<ul role="menu" class="sub-menu">
+										<li><a href="">Hoa hồng đỏ</a></li>
+										<li><a href="">Hoa hồng vàng</a></li>
+										<li><a href="">Hoa hồng trắng</a></li>
+										<li><a href="">Hoa tulip</a></li>
+										<li><a href="">Hoa cúc</a></li>
+										<li><a href="">Hoa hướng dương</a></li>
+										<li><a href="">Hoa cẩm chướng</a></li>
+										<li><a href="">Các loại hoa khác</a></li>
+									</ul>
+								</li>
+								<li class="dropdown"><a href="#">Chủ đề hoa<i class="fa fa-angle-down"></i></a>
+									<ul role="menu" class="sub-menu">
+										<li><a href="#">Hoa chúc mừng</a></li>
+										<li><a href="#">Hoa tình yêu</a></li>
+										<li><a href="#">Hoa khai trương</a></li>
+										<li><a href="#">Hoa sinh nhật</a></li>
+										<li><a href="#">Hoa cưới</a></li>
+										<li><a href="#">Hoa chia buồn</a></li>
+									</ul>
+								</li>
+								<li class="dropdown"><a href="#">Quà tặng<i class="fa fa-angle-down"></i></a>
+									<ul role="menu" class="sub-menu">
+										<li><a href="">Gấu bông</a></li>
+										<li><a href="">Socola</a></li>
+										<li><a href="">Bánh kem</a></li>
+										<li><a href="">Giỏ trái cây</a></li>
+										<li><a href="">Giỏ quà tặng</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="search_box pull-right">
+							<input type="text" placeholder="Search" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--/header-bottom-->
+	</header>
 
         <jsp:include page="${param.view}"/>
 

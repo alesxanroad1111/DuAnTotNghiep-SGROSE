@@ -2,7 +2,7 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <base href="${pageContext.servletContext.contextPath}/">
-<section id="slider"><!--slider-->
+<section id="slider">
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
@@ -18,8 +18,8 @@
                             <div class="col-sm-6">
                                 <h1><span>SG</span>-Rose</h1>
                                 <h2>Free E-Commerce Template</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                <button type="button" class="btn btn-default get">Get it now</button>
+                                <p>Hoa tình yêu tượng trưng cho tình yêu cháy nồng ngọt ngào mlem mlem. </p>
+                                <button type="button" class="btn btn-default get">Thử ngay nào</button>
                             </div>
                             <div class="col-sm-6">
                                 <img src="images/home/birthday-flower.png" class="girl img-responsive" alt="" />
@@ -29,7 +29,7 @@
                         <div class="item">
                             <div class="col-sm-6">
                                 <h1><span>SG</span>-Rose</h1>
-                                <img src="../../../../../../../C:/Users/DiemNgonTrai/AppData/Local/Temp/pricing.png" alt=""/>
+                                <img src="" alt=""/>
                                 <h2>100% Responsive Design</h2>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
                                 <button type="button" class="btn btn-default get">Get it now</button>
@@ -73,24 +73,27 @@
         <div class="row">
             <div class="col-sm-3">
                 <div class="left-sidebar">
-                    <h2>Loại Hoa</h2>
-                    <div class="panel-group category-products" id="accordian"><!--category-productsr-->
+                    <h2>Thể loại</h2>
+                    <div class="panel-group category-products" id="accordian">
+                        <!--category-productsr-->
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
+                                    <a data-toggle="collapse" data-parent="#accordian" href="#themflowers">
                                         <span class="badge pull-right"><i class="fa fa-plus"></i></span>
-                                        Hoa Sinh Nhật
+                                        Các chủ đề hoa
                                     </a>
                                 </h4>
                             </div>
-                            <div id="sportswear" class="panel-collapse collapse">
+                            <div id="themflowers" class="panel-collapse collapse">
                                 <div class="panel-body">
                                     <ul>
-                                        <li><a href="#">Hoa Sinh Nhật Tặng Bồ </a></li>
-                                        <li><a href="#">Hoa Sinh Nhật Tặng Mẹ </a></li>
-                                        <li><a href="#">Hoa Sinh Nhật Tặng Bạn </a></li>
-                                        <li><a href="#">Hoa Sinh Nhật Giá Bèo</a></li>
+                                        <li><a href="#">Hoa chúc mừng</a></li>
+                                        <li><a href="#">Hoa tình yêu</a></li>
+                                        <li><a href="#">Hoa khai trương</a></li>
+                                        <li><a href="#">Hoa sinh nhật</a></li>
+                                        <li><a href="#">Hoa cưới</a></li>
+                                        <li><a href="#">Hoa chia buồn</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -98,25 +101,23 @@
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordian" href="#mens">
+                                    <a data-toggle="collapse" data-parent="#accordian" href="#typesofflowers">
                                         <span class="badge pull-right"><i class="fa fa-plus"></i></span>
-                                        Mens
+                                        các loại hoa tươi
                                     </a>
                                 </h4>
                             </div>
-                            <div id="mens" class="panel-collapse collapse">
+                            <div id="typesofflowers" class="panel-collapse collapse">
                                 <div class="panel-body">
                                     <ul>
-                                        <li><a href="#">Fendi</a></li>
-                                        <li><a href="#">Guess</a></li>
-                                        <li><a href="#">Valentino</a></li>
-                                        <li><a href="#">Dior</a></li>
-                                        <li><a href="#">Versace</a></li>
-                                        <li><a href="#">Armani</a></li>
-                                        <li><a href="#">Prada</a></li>
-                                        <li><a href="#">Dolce and Gabbana</a></li>
-                                        <li><a href="#">Chanel</a></li>
-                                        <li><a href="#">Gucci</a></li>
+                                        <li><a href="">Hoa hồng đỏ</a></li>
+                                        <li><a href="">Hoa hồng vàng</a></li>
+                                        <li><a href="">Hoa hồng trắng</a></li>
+                                        <li><a href="">Hoa tulip</a></li>
+                                        <li><a href="">Hoa cúc</a></li>
+                                        <li><a href="">Hoa hướng dương</a></li>
+                                        <li><a href="">Hoa cẩm chướng</a></li>
+                                        <li><a href="">Các loại hoa khác</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -125,86 +126,51 @@
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordian" href="#womens">
+                                    <a data-toggle="collapse" data-parent="#accordian" href="#present">
                                         <span class="badge pull-right"><i class="fa fa-plus"></i></span>
-                                        Womens
+                                        Quà tặng
                                     </a>
                                 </h4>
                             </div>
-                            <div id="womens" class="panel-collapse collapse">
+                            <div id="present" class="panel-collapse collapse">
                                 <div class="panel-body">
                                     <ul>
-                                        <li><a href="#">Fendi</a></li>
-                                        <li><a href="#">Guess</a></li>
-                                        <li><a href="#">Valentino</a></li>
-                                        <li><a href="#">Dior</a></li>
-                                        <li><a href="#">Versace</a></li>
+                                        <li><a href="">Gấu bông</a></li>
+                                        <li><a href="">Socola</a></li>
+                                        <li><a href="">Bánh kem</a></li>
+                                        <li><a href="">Giỏ trái cây</a></li>
+                                        <li><a href="">Giỏ quà tặng</a></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title"><a href="#">Kids</a></h4>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title"><a href="#">Fashion</a></h4>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title"><a href="#">Households</a></h4>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title"><a href="#">Interiors</a></h4>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title"><a href="#">Clothing</a></h4>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title"><a href="#">Bags</a></h4>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title"><a href="#">Shoes</a></h4>
-                            </div>
-                        </div>
+
                     </div><!--/category-products-->
 
                     <div class="brands_products"><!--brands_products-->
                         <h2>Hàng Hot</h2>
                         <div class="brands-name">
                             <ul class="nav nav-pills nav-stacked">
-                                <li><a href="#"> <span class="pull-right">(50)</span>Acne</a></li>
-                                <li><a href="#"> <span class="pull-right">(56)</span>Grüne Erde</a></li>
-                                <li><a href="#"> <span class="pull-right">(27)</span>Albiro</a></li>
-                                <li><a href="#"> <span class="pull-right">(32)</span>Ronhill</a></li>
-                                <li><a href="#"> <span class="pull-right">(5)</span>Oddmolly</a></li>
-                                <li><a href="#"> <span class="pull-right">(9)</span>Boudestijn</a></li>
-                                <li><a href="#"> <span class="pull-right">(4)</span>Rösch creative culture</a></li>
+                                <li><a href="#"> <span class="pull-right">(50)</span>Hoa hồng đỏ</a></li>
+                                <li><a href="#"> <span class="pull-right">(56)</span>Hoa tulip</a></li>
+                                <li><a href="#"> <span class="pull-right">(27)</span>Hoa hồng vàng</a></li>
+                                <li><a href="#"> <span class="pull-right">(32)</span>Gấu bông</a></li>
+                                <li><a href="#"> <span class="pull-right">(43)</span>Bánh kem</a></li>
+                                <li><a href="#"> <span class="pull-right">(9)</span>Hoa hướng dương</a></li>
                             </ul>
                         </div>
                     </div><!--/brands_products-->
 
-                    <div class="price-range"><!--price-range-->
+<!--                    <div class="price-range">price-range
                         <h2>Price Range</h2>
                         <div class="well text-center">
                             <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2" ><br />
                             <b class="pull-left">$ 0</b> <b class="pull-right">$ 600</b>
                         </div>
-                    </div><!--/price-range-->
+                    </div>/price-range-->
 
-                    <div class="shipping text-center"><!--shipping-->
-                        <img src="images/home/shipping.jpg" alt="" />
+                    <div class=" text-center"><!--shipping-->
+                        <img src="images/hoa/tayhoa.jpg" alt=""  width="260px"/>
                     </div><!--/shipping-->
 
                 </div>
