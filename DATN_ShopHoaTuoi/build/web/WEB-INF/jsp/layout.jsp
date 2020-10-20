@@ -64,8 +64,8 @@
                     <div class="row">
                         <div class="col-md-4 clearfix">
                             <div class="logo pull-left">
-                                <a href="index.html"><img src="images/shop/logo.jpg" alt="Logo_shop"
-                                                          style="height: 80px; width: 80px;" /></a>
+                                <a href=""><img src="images/logo/logoo1.jpg" alt="Logo_shop"
+                                                          style="height: 70px; width: 150px;" /></a>
                             </div>
                             <div class="btn-group pull-right clearfix">
                                 <div class="btn-group">
@@ -98,7 +98,6 @@
                 </div>
             </div>
             <!--/header-middle-->
-
             <div class="header-bottom">
                 <!--header-bottom-->
                 <div class="container">
@@ -115,8 +114,8 @@
                             </div>
                             <div class="mainmenu pull-left">
                                 <ul class="nav navbar-nav collapse navbar-collapse">
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="contact-us.html">Giới thiệu</a></li>
+                                    <li><a href="" style="color: orange">Home</a></li>
+                                    <li><a href="">Giới thiệu</a></li>
                                     <li class="dropdown"><a href="#">Hoa tươi<i class="fa fa-angle-down"></i></a>
                                         <ul role="menu" class="sub-menu">
                                             <li><a href="">Hoa hồng đỏ</a></li>
