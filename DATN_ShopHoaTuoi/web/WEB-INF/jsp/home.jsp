@@ -213,7 +213,7 @@
             <div class="col-sm-9 padding-right">
                 <div class="features_items"><!--features_items-->
                     <h2 class="title text-center">Danh Mục Hoa</h2>
-                    <c:forEach var="rows" items="${listFlower}">
+                    <c:forEach var="rows" items="${flowers}">
                         <div class="col-sm-4">
 
 
@@ -223,13 +223,13 @@
                                         <img src="images/hoa/${rows.image}" alt="" />
                                         <h2 name="txtPrice">${rows.price}</h2>
                                         <p name="txtName">${rows.name}</p>
-                                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Đặt vào giỏ hàng</a>
+                                        <a href="product/${rows.id}.htm" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Đặt Hàng</a>
                                     </div>
                                     <div class="product-overlay">
                                         <div class="overlay-content">
                                             <h2 name="txtPrice">${rows.price}</h2>
                                             <p name="txtName">${rows.name}</p>
-                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Đặt vào giỏ hàng</a>
+                                            <a href="product/${rows.id}.htm" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Đặt Hàng</a>
                                         </div>
                                     </div>
                                 </div>
