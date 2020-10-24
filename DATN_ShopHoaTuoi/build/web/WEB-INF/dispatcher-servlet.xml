@@ -34,7 +34,7 @@
         
     <!-- Cấu hình package chứa các controller -->
     <context:component-scan base-package="controller" />
-
+    <!-- Cấu hình view -->  
     <bean id="viewResolver"
           class="org.springframework.web.servlet.view.InternalResourceViewResolver"
           p:prefix="/WEB-INF/jsp/layout.jsp?view="
@@ -56,5 +56,32 @@
     <bean name="indexController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="index" />
+    
+    <!-- Kết nối CSDL -->
+	<bean id="dataSource" 
+	    	class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+			p:driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+			p:url="jdbc:sqlserver://localhost:1433; Database=SG_Rose"
+			p:username="sa"
+			p:password="1234">
+	</bean>
 
+        <!-- Cấu hình Hibernate -->
+	<bean id="sessionFactory" 
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+	    <property name="dataSource" ref="dataSource"/>
+	    <property name="hibernateProperties">
+	      <props>        
+	            <prop key="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</prop>          
+	            <prop key="hibernate.show_sql">false</prop>
+	       </props>
+	    </property>
+            <property name="packagesToScan" value="entity"/>
+	</bean>
+        
+        <!-- Transaction Manager -->
+        <bean id="transactionManager" 
+            class="org.springframework.orm.hibernate4.HibernateTransactionManager" 
+            p:sessionFactory-ref="sessionFactory" />
+        <tx:annotation-driven transaction-manager="transactionManager" />
 </beans>

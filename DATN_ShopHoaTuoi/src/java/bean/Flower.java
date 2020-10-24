@@ -2,17 +2,35 @@
 package bean;
 
 import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import org.springframework.format.annotation.DateTimeFormat;
 
-
+@Entity
+@Table(name = "Flowers")
 public class Flower {
+    @Id
     private String id;
     private String name;
-    private String typeid;
+    
+    @ManyToOne
+    @JoinColumn(name = "TypeId")
+    private TypesOfFlower typeid;
+    
     private int amount;
     private double price;
     private String image;
     private String note;
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "MM/dd/yyyy")
     private Date createTime;
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "MM/dd/yyyy")
     private Date updateTime;
 
     public Flower() {
@@ -24,7 +42,7 @@ public class Flower {
         this.image = image;
     }
 
-    public Flower(String id, String name, String typeid, int amount, double price, String image, String note, Date createTime, Date updateTime) {
+    public Flower(String id, String name, TypesOfFlower typeid, int amount, double price, String image, String note, Date createTime, Date updateTime) {
         this.id = id;
         this.name = name;
         this.typeid = typeid;
@@ -35,9 +53,6 @@ public class Flower {
         this.createTime = createTime;
         this.updateTime = updateTime;
     }
-    
-    
-    
 
     public String getId() {
         return id;
@@ -55,11 +70,11 @@ public class Flower {
         this.name = name;
     }
 
-    public String getTypeid() {
+    public TypesOfFlower getTypeid() {
         return typeid;
     }
 
-    public void setTypeid(String typeid) {
+    public void setTypeid(TypesOfFlower typeid) {
         this.typeid = typeid;
     }
 
@@ -78,8 +93,6 @@ public class Flower {
     public void setPrice(double price) {
         this.price = price;
     }
-    
-    
 
     public String getImage() {
         return image;
@@ -112,7 +125,6 @@ public class Flower {
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
     }
-    
-    
+
     
 }
