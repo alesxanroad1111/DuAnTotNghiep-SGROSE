@@ -34,7 +34,7 @@
                                 <td>${rows.status}</td>
                                 <td>${rows.ispaid}</td>
                                 <td>${rows.createdtime}</td>
-                                <td>${rows.createdtime}</td>
+                                <td>${rows.updatedtime}</td>
                                 <td> <i class="material-icons">done_outline</i></td>
                                 <td><i class="material-icons">delete</i></td>
                             </tr>
@@ -50,9 +50,9 @@
             <div class="col-md-12 text-center">
                 <h2>Thông tin chi tiết</h2>
             </div>
-            <div class="col-md-12 row">
-                <form class="col-md-8">
-                    <div class="form-group">
+            <div class="col-md-12 row"><div class="col-md-2"></div>
+                <form class="col-md-7">
+                    <div class="form-group center">
                         <label >Mã hóa đơn</label>
                         <input class="form-control" >
                     </div>
@@ -73,22 +73,34 @@
                         <input class="form-control" >
                     </div>
                     <div class="form-group">
-                        <label >Trạng thái</label>
-<!--                        <label class="radio-inline"><input type="radio" name="optradio" >Chưa đặt hàng</label>
-                        <label class="radio-inline"><input type="radio" name="optradio">Đã đặt hàng</label>
-                        <label class="radio-inline"><input type="radio" name="optradio">Đang chờ giao hàng</label>
-                        <label class="radio-inline"><input type="radio" name="optradio">Giao hàng thành công</label>-->
+                        <label >Trạng thái</label><br>
+                        <div class="radio">
+                            <label><input type="radio" name="optradio" checked>Đang giao hàng</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="optradio">Đã giao hàng</label>
+                        </div>
+                        <div class="radio disabled">
+                            <label><input type="radio" name="optradio">Đang chờ giao hàng </label>
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label >Trạng thái thanh toán</label>
-<!--                        <div>
-				<input:radiobutton path="ispaid" value="true" label="Chưa thanh toán"/>
-				<input:radiobutton path="ispaid" value="false" label="Đã thanh toán"/>
-			</div>-->
+                        <label >Trạng thái thanh toán</label><br>
+                        <div class="radio">
+                            <label><input type="radio" name="optradio" checked>Chưa thanh toán</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="optradio">Đã thanh toán</label>
+                        </div>
                     </div>
                 </form>
-
             </div>
+            <div class="form-group text-center" >
+                <button name="btnInsert" class="btn btn-default"><i class="material-icons">add_task</i></button>
+                <button name="btnUpdate" class="btn btn-default"><i class="material-icons">arrow_circle_down</i></button>
+                <button name="btnDelete" class="btn btn-default"><i class="material-icons">delete</i></button>
+                <button name="btnReset" class="btn btn-default"><i class="material-icons">autorenew</i></button>
+            </div> 
         </div>
     </div>
 </div>

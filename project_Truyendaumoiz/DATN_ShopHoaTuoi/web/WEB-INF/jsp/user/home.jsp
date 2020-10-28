@@ -154,7 +154,7 @@
                                 <li><a href="#"> <span class="pull-right">(50)</span>Hoa hồng đỏ</a></li>
                                 <li><a href="#"> <span class="pull-right">(56)</span>Hoa tulip</a></li>
                                 <li><a href="#"> <span class="pull-right">(27)</span>Hoa hồng vàng</a></li>
-                                <li><a href="#"> <span class="pull-right">(32)</span>Gấu siêu to đầu cắt môiz</a></li>
+                                <li><a href="#"> <span class="pull-right">(32)</span>Gấu siêu to khổng lồ</a></li>
                                 <li><a href="#"> <span class="pull-right">(5)</span>Socola tặng gấu</a></li>
                                 <li><a href="#"> <span class="pull-right">(9)</span>Hoa tình yêu lãng mạng</a></li>
                                 <li><a href="#"> <span class="pull-right">(4)</span>Hoa sinh nhật</a></li>
@@ -185,17 +185,18 @@
 
 
                             <div class="product-image-wrapper">
-                                <div class="single-products">
-                                    <div class="productinfo text-center">
+                                <div class="single-products" >
+                                    <div class="productinfo text-center" >
+                                        
                                         <img src="images/hoa/${rows.image}" alt="" />
                                         <h2 name="txtPrice">${rows.price}</h2>
-                                        <p name="txtName">${rows.name}</p>
+                                        <p name="txtName">Hoa ${rows.name}</p>
                                         <a href="user/product/${rows.id}.htm" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Đặt Hàng</a>
                                     </div>
                                     <div class="product-overlay">
                                         <div class="overlay-content">
                                             <h2 name="txtPrice">${rows.price}</h2>
-                                            <p name="txtName">${rows.name}</p>
+                                            <p name="txtName">Hoa ${rows.name}</p>
                                             <a href="user/product/${rows.id}.htm" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Đặt Hàng</a>
                                         </div>
                                     </div>

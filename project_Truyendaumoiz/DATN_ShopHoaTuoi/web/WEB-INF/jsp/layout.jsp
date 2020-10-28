@@ -47,11 +47,10 @@
                         <div class="col-sm-6">
                             <div class="social-icons pull-right">
                                 <ul class="nav navbar-nav">
-                                    <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href=""><i class="fa fa-linkedin"></i></a></li>
-                                    <li><a href=""><i class="fa fa-dribbble"></i></a></li>
-                                    <li><a href=""><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a></li>
+                                    <li><a href="https://google.com/"><i class="fa fa-google-plus"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -66,18 +65,18 @@
                     <div class="row">
                         <div class="col-md-4 clearfix">
                             <div class="logo pull-left">
-                                <a href="index.html"><img src="images/logo/new.png" alt="Logo_shop"
-                                                         /></a>
+                                <a href="user/home.htm"><img src="images/logo/new.png" alt="Logo_shop"
+                                                        /></a>
                             </div>
-                            
+
                         </div>
                         <div class="col-md-8 clearfix">
                             <div class="shop-menu clearfix pull-right">
                                 <ul class="nav navbar-nav">
                                     <li><a href=""><i class="fa fa-user"></i> Account</a></li>
-                                    <li><a href="#"><i class="fa fa-crosshairs"></i> Checkout</a></li>
+                                    <li><a href="check_out.htm"><i class="fa fa-crosshairs"></i> Checkout</a></li>
                                     <li><a href="#"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-                                    <li><a href="#"><i class="fa fa-lock"></i> Login</a></li>
+                                    <li><a href="user/login.htm"><i class="fa fa-lock"></i> Login</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -102,7 +101,7 @@
                             </div>
                             <div class="mainmenu pull-left">
                                 <ul class="nav navbar-nav collapse navbar-collapse">
-                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="user/home.htm">Home</a></li>
                                     <li><a href="contact-us.html">Giới thiệu</a></li>
                                     <li class="dropdown"><a href="#">Hoa tươi<i class="fa fa-angle-down"></i></a>
                                         <ul role="menu" class="sub-menu">
@@ -153,176 +152,176 @@
 
         <jsp:include page="${param.view}"/>
 
-       <footer id="footer">
-		<!--Footer-->
-		<div class="footer-top">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-2">
-						<div class="companyinfo">
-							<h2><span>SG</span>-Rose</h2>
-							<p>Đây là shop hoa tươi không cần tưới</p>
-						</div>
-					</div>
-					<div class="col-sm-7">
-						<div class="col-sm-3">
-							<div class="video-gallery text-center">
-								<a href="#">
-									<div class="iframe-img">
-										<img src="images/home/iframe1.png" alt="" />
-									</div>
-									<div class="overlay-icon">
-										<i class="fa fa-play-circle-o"></i>
-									</div>
-								</a>
-								<p>Doanh Ngọc Diễm</p>
-								<h2>20/10/2020</h2>
-							</div>
-						</div>
-						<div class="col-sm-3">
-							<div class="video-gallery text-center">
-								<a href="#">
-									<div class="iframe-img">
-										<img src="images/ceo/ctruyen.jpg" alt="" style="width: 40px;" />
-									</div>
-									<div class="overlay-icon">
-										<i class="fa fa-play-circle-o"></i>
-									</div>
-								</a>
-								<p>Trần Công Truyền</p>
-								<h2>20/10/2020</h2>
-							</div>
-						</div>
-						<div class="col-sm-3">
-							<div class="video-gallery text-center">
-								<a href="#">
-									<div class="iframe-img">
-										<img src="images/home/iframe2.png" alt="" />
-									</div>
-									<div class="overlay-icon">
-										<i class="fa fa-play-circle-o"></i>
-									</div>
-								</a>
-								<p>Nguyễn Đức Hòa</p>
-								<h2>20/10/2020</h2>
-							</div>
-						</div>
+        <footer id="footer">
+            <!--Footer-->
+            <div class="footer-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <div class="companyinfo">
+                                <h2><span>SG</span>-Rose</h2>
+                                <p>Đây là shop hoa tươi không cần tưới</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-7">
+                            <div class="col-sm-3">
+                                <div class="video-gallery text-center">
+                                    <a href="#">
+                                        <div class="iframe-img">
+                                            <img src="images/home/iframe1.png" alt="" />
+                                        </div>
+                                        <div class="overlay-icon">
+                                            <i class="fa fa-play-circle-o"></i>
+                                        </div>
+                                    </a>
+                                    <p>Doanh Ngọc Diễm</p>
+                                    <h2>20/10/2020</h2>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="video-gallery text-center">
+                                    <a href="#">
+                                        <div class="iframe-img">
+                                            <img src="images/ceo/ctruyen.jpg" alt="" style="width: 40px;" />
+                                        </div>
+                                        <div class="overlay-icon">
+                                            <i class="fa fa-play-circle-o"></i>
+                                        </div>
+                                    </a>
+                                    <p>Trần Công Truyền</p>
+                                    <h2>20/10/2020</h2>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="video-gallery text-center">
+                                    <a href="#">
+                                        <div class="iframe-img">
+                                            <img src="images/home/iframe2.png" alt="" />
+                                        </div>
+                                        <div class="overlay-icon">
+                                            <i class="fa fa-play-circle-o"></i>
+                                        </div>
+                                    </a>
+                                    <p>Nguyễn Đức Hòa</p>
+                                    <h2>20/10/2020</h2>
+                                </div>
+                            </div>
 
-						<div class="col-sm-3">
-							<div class="video-gallery text-center">
-								<a href="#">
-									<div class="iframe-img">
-										<img src="images/home/iframe3.png" alt="" />
-									</div>
-									<div class="overlay-icon">
-										<i class="fa fa-play-circle-o"></i>
-									</div>
-								</a>
-								<p>Hồ Phi Long</p>
-								<h2>20/10/2020</h2>
-							</div>
-						</div>
+                            <div class="col-sm-3">
+                                <div class="video-gallery text-center">
+                                    <a href="#">
+                                        <div class="iframe-img">
+                                            <img src="images/home/iframe3.png" alt="" />
+                                        </div>
+                                        <div class="overlay-icon">
+                                            <i class="fa fa-play-circle-o"></i>
+                                        </div>
+                                    </a>
+                                    <p>Hồ Phi Long</p>
+                                    <h2>20/10/2020</h2>
+                                </div>
+                            </div>
 
-						<div class="col-sm-3">
-							<div class="video-gallery text-center">
-								<a href="#">
-									<div class="iframe-img">
-										<img src="images/home/iframe4.png" alt="" />
-									</div>
-									<div class="overlay-icon">
-										<i class="fa fa-play-circle-o"></i>
-									</div>
-								</a>
-								<p>Trần Đại Hưng</p>
-								<h2>20/10/2020</h2>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-3">
-						<div class="address">
-							<iframe
-								src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62706.19126010514!2d106.66183064710812!3d10.800821146647111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7649fa48af2a40ef!2zVlDEkEQgQ8O0bmcgdHkgUGjDoXQgdHJp4buDbiBQaOG6p24gbeG7gW0gUXVhbmcgVHJ1bmc!5e0!3m2!1svi!2s!4v1602660139339!5m2!1svi!2s"
-								height="250px" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
-								tabindex="0"></iframe>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+                            <div class="col-sm-3">
+                                <div class="video-gallery text-center">
+                                    <a href="#">
+                                        <div class="iframe-img">
+                                            <img src="images/home/iframe4.png" alt="" />
+                                        </div>
+                                        <div class="overlay-icon">
+                                            <i class="fa fa-play-circle-o"></i>
+                                        </div>
+                                    </a>
+                                    <p>Trần Đại Hưng</p>
+                                    <h2>20/10/2020</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="address">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62706.19126010514!2d106.66183064710812!3d10.800821146647111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7649fa48af2a40ef!2zVlDEkEQgQ8O0bmcgdHkgUGjDoXQgdHJp4buDbiBQaOG6p24gbeG7gW0gUXVhbmcgVHJ1bmc!5e0!3m2!1svi!2s!4v1602660139339!5m2!1svi!2s"
+                                    height="250px" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                                    tabindex="0"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-		<div class="footer-widget">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-2">
-						<div class="single-widget">
-							<h2>Dịch vụ</h2>
-							<ul class="nav nav-pills nav-stacked">
-								<li><a href="">Hỗ trợ trực tuyến</a></li>
-								<li><a href="">Về chúng tôi</a></li>
-								<li><a href="">Trạng thái đặt hàng</a></li>
+            <div class="footer-widget">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <div class="single-widget">
+                                <h2>Dịch vụ</h2>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li><a href="">Hỗ trợ trực tuyến</a></li>
+                                    <li><a href="">Về chúng tôi</a></li>
+                                    <li><a href="">Trạng thái đặt hàng</a></li>
 
-							</ul>
-						</div>
-					</div>
-					<div class="col-sm-2">
-						<div class="single-widget">
-							<h2>Tiện ích </h2>
-							<ul class="nav nav-pills nav-stacked">
-								<li><a href="">Các loại hoa</a></li>
-								<li><a href="">Quà tặng</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-sm-2">
-						<div class="single-widget">
-							<h2>Chính sách</h2>
-							<ul class="nav nav-pills nav-stacked">
-								<li><a href="">Điều khoản sử dụng</a></li>
-								<li><a href="">Chính sách bảo mật</a></li>
-								<li><a href="">Chính sách hoàn tiền</a></li>
-								<li><a href="">Hệ thống thanh toán</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-sm-2">
-						<div class="single-widget">
-							<h2>About SG-ROSE</h2>
-							<ul class="nav nav-pills nav-stacked">
-								<li><a href="">Thông tin về cửa hàng</a></li>
-								<li><a href="">Việc làm</a></li>
-								<li><a href="">Vị trí cửa hàngs</a></li>
-								<li><a href="">Chương trình liên kết</a></li>
-								<li><a href="">Copyright</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-sm-3 col-sm-offset-1">
-						<div class="single-widget">
-							<h2>Liên hệ SG-Rose</h2>
-							<form action="#" class="searchform">
-								<input type="text" placeholder="Your email address" />
-								<button type="submit" class="btn btn-default"><i
-										class="fa fa-arrow-circle-o-right"></i></button>
-								<p>Hãy gửi mail để chúng tôi phản hồi <br> sớm nhất có thể</p>
-							</form>
-						</div>
-					</div>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="single-widget">
+                                <h2>Tiện ích </h2>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li><a href="">Các loại hoa</a></li>
+                                    <li><a href="">Quà tặng</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="single-widget">
+                                <h2>Chính sách</h2>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li><a href="">Điều khoản sử dụng</a></li>
+                                    <li><a href="">Chính sách bảo mật</a></li>
+                                    <li><a href="">Chính sách hoàn tiền</a></li>
+                                    <li><a href="">Hệ thống thanh toán</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="single-widget">
+                                <h2>About SG-ROSE</h2>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li><a href="">Thông tin về cửa hàng</a></li>
+                                    <li><a href="">Việc làm</a></li>
+                                    <li><a href="">Vị trí cửa hàngs</a></li>
+                                    <li><a href="">Chương trình liên kết</a></li>
+                                    <li><a href="">Copyright</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-sm-offset-1">
+                            <div class="single-widget">
+                                <h2>Liên hệ SG-Rose</h2>
+                                <form action="#" class="searchform">
+                                    <input type="text" placeholder="Your email address" />
+                                    <button type="submit" class="btn btn-default"><i
+                                            class="fa fa-arrow-circle-o-right"></i></button>
+                                    <p>Hãy gửi mail để chúng tôi phản hồi <br> sớm nhất có thể</p>
+                                </form>
+                            </div>
+                        </div>
 
-				</div>
-			</div>
-		</div>
+                    </div>
+                </div>
+            </div>
 
-		<div class="footer-bottom">
-			<div class="container ">
-				<div class="text-center">
+            <div class="footer-bottom">
+                <div class="container ">
+                    <div class="text-center">
 
-					<p class="pull-left">Copyright © 2020 SG-ROSE Inc. All rights reserved.</p>
+                        <p class="pull-left">Copyright © 2020 SG-ROSE Inc. All rights reserved.</p>
 
-				</div>
-			</div>
-		</div>
+                    </div>
+                </div>
+            </div>
 
-	</footer>
+        </footer>
 
         <script src="js/jquery.js"></script>
         <script src="js/bootstrap.min.js"></script>

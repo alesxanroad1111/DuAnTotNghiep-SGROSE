@@ -222,13 +222,13 @@
                                     <div class="productinfo text-center">
                                         <img src="images/hoa/${rows.image}" alt="" />
                                         <h2 name="txtPrice">${rows.price}</h2>
-                                        <p name="txtName">${rows.name}</p>
+                                        <p name="txtName">Hoa ${rows.name}</p>
                                         <a href="product/${rows.id}.htm" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Đặt Hàng</a>
                                     </div>
                                     <div class="product-overlay">
                                         <div class="overlay-content">
                                             <h2 name="txtPrice">${rows.price}</h2>
-                                            <p name="txtName">${rows.name}</p>
+                                            <p name="txtName">Hoa ${rows.name}</p>
                                             <a href="product/${rows.id}.htm" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Đặt Hàng</a>
                                         </div>
                                     </div>

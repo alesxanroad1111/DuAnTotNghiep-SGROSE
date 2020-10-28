@@ -28,14 +28,14 @@
                         <c:forEach var="rows" items="${flowers}">
                             <tr>
                                 <td>${rows.id}</td>
-                                <td>${rows.name}</td>
+                                <td>Hoa ${rows.name}</td>
                                 <td>${rows.typeid.name}</td>
                                 <td>${rows.amount}</td>
                                 <td>${rows.price}</td>
                                 <td>${rows.createtimes}</td>
-                                <td>${rows.createtimes}</td>
-                                <td><a href="productsmanage/${rows.id}.htm"><i class="material-icons">done_outline</i></a></td>
-                                <td><i class="material-icons">delete</i></td>
+                                <td>${rows.updatetimes}</td>
+                                <td><a href="admin/productsmanage/${rows.id}.htm"><i class="material-icons">done_outline</i></a></td>
+                                <td><a href="admin/productsmanage/${rows.id}.htm"><i class="material-icons">delete</i></td>
                             </tr>
                         </c:forEach>
 
@@ -51,7 +51,7 @@
             </div>
             ${message}
             <div class="col-md-12 row">
-                <form:form action="productsmanage.htm" modelAttribute="flower" method="get" class="col-md-8">
+                <form:form action="admin/productsmanage.htm" modelAttribute="flower" method="get" class="col-md-8">
                     <div class="form-group">
                         <label >Mã hoa</label>
                         <form:input path="id" cssClass="form-control"/>
@@ -76,7 +76,13 @@
                         <label >Notes</label>
                         <form:input path="notes" cssClass="form-control"/>
                     </div>
-                </form:form>
+                    <div class="form-group text-center">
+                        <button name="btnInsert" class="btn btn-default">Insert</button>
+                        <button name="btnUpdate" class="btn btn-default">Update</button>
+                        <button name="btnDelete" class="btn btn-default">Delete</button>
+                        <button name="btnReset" class="btn btn-default">Reset</button>
+                    </div>  
+            </form:form>
                 <div class="col-md-4">
                     <div class="">
                         <img src="./assets/Hoakhaitruong/Chucthanhcong.jpg" alt="" style="width:100%">
@@ -87,14 +93,7 @@
                     </div>
                 </div>
             </div>
-            <form:form action="productsmanage.htm" modelAttribute="flower" method="get">
-            <div class="form-group text-center">
-			<button name="btnInsert" class="btn btn-default">Insert</button>
-			<button name="btnUpdate" class="btn btn-default">Update</button>
-			<button name="btnDelete" class="btn btn-default">Delete</button>
-			<button name="btnReset" class="btn btn-default">Reset</button>
-            </div>  
-            </form:form>
+           
         </div>
          
     </div>

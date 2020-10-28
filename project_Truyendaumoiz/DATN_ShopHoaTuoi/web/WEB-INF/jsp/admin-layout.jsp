@@ -36,19 +36,19 @@
                 <div class="sidebar-wrapper">
                     <ul class="nav">
                         <li class="nav-item active  ">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="admin/dashboardmanage.htm">
                                 <i class="material-icons">dashboard</i>
                                 <p>Thông tin</p>
                             </a>
                         </li>   
                         <li class="nav-item active  ">
-                            <a class="nav-link" href="">
+                            <a class="nav-link" href="admin/productsmanage.htm">
                                 <i class="material-icons">local_florist</i>
                                 <p>Quản lý sản phẩm</p>
                             </a>
                         </li>
                         <li class="nav-item active  ">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="admin/staffmanage.htm">
                                 <i class="material-icons">face</i>
                                 <p>Quản lý nhân viên</p>
                             </a>
@@ -60,7 +60,7 @@
                             </a>
                         </li>
                         <li class="nav-item active  ">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="admin/ordersmanage.htm">
                                 <i class="material-icons">library_books</i>
                                 <p>Quản lý hóa đơn</p>
                             </a>
