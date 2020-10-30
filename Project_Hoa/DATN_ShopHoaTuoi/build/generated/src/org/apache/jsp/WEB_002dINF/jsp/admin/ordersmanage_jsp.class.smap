@@ -1,0 +1,15 @@
+SMAP
+ordersmanage_jsp.java
+JSP
+*S JSP
+*F
++ 0 ordersmanage.jsp
+WEB-INF/jsp/admin/ordersmanage.jsp
+*L
+1,28:54
+28:156,11
+29:167
+30,8:168,3
+38,4:192
+41,55:84
+*E
