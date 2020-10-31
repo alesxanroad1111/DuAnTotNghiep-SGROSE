@@ -1,0 +1,13 @@
+﻿
+2/ Phân trang
+https://www.javatpoint.com/spring-mvc-pagination-example
+https://www.javatpoint.com/spring-mvc-pagination-example
+
+
+3/ sử dụng câu lênh sql trong hibernate
+https://docs.jboss.org/hibernate/core/3.3/reference/en/html/queryhql.html
+
+
+4/ thanh toán 
+https://medium.com/@keenanrahman96/paypal-integration-with-java-spring-55d0c681c948
+paypal sandbox spring mvc
