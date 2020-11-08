@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!-- was: <?xml version="1.0" encoding="UTF-8"?> -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+       http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
+
+    <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
+
+    <!--
+    Most controllers will use the ControllerClassNameHandlerMapping above, but
+    for the index controller we are using ParameterizableViewController, so we must
+    define an explicit mapping for it.
+    -->
+    <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>
+                <prop key="index.htm">indexController</prop>
+            </props>
+        </property>
+    </bean>
+    <!-- Spring MVC Annotation -->
+    <context:annotation-config />
+    <mvc:annotation-driven/>
+        
+    <!-- Cấu hình package chứa các controller -->
+    <context:component-scan base-package="controller, components, bean" />
+
+     <!-- Cấu hình view -->
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          p:prefix="/WEB-INF/jsp/"
+          p:suffix=".jsp" />
+
+    <!--
+    The index controller.
+    -->
+    <bean name="indexController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="index" />
+
+    <bean id="poly" class="bean.Company">
+            <property name="name" value="FPT Polytechnic"/>
+            <property name="slogan" value="Hoc hoc nua hoc mau"/>
+            <property name="logo" value="images/logos/poly.png"/>
+    </bean>
+     
+    <bean id="petro" class="bean.Company">
+            <property name="name" value="Petrolimex"/>
+            <property name="slogan" value="Khoi nguon moi chuyen dong"/>
+            <property name="logo" value="images/logos/Petrolimex.jpg"/>
+    </bean>
+    <!-- Spring Mail Sender -->
+    <bean id="mailSender" 
+	class="org.springframework.mail.javamail.JavaMailSenderImpl">
+	<property name="host" value="smtp.gmail.com" />
+	<property name="port" value="587" />	
+	<property name="username" value="diemdnps09660@fpt.edu.vn" />
+	<property name="password" value="0209638001" />
+ 	<property name="defaultEncoding" value="UTF-8"/> 
+	<property name="javaMailProperties">
+	<props>
+          <prop key="mail.smtp.auth">true</prop>
+          <prop key="mail.smtp.socketFactory.class">javax.net.ssl.SSLSocketFactory</prop>
+              <prop key="mail.smtp.socketFactory.port">465</prop>
+          <prop key="mail.smtp.starttls.enable">false</prop>
+          <prop key="mail.debug">true</prop>
+        </props>
+	</property>	
+    </bean>
+    
+    <bean id="multipartResolver" 
+            class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+            <!-- maxUploadSize=20MB -->
+            <property name="maxUploadSize" value="20971520"/>
+    </bean>
+</beans>
