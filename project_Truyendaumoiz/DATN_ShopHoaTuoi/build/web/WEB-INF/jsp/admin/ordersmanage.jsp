@@ -10,7 +10,7 @@
             <!-- Đây là nội dung cái của trang -->
 
             <div class="col-md-12 text-center">
-                <table class="table table-condensed" ng-app="myapp" ng-controller="myctrl">
+                <table class="table table-condensed" >
                     <thead>
                         <tr>
                             <th>Mã hóa đơn</th>
@@ -35,8 +35,8 @@
                                 <td>${rows.ispaid}</td>
                                 <td>${rows.createdtime}</td>
                                 <td>${rows.updatedtime}</td>
-                                <td> <i class="material-icons">done_outline</i></td>
-                                <td><i class="material-icons">delete</i></td>
+                                <td><a href="admin/ordersmanage/${rows.id}.htm"><i class="material-icons">done_outline</i></a></td>
+                                <td><a href="admin/ordersmanage/delete/${rows.id}.htm"><i class="material-icons">delete</i></td>
                             </tr>
                         </c:forEach>
 
@@ -49,58 +49,49 @@
             </div>
             <div class="col-md-12 text-center">
                 <h2>Thông tin chi tiết</h2>
-            </div>
+            </div>      ${message}
             <div class="col-md-12 row"><div class="col-md-2"></div>
-                <form class="col-md-7">
+                <form:form action="${pageContext.request.contextPath}/admin/ordersmanage.htm" modelAttribute="order" method="get" class="col-md-7">
                     <div class="form-group center">
                         <label >Mã hóa đơn</label>
-                        <input class="form-control" >
-                    </div>
-                    <div class="form-group">
-                        <label >Mã nhân viên</label>
-                        <input class="form-control" >
+                        <form:input path="id" class="form-control" disabled="true" />
                     </div>
                     <div class="form-group">
                         <label >Tên khách hàng</label>
-                        <input class="form-control" >
+                        <form:input path="userid.name" class="form-control" />
                     </div>
                     <div class="form-group">
                         <label >Địa chỉ</label>
-                        <input class="form-control" >
+                        <form:input path="address" class="form-control" />
                     </div>
                     <div class="form-group">
                         <label >Tổng tiền</label>
-                        <input class="form-control" >
+                        <form:input path="totalmoney" class="form-control" />
                     </div>
                     <div class="form-group">
-                        <label >Trạng thái</label><br>
-                        <div class="radio">
-                            <label><input type="radio" name="optradio" checked>Đang giao hàng</label>
-                        </div>
-                        <div class="radio">
-                            <label><input type="radio" name="optradio">Đã giao hàng</label>
-                        </div>
-                        <div class="radio disabled">
-                            <label><input type="radio" name="optradio">Đang chờ giao hàng </label>
+                        <label >Trạng thái</label>
+                        <div>
+                            <form:radiobutton path="status" value="1" label="Đang giao hàng"/>
+                            <form:radiobutton path="status" value="2" label="Đang giao hàng"/>
+                            <form:radiobutton path="status" value="3" label="Đang chờ giao hàng"/>
                         </div>
                     </div>
                     <div class="form-group">
                         <label >Trạng thái thanh toán</label><br>
-                        <div class="radio">
-                            <label><input type="radio" name="optradio" checked>Chưa thanh toán</label>
-                        </div>
-                        <div class="radio">
-                            <label><input type="radio" name="optradio">Đã thanh toán</label>
+                        <div>
+                            <form:radiobutton path="ispaid" value="1" label="Đã thanh toán"/>
+                            <form:radiobutton path="ispaid" value="2" label="Chưa thanh toán"/>
+                            <form:radiobutton path="ispaid" value="3" label="Đang chờ thanh toán"/>
                         </div>
                     </div>
-                </form>
-            </div>
-            <div class="form-group text-center" >
-                <button name="btnInsert" class="btn btn-default"><i class="material-icons">add_task</i></button>
-                <button name="btnUpdate" class="btn btn-default"><i class="material-icons">arrow_circle_down</i></button>
-                <button name="btnDelete" class="btn btn-default"><i class="material-icons">delete</i></button>
-                <button name="btnReset" class="btn btn-default"><i class="material-icons">autorenew</i></button>
-            </div> 
+                    </form>
+                </div>
+                <div class="form-group text-center" >
+                        <input name="btnInsert" class="btn btn-default" type="submit" value="Insert" />
+                        <input name="btnUpdate" class="btn btn-default" type="submit" value="Update" />
+                        <input name="btnReset" class="btn btn-default" type="submit" value="Reset" />
+                </div> 
+            </form:form>
         </div>
     </div>
 </div>

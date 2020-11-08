@@ -8,6 +8,7 @@ package entity;
 import java.util.Collection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -15,21 +16,25 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "TypesOfFlowers")
 public class TypesOfFlower {
+
     @Id
-    private String id;
+    @GeneratedValue
+    private int id;
     private String name;
     private String image;
     
     @OneToMany(mappedBy = "typeid", fetch = FetchType.EAGER)
     private Collection<Flower> flowers;
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
+
+    
 
     public String getName() {
         return name;

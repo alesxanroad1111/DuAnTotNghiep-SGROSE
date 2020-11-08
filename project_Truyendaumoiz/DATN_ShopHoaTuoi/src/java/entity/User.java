@@ -12,7 +12,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Table(name = "Users")
 public class User {
     @Id
-    private String id;
+    private int id;
     private String name;
     private String email;
     private String address;
@@ -28,11 +28,11 @@ public class User {
     @DateTimeFormat(pattern="MM/dd/yyyy")
     private Date updatedtime;
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

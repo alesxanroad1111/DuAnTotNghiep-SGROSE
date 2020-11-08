@@ -116,19 +116,19 @@ public class AdminController {
 //    }
 //    
     
-    @RequestMapping("ordersmanage")
-    public String orders(ModelMap model) {
-        model.addAttribute("order", new Order());
-	model.addAttribute("orders", getOrders());
-        return "admin/ordersmanage";
-    }
-    
-    @SuppressWarnings("unchecked")
-    public List<Order> getOrders() {
-        Session session = factory.getCurrentSession();
-        String hql = "FROM Order";
-        Query query = session.createQuery(hql);
-        List<Order> list = query.list();
-        return list;
-    }
+//    @RequestMapping("ordersmanage")
+//    public String orders(ModelMap model) {
+//        model.addAttribute("order", new Order());
+//	model.addAttribute("orders", getOrders());
+//        return "admin/ordersmanage";
+//    }
+//    
+//    @SuppressWarnings("unchecked")
+//    public List<Order> getOrders() {
+//        Session session = factory.getCurrentSession();
+//        String hql = "FROM Order";
+//        Query query = session.createQuery(hql);
+//        List<Order> list = query.list();
+//        return list;
+//    }
 }

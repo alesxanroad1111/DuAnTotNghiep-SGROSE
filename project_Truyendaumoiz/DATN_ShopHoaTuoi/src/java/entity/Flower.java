@@ -1,11 +1,16 @@
-
 package entity;
 
+import java.util.Collection;
 import java.util.Date;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -15,30 +20,44 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Entity
 @Table(name = "Flowers")
 public class Flower {
+
     @Id
-    private String id;
+    @GeneratedValue
+    private int id;
     private String name;
-    
+
     @ManyToOne
     @JoinColumn(name = "typeid")
     private TypesOfFlower typeid;
-    
+
     private int amount;
     private double price;
     private String image;
     private String notes;
     @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern="MM/dd/yyyy")
-    private Date createtimes;
+    @DateTimeFormat(pattern = "MM/dd/yyyy")
+    private Date createdtime;
     @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern="MM/dd/yyyy")
-    private Date updatetimes;
+    @DateTimeFormat(pattern = "MM/dd/yyyy")
+    private Date updatedtime;
 
-    public String getId() {
+    @OneToMany(mappedBy = "flowerId", fetch = FetchType.EAGER)
+    private Collection<OrdersDetail> orders;
+
+//    public Flower(String name, TypesOfFlower typeid, int amount, double price, String image, String notes) {
+//        this.name = name;
+//        this.typeid = typeid;
+//        this.amount = amount;
+//        this.price = price;
+//        this.image = image;
+//        this.notes = notes;
+//
+//    }
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -90,20 +109,28 @@ public class Flower {
         this.notes = notes;
     }
 
-    public Date getCreatetimes() {
-        return createtimes;
+    public Date getCreatedtime() {
+        return createdtime;
     }
 
-    public void setCreatetimes(Date createtimes) {
-        this.createtimes = createtimes;
+    public void setCreatedtime(Date createdtime) {
+        this.createdtime = createdtime;
     }
 
-    public Date getUpdatetimes() {
-        return updatetimes;
+    public Date getUpdatedtime() {
+        return updatedtime;
     }
 
-    public void setUpdatetimes(Date updatetimes) {
-        this.updatetimes = updatetimes;
+    public void setUpdatedtime(Date updatetime) {
+        this.updatedtime = updatetime;
     }
-    
+
+    public Collection<OrdersDetail> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(Collection<OrdersDetail> orders) {
+        this.orders = orders;
+    }
+
 }
