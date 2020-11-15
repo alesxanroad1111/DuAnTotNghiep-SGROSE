@@ -9,11 +9,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Transactional
 @Controller
-@RequestMapping("/admin/")
+@RequestMapping("/admin//")
 public class staffController {
 
     @Autowired
@@ -25,6 +26,15 @@ public class staffController {
 	model.addAttribute("staffs", getStaffs());
         return "admin/staffmanage";
     }
+    
+//     @RequestMapping("{id}")
+//    public String edit1(ModelMap model, @PathVariable("id") int id) {
+//        Session session = factory.getCurrentSession();
+//        Staff staff = (Staff) session.get(Staff.class, id);
+//        model.addAttribute("staff", staff);
+//        model.addAttribute("staffs", getStaffs());
+//        return "admin/staffmanage";
+//    }
     
     @SuppressWarnings("unchecked")
     public List<Staff> getStaffs() {

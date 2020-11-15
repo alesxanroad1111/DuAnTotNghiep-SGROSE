@@ -35,7 +35,7 @@ public class HomeController {
     
     
     @RequestMapping("product/{id}")
-    public String detailProduct(ModelMap model, @PathVariable("id") String id){
+    public String detailProduct(ModelMap model, @PathVariable("id") int id){
         Session session = factory.getCurrentSession();
         Flower flower = (Flower) session.get(Flower.class, id);
         model.addAttribute("flower", flower);
