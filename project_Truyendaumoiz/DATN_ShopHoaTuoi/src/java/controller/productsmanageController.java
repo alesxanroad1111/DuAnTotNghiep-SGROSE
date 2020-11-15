@@ -29,36 +29,33 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @Transactional
 @Controller
-@RequestMapping("/admin")
+@RequestMapping("/admin/")
 public class productsmanageController {
 
     @Autowired
     SessionFactory factory;
 
-    @RequestMapping("/productsmanage")
+    @RequestMapping("productsmanage")
     public String products(ModelMap model) {
         model.addAttribute("flower", new Flower());
         model.addAttribute("flowers", getFlowers());
         return "admin/productsmanage";
     }
 
-
-    @RequestMapping(method = RequestMethod.GET, params = "btnInsert")
+    @RequestMapping(value = "productsmanage", method = RequestMethod.GET, params = "btnInsert")
     public String insert(ModelMap model, @ModelAttribute("flower") Flower flower) {
 
         Session session = factory.openSession();
         Transaction t = session.beginTransaction();
         try {
-            System.out.println(flower);
+
             session.save(flower);
             t.commit();
-            System.out.println("alo");
             model.addAttribute("message", "Cập nhật thành công !");
 
         } catch (Exception e) {
             t.rollback();
             e.printStackTrace();
-            System.out.println("alo 123");
             model.addAttribute("message", "Thêm mới thất bại !");
         } finally {
             session.close();
@@ -66,22 +63,22 @@ public class productsmanageController {
         model.addAttribute("flowers", getFlowers());
         return "admin/productsmanage";
     }
-    
-    @RequestMapping("delete/{id}")
-	public String delete(ModelMap model, @PathVariable("id") int id) {
-		Session session = factory.getCurrentSession();
-		Flower flower = (Flower) session.get(Flower.class, id);
-		session.delete(flower);
-		return "redirect:/admin/productsmanage.htm";
-               
-	}
 
-    @RequestMapping(method = RequestMethod.GET, params = "btnUpdate")
+    @RequestMapping("delete/{id}")
+    public String delete(ModelMap model, @PathVariable("id") int id) {
+        Session session = factory.getCurrentSession();
+        Flower flower = (Flower) session.get(Flower.class, id);
+        session.delete(flower);
+        return "redirect:/admin/productsmanage.htm";
+
+    }
+
+    @RequestMapping(value = "productsmanage", method = RequestMethod.GET, params = "btnUpdate")
     public String update(ModelMap model, @ModelAttribute("flower") Flower flower) {
         Session session = factory.openSession();
         Transaction t = session.beginTransaction();
         try {
-            session.saveOrUpdate(flower);
+            session.update(flower);
             t.commit();
             model.addAttribute("message", "Cập nhật thành công !");
         } catch (Exception e) {
@@ -94,8 +91,7 @@ public class productsmanageController {
         return "admin/productsmanage";
     }
 
-
-    @RequestMapping(method = RequestMethod.GET, params = "btnReset")
+    @RequestMapping(value = "productsmanage", method = RequestMethod.GET, params = "btnReset")
     public String reset(ModelMap model, Flower flower) {
         Session session = factory.openSession();
         Transaction t = session.beginTransaction();
@@ -108,7 +104,7 @@ public class productsmanageController {
         return "admin/productsmanage";
     }
 
-    @RequestMapping("{id}")
+    @RequestMapping("show/{id}")
     public String edit(ModelMap model, @PathVariable("id") int id) {
         Session session = factory.getCurrentSession();
         Flower flower = (Flower) session.get(Flower.class, id);
@@ -118,7 +114,6 @@ public class productsmanageController {
     }
 
 //    
-
     @SuppressWarnings("unchecked")
     public List<Flower> getFlowers() {
         Session session = factory.getCurrentSession();
@@ -137,6 +132,5 @@ public class productsmanageController {
         List<TypesOfFlower> list = query.list();
         return list;
     }
-
 
 }

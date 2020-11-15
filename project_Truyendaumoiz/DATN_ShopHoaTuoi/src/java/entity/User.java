@@ -1,8 +1,12 @@
 package entity;
 
+import java.util.Collection;
 import java.util.Date;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -12,6 +16,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Table(name = "Users")
 public class User {
     @Id
+    @GeneratedValue
     private int id;
     private String name;
     private String email;
@@ -27,6 +32,9 @@ public class User {
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern="MM/dd/yyyy")
     private Date updatedtime;
+    
+    @OneToMany(mappedBy = "userid", fetch = FetchType.EAGER)
+    private Collection<Order> orders;
 
     public int getId() {
         return id;
@@ -114,6 +122,14 @@ public class User {
 
     public void setUpdatedtime(Date updatedtime) {
         this.updatedtime = updatedtime;
+    }
+
+    public Collection<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(Collection<Order> orders) {
+        this.orders = orders;
     }
     
     
