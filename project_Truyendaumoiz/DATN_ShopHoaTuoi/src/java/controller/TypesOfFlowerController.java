@@ -30,8 +30,8 @@ public class TypesOfFlowerController {
 
     @RequestMapping("/typesofflowermng")
     public String index(ModelMap model) {
-        model.addAttribute("typeofflower", new TypesOfFlower());
-        model.addAttribute("typeofflowers", getTypesOfFlowers());
+        model.addAttribute("typesofflower", new TypesOfFlower());
+        model.addAttribute("typesofflowers", getTypesOfFlowers());
         return "admin/typesofflowermng";
     }
 

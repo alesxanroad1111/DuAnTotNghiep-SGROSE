@@ -34,8 +34,6 @@ public class TypesOfFlower {
         this.id = id;
     }
 
-    
-
     public String getName() {
         return name;
     }
@@ -59,7 +57,6 @@ public class TypesOfFlower {
     public void setFlowers(Collection<Flower> flowers) {
         this.flowers = flowers;
     }
-    
-    
+
     
 }

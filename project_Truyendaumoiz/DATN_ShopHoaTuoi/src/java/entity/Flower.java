@@ -14,6 +14,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -34,11 +36,14 @@ public class Flower {
     private double price;
     private String image;
     private String notes;
+    
     @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "MM/dd/yyyy")
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
     private Date createdtime;
+    
     @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "MM/dd/yyyy")
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
+    @UpdateTimestamp
     private Date updatedtime;
 
     @OneToMany(mappedBy = "flowerId", fetch = FetchType.EAGER)

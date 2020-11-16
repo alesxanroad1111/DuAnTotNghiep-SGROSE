@@ -22,6 +22,9 @@ public class Order {
     @GeneratedValue
     private int id;
     
+    @ManyToOne
+    @JoinColumn(name = "userid")
+    private User userid;
 
     private String address;
     private int totalmoney;
@@ -34,9 +37,7 @@ public class Order {
     @DateTimeFormat(pattern = "MM/dd/yyyy")
     private Date updatedtime;
 
-    @ManyToOne
-    @JoinColumn(name = "userid")
-    private User userid;
+    
     
     @OneToMany(mappedBy = "orderid", fetch = FetchType.EAGER)
     private Collection<OrdersDetail> ordersdetails;
