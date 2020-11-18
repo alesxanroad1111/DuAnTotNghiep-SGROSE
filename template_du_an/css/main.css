@@ -1470,14 +1470,11 @@ h2.title {
     background: #FE980F;
     border: medium none;
     border-radius: 0;
-    color: #FFFFFF;
+    color: white;
     display: block;
     font-family: 'Roboto', sans-serif;
     padding: 6px 25px;
 }
-
-.login-form label {}
-
 .login-form label input {
     border: medium none;
     display: inline-block;
@@ -2514,3 +2511,4 @@ textarea {
     font-weight: 600;
     margin-bottom: 15px;
   }
+  
