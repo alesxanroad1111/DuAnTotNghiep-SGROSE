@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+	<table-filter match-catalog="EmployeeManager"
+		match-schema="dbo" match-name="Account" />
+	<table-filter match-catalog="EmployeeManager"
+		match-schema="dbo" match-name="Contract" />
+	<table-filter match-catalog="EmployeeManager"
+		match-schema="dbo" match-name="Department" />
+	<table-filter match-catalog="EmployeeManager"
+		match-schema="dbo" match-name="Employee" />
+	<table-filter match-catalog="EmployeeManager"
+		match-schema="dbo" match-name="EmployeeType" />
+	<table-filter match-catalog="EmployeeManager"
+		match-schema="dbo" match-name="Position" />
+	<table-filter match-catalog="EmployeeManager"
+		match-schema="dbo" match-name="Record" />
+</hibernate-reverse-engineering>
