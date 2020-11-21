@@ -5,12 +5,12 @@
     <div class="col-md-12 row">
         <div class="container-fluid">
             <div class="col-md-12 text-center">
-                <h2>Bảng hóa đơn</h2>
+                <h2 class="font-weight-bold text-primary"><strong>DANH SÁCH HÓA ĐƠN</strong></h2>
             </div>
             <!-- Đây là nội dung cái của trang -->
 
-            <div class="col-md-12 text-center">
-                <table class="table table-condensed" >
+            <div class="col-md-12">
+                <table class="table table-dark table-striped table-hover" >
                     <thead>
                         <tr>
                             <th>Mã hóa đơn</th>
@@ -35,8 +35,8 @@
                                 <td>${rows.ispaid}</td>
                                 <td>${rows.createdtime}</td>
                                 <td>${rows.updatedtime}</td>
-                                <td><a href="admin/ordersmanage/${rows.id}.htm"><i class="material-icons">done_outline</i></a></td>
-                                <td><a href="admin/ordersmanage/delete/${rows.id}.htm"><i class="material-icons">delete</i></td>
+                                <td><a href="admin/${rows.id}.htm"><i class="material-icons">done_outline</i></a></td>
+                                <td><a href="admin/delete1/${rows.id}.htm"><i class="material-icons">delete</i></td>
                             </tr>
                         </c:forEach>
 
@@ -48,17 +48,16 @@
                 </ul>
             </div>
             <div class="col-md-12 text-center">
-                <h2>Thông tin chi tiết</h2>
-            </div>      ${message}
+                <h2 class="text-primary">Thông tin chi tiết</h2> ${message}
+            </div>     
             <div class="col-md-12 row"><div class="col-md-2"></div>
                 <form:form action="${pageContext.request.contextPath}/admin/ordersmanage.htm" modelAttribute="order" method="get" class="col-md-7">
                     <div class="form-group center">
-                        <label >Mã hóa đơn</label>
-                        <form:input path="id" class="form-control" disabled="true" />
+                        <form:hidden path="id" class="form-control"/>
                     </div>
                     <div class="form-group">
-                        <label >Tên khách hàng</label>
-                        <form:input path="userid.name" class="form-control" />
+                        <label >Mã khách hàng</label>
+                        <form:input path="userid.id" class="form-control"  />
                     </div>
                     <div class="form-group">
                         <label >Địa chỉ</label>
@@ -70,21 +69,20 @@
                     </div>
                     <div class="form-group">
                         <label >Trạng thái</label>
-                        <div>
-                            <form:radiobutton path="status" value="1" label="Đang giao hàng"/>
+                        <div class="form-control">
+                            <form:radiobutton path="status" value="1" label="Đã giao hàng"/>
                             <form:radiobutton path="status" value="2" label="Đang giao hàng"/>
                             <form:radiobutton path="status" value="3" label="Đang chờ giao hàng"/>
                         </div>
                     </div>
                     <div class="form-group">
                         <label >Trạng thái thanh toán</label><br>
-                        <div>
+                        <div class="custom-control custom-radio custom-control-inline">
                             <form:radiobutton path="ispaid" value="1" label="Đã thanh toán"/>
                             <form:radiobutton path="ispaid" value="2" label="Chưa thanh toán"/>
                             <form:radiobutton path="ispaid" value="3" label="Đang chờ thanh toán"/>
                         </div>
                     </div>
-                    </form>
                 </div>
                 <div class="form-group text-center" >
                         <input name="btnInsert" class="btn btn-default" type="submit" value="Insert" />

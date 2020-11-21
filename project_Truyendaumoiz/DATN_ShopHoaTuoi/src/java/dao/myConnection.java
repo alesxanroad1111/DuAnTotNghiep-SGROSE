@@ -14,7 +14,7 @@ public class myConnection {
         try {
             String url = "jdbc:sqlserver://localhost:1433;databasename=SG_Rose";
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            cn = DriverManager.getConnection(url, "sa", "1234");
+            cn = DriverManager.getConnection(url, "sa", "123");
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -34,15 +34,15 @@ public class orderController {
     @Autowired
     SessionFactory factory;
 
-    @RequestMapping("ordersmanage")
+    @RequestMapping("/ordersmanage")
     public String orders(ModelMap model) {
         model.addAttribute("order", new Order());
         model.addAttribute("orders", getOrders());
         return "admin/ordersmanage";
     }
 
-     @RequestMapping(method = RequestMethod.GET, params = "btnInsert")
-    public String insert(ModelMap model, @ModelAttribute("order") Order order) {
+    @RequestMapping(value = "ordersmanage",method = RequestMethod.GET, params = "btnInsert")
+    public String insert1(ModelMap model, @ModelAttribute("order") Order order) {
 
         Session session = factory.openSession();
         Transaction t = session.beginTransaction();
@@ -50,13 +50,11 @@ public class orderController {
             System.out.println(order);
             session.save(order);
             t.commit();
-            System.out.println("alo");
             model.addAttribute("message", "Cập nhật thành công !");
 
         } catch (Exception e) {
             t.rollback();
             e.printStackTrace();
-            System.out.println("alo 123");
             model.addAttribute("message", "Thêm mới thất bại !");
         } finally {
             session.close();
@@ -65,8 +63,8 @@ public class orderController {
         return "admin/ordersmanage";
     }
     
-    @RequestMapping("delete/{id}")
-	public String delete(ModelMap model, @PathVariable("id") int id) {
+    @RequestMapping("delete1/{id}")
+	public String delete1(ModelMap model, @PathVariable("id") int id) {
 		Session session = factory.getCurrentSession();
 		Order order = (Order) session.get(Order.class, id);
 		session.delete(order);
@@ -74,12 +72,12 @@ public class orderController {
                
 	}
 
-    @RequestMapping(method = RequestMethod.GET, params = "btnUpdate")
-    public String update(ModelMap model, @ModelAttribute("order") Order order) {
+    @RequestMapping(value = "ordersmanage",method = RequestMethod.GET, params = "btnUpdate")
+    public String update1(ModelMap model, @ModelAttribute("order") Order order) {
         Session session = factory.openSession();
         Transaction t = session.beginTransaction();
         try {
-            session.saveOrUpdate(order);
+            session.update(order);
             t.commit();
             model.addAttribute("message", "Cập nhật thành công !");
         } catch (Exception e) {
@@ -94,7 +92,7 @@ public class orderController {
 
 
     @RequestMapping(method = RequestMethod.GET, params = "btnReset")
-    public String reset(ModelMap model, Order order) {
+    public String reset1(ModelMap model, Order order) {
         Session session = factory.openSession();
         Transaction t = session.beginTransaction();
         {
@@ -107,7 +105,7 @@ public class orderController {
     }
 
     @RequestMapping("{id}")
-    public String edit(ModelMap model, @PathVariable("id") int id) {
+    public String edit1(ModelMap model, @PathVariable("id") int id) {
         Session session = factory.getCurrentSession();
         Order order = (Order) session.get(Order.class, id);
         model.addAttribute("order", order);
