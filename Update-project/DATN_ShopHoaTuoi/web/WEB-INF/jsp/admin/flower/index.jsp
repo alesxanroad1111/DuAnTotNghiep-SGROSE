@@ -3,11 +3,11 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <div class="content">
-                      <a class="btn btn-primary" href="admin/flower/update.htm">add</a>
-                    
+                      
+                      
     <div class="col-md-12 row">
         <div class="container-fluid">
-              ${message}
+              <a class="btn btn-success btn-hover" href="admin/flower/update.htm">add</a>
             <div class="card">
                 <div class="card-header card-header-success">
                   <h4 class="card-title ">Flowers Manager</h4>

@@ -5,7 +5,9 @@
  */
 package controller;
 
+import entity.Ispaid;
 import entity.Order;
+import entity.OrderStatus;
 import entity.OrdersDetail;
 import java.util.List;
 import org.hibernate.Query;
@@ -45,9 +47,8 @@ public class orderController {
         model.addAttribute("insertorder", new Order());
         return "admin/order/update";
     }
-    
 
-    @RequestMapping(value = "insert", method = RequestMethod.GET)
+    @RequestMapping(value = "insert", method = RequestMethod.POST)
     public String insert(ModelMap model, @ModelAttribute("insertorder") Order order) {
         Session session = factory.openSession();
         Transaction t = session.beginTransaction();
@@ -55,7 +56,6 @@ public class orderController {
             session.save(order);
             t.commit();
             model.addAttribute("message", "Thêm mới thành công !");
-            return "redirect:/admin/order/index.htm";
         } catch (Exception e) {
             t.rollback();
             e.printStackTrace();
@@ -64,7 +64,7 @@ public class orderController {
             session.close();
         }
         model.addAttribute("orders", getOrders());
-        return "admin/order/update";
+        return "admin/order/index";
     }
 //    
 
@@ -78,13 +78,14 @@ public class orderController {
     }
 
     @RequestMapping(value = "edit", method = RequestMethod.GET, params = "btnUpdate")
-    public String update1(ModelMap model, @ModelAttribute("order") Order order) {
+    public String update(ModelMap model, @ModelAttribute("order") Order order) {
         Session session = factory.openSession();
         Transaction t = session.beginTransaction();
         try {
             session.update(order);
             t.commit();
             model.addAttribute("message", "Cập nhật thành công !");
+//            return "redirect:/admin/order/index.htm";
         } catch (Exception e) {
             t.rollback();
             model.addAttribute("message", "Cập nhật thất bại !");
@@ -92,7 +93,7 @@ public class orderController {
             session.close();
         }
         model.addAttribute("orders", getOrders());
-        return "admin/order/index";
+        return "admin/order/edit";
     }
 
     @RequestMapping(value = "edit", method = RequestMethod.GET, params = "btnReset")
@@ -133,6 +134,25 @@ public class orderController {
         String hql = "FROM OrdersDetail";
         Query query = session.createQuery(hql);
         List<OrdersDetail> list = query.list();
+        return list;
+    }
+    @ModelAttribute("Ispaid")
+    @SuppressWarnings("unchecked")
+    public List<Ispaid> getIspaids(){
+        Session session = factory.getCurrentSession();
+         String hql = "FROM Ispaid";
+         Query query = session.createQuery(hql);
+         List<Ispaid> list = query.list();
+        return list;
+    }
+    
+    @ModelAttribute("OrderStatus")
+    @SuppressWarnings("unchecked")
+    public List<OrderStatus> getOrderStatuss(){
+        Session session = factory.getCurrentSession();
+         String hql = "FROM OrderStatus";
+         Query query = session.createQuery(hql);
+         List<OrderStatus> list = query.list();
         return list;
     }
 }

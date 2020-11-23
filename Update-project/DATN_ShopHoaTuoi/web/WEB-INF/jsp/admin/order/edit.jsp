@@ -31,29 +31,23 @@
                                 </div>
                             </div>
                             <div class="row">
-                                
+
                                 <div class="col-md-6">
-                                     <div class="form-group">
-                                        <label >Trạng thái</label><br>
+                                    <div class="form-group">
+                                        <label >Trạng thái giao hàng</label><br>
                                         <div class="form-control">
-                                            <form:select path="status" cssClass="form-control bg-dark">
-                                                <form:option value="1" label="Đã giao hàng"></form:option>
-                                                <form:option value="2" label="Chưa giao hàng"></form:option>
-                                                <form:option value="3" label="Đang chờ giao hàng"></form:option>
-                                            </form:select>
+                                            <form:select path="status" cssClass="form-control bg-dark"
+                                                         items="${OrderStatus}" itemValue="id" itemLabel="name" />
                                         </div>
                                     </div>
-                                    
+
                                 </div>
-                                    <div class="col-md-6">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label >Trạng thái thanh toán</label><br>
                                         <div class="form-control">
-                                            <form:select path="ispaid" cssClass="form-control bg-dark">
-                                                <form:option value="1" label="Đã thanh toán"></form:option>
-                                                <form:option value="2" label="Chưa thanh toán"></form:option>
-                                                <form:option value="3" label="Đang chờ thanh toán"></form:option>
-                                            </form:select>
+                                            <form:select path="ispaid" cssClass="form-control bg-dark"
+                                                         items="${Ispaid}" itemValue="id" itemLabel="name" />
                                         </div>
                                     </div>
                                 </div>
@@ -64,16 +58,24 @@
                                         <label >Tổng tiền</label>
                                         <form:input path="totalmoney" class="form-control" />
                                     </div>
-                                    
+
                                 </div>
-                            </div>
-                            <input name="btnInsert" class="btn btn-success" type="submit" value="Insert" />
+                            </div>                            
+
                             <input name="btnUpdate" class="btn btn-success" type="submit" value="Update" />
-                            <input name="btnReset" class="btn btn-success" type="submit" value="Reset" />
-                            <a class="btn btn-success" href="admin/flower/index.htm"><img src="https://img.icons8.com/fluent/48/000000/assignment-return.png" width="18px"/></a>
+                            <a class="btn btn-success" href="admin/order/index.htm">Cancel</a>
                             <div class="clearfix"></div>
                         </form:form>  
                     </div>
+                   
+                </div>
+            </div>
+             <div class="col-md-4">
+                    <div class="card card-profile">
+                        <div class="card-body">
+                            
+                            <img src="images/hoadon.jpg" width="100%"/>
+                        </div>
                 </div>
             </div>
         </div>

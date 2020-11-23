@@ -51,17 +51,15 @@ public class productsmanageController {
     
     
 
-    @RequestMapping(value = "insert", method = RequestMethod.GET)
+    @RequestMapping(value = "insert", method = RequestMethod.POST)
     public String insert(ModelMap model, @ModelAttribute("flower") Flower flower) {
 
         Session session = factory.openSession();
         Transaction t = session.beginTransaction();
         try {
-
             session.save(flower);
             t.commit();
             model.addAttribute("message", "them ok!");
-            return "redirect:/admin/flower/index.htm";
         } catch (Exception e) {
             t.rollback();
             e.printStackTrace();
@@ -70,7 +68,7 @@ public class productsmanageController {
             session.close();
         }
         model.addAttribute("flowers", getFlowers());
-        return "admin/flower/update";
+        return "admin/flower/index";
     }
 
     @RequestMapping("/edit/delete/{id}")

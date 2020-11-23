@@ -1,6 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<base href="${pageContext.servletContext.contextPath}/">
 
 <div class="content">
     <div class="container-fluid">
@@ -12,7 +13,7 @@
                         <p class="card-category">Form here</p>
                     </div>
                     <div class="card-body">
-                        <form:form action="${pageContext.request.contextPath}/admin/order/insert.htm" modelAttribute="insertorder" method="get">
+                        <form:form action="admin/order/insert.htm" modelAttribute="insertorder" method="POST">
                             <div class="form-group center">
                                 <form:hidden path="id" class="form-control"/>
                             </div>
@@ -34,10 +35,10 @@
 
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label >Trạng thái</label><br>
+                                        <label >Trạng thái giao hàng</label><br>
                                         <div class="form-control">
-                                            <form:select path="status.id" cssClass="form-control"
-                                                         items="${status}" itemValue="id" itemLabel="name" />
+                                            <form:select path="status" cssClass="form-control bg-dark"
+                                                         items="${OrderStatus}" itemValue="id" itemLabel="name" />
                                         </div>
                                     </div>
 
@@ -46,8 +47,8 @@
                                     <div class="form-group">
                                         <label >Trạng thái thanh toán</label><br>
                                         <div class="form-control">
-                                            <form:select path="ispaid.id" cssClass="form-control"
-                                                         items="${ispaid}" itemValue="id" itemLabel="name" />
+                                            <form:select path="ispaid" cssClass="form-control bg-dark"
+                                                         items="${Ispaid}" itemValue="id" itemLabel="name" />
                                         </div>
                                     </div>
                                 </div>

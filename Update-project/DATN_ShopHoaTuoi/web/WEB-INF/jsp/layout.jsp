@@ -73,7 +73,7 @@
                         <div class="col-md-8 clearfix">
                             <div class="shop-menu clearfix pull-right">
                                 <ul class="nav navbar-nav">
-                                    <li><a href=""><i class="fa fa-user"></i> Account</a></li>
+                                    <li><a href=""><i class="fa fa-user"></i> ${user.name}</a></li>
                                     <li><a href="check_out.htm"><i class="fa fa-crosshairs"></i> Checkout</a></li>
                                     <li><a href="#"><i class="fa fa-shopping-cart"></i> Cart</a></li>
                                     <li><a href="user/login.htm"><i class="fa fa-lock"></i> Login</a></li>

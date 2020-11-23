@@ -1,7 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
+<base href="${pageContext.servletContext.contextPath}/">
 
 <div class="content">
     <div class="container-fluid">
@@ -13,7 +13,7 @@
                         <p class="card-category">Form here</p>
                     </div>
                     <div class="card-body">
-                        <form:form action="${pageContext.request.contextPath}/admin/flower/insert.htm" modelAttribute="flower" method="get">
+                        <form:form action="admin/flower/insert.htm" modelAttribute="flower" method="POST">
                             <div class="row">
                                 <div class="form-group center">
                                     <form:hidden path="id" class="form-control"/>
