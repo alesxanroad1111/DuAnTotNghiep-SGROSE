@@ -3,9 +3,10 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <div class="content">
-      <a class="btn btn-primary" href="admin/order/update.htm">add</a>
+      
     <div class="col-md-12 row">
         <div class="container-fluid">
+            <a class="btn btn-success" href="admin/order/update.htm">add</a>
             <div class="card">
                 <div class="card-header card-header-success">
                   <h4 class="card-title ">Orders Manager</h4>

@@ -7,15 +7,15 @@
                 <div class="card card-signin my-5">
                     <div class="card-body">
                         <h1 class="card-title text-center" style="font-size: 40px;font-weight: bold;">Sign In</h1>
-                        <form class="form-signin">
+                        <form class="form-signin"  action="user/login.htm" method="post">
                             <div class="form-label-group">
                                 <label for="inputEmail">Email address</label><br><br> 
-                                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                                <input name="id" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
 
                             </div>
                             <div class="form-label-group">
                                 <label for="inputPassword">Password</label><br><br>
-                                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                                <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
 
                             </div>
 
@@ -25,8 +25,8 @@
                             </div>
                             <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
                             <hr class="my-4">
-                            <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fa fa-google-plus"></i> Sign in with Google</button>
-                            <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fa fa-facebook"></i>  Sign in with Facebook</button>
+                            <button class="btn btn-lg btn-google btn-block text-uppercase" type="#"><i class="fa fa-google-plus"></i> Sign in with Google</button>
+                            <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="#"><i class="fa fa-facebook"></i>  Sign in with Facebook</button>
                         </form>
                     </div>
                 </div>

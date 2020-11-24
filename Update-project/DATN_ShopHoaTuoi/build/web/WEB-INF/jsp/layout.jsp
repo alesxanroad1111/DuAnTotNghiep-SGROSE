@@ -10,7 +10,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
         <title>SG-Rose</title>
-        <link rel="shortcut icon" href="assets/img/new.ico"/> 
+        <link rel="shortcut icon" href="images/icon/new.ico"/>
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/font-awesome.min.css" rel="stylesheet">
         <link href="css/prettyPhoto.css" rel="stylesheet">
@@ -66,14 +66,14 @@
                         <div class="col-md-4 clearfix">
                             <div class="logo pull-left">
                                 <a href="user/home.htm"><img src="images/logo/new.png" alt="Logo_shop"
-                                                        /></a>
+                                                             /></a>
                             </div>
 
                         </div>
                         <div class="col-md-8 clearfix">
                             <div class="shop-menu clearfix pull-right">
                                 <ul class="nav navbar-nav">
-                                    <li><a href=""><i class="fa fa-user"></i> Account</a></li>
+                                    <li><a href=""><i class="fa fa-user"></i> ${user.name}</a></li>
                                     <li><a href="check_out.htm"><i class="fa fa-crosshairs"></i> Checkout</a></li>
                                     <li><a href="#"><i class="fa fa-shopping-cart"></i> Cart</a></li>
                                     <li><a href="user/login.htm"><i class="fa fa-lock"></i> Login</a></li>

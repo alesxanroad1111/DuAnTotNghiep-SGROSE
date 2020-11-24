@@ -29,7 +29,7 @@
                         <div class="item">
                             <div class="col-sm-6">
                                 <h1><span>SG</span>-Rose</h1>
-<!--                                <img src="../../../../../../../C:/Users/DiemNgonTrai/AppData/Local/Temp/pricing.png" alt=""/>-->
+                                <!--                                <img src="../../../../../../../C:/Users/DiemNgonTrai/AppData/Local/Temp/pricing.png" alt=""/>-->
                                 <h2>100% Responsive Design</h2>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
                                 <button type="button" class="btn btn-default get">Get it now</button>
@@ -180,30 +180,29 @@
             <div class="col-sm-9 padding-right">
                 <div class="features_items"><!--features_items-->
                     <h2 class="title text-center">Danh Mục Hoa</h2>
-                    <c:forEach var="rows" items="${flowers}">
-                        <div class="col-sm-4">
+                    <form:form action="user/cart.htm" method="GET">
+                        <c:forEach var="rows" items="${flowers}">
+                            <div class="col-sm-4">
 
 
-                            <div class="product-image-wrapper">
-                                <div class="single-products" >
-                                    <div class="productinfo text-center" >
-                                        
-                                        <img src="images/hoa/${rows.image}" alt="" />
-                                        <h2 name="txtPrice">${rows.price}</h2>
-                                        <p name="txtName">Hoa ${rows.name}</p>
-                                        <a href="user/product/${rows.id}.htm" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Đặt Hàng</a>
-                                    </div>
-                                    <div class="product-overlay">
-                                        <div class="overlay-content">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+
+                                        <div class="productinfo text-center">
+                                            <p class="txtid" hidden>${rows.id}</p>
+                                            <p class="pname" hidden>${rows.name}</p>
+                                            <p class="pprice" hidden>${rows.price}</p>
+                                            <a href="user/product/${rows.id}.htm"><img src="images/hoa/${rows.image}" alt="" /></a>
                                             <h2 name="txtPrice">${rows.price}</h2>
-                                            <p name="txtName">Hoa ${rows.name}</p>
-                                            <a href="user/product/${rows.id}.htm" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Đặt Hàng</a>
+                                            <p name="txtName">${rows.name}</p>
+                                            <a href="user/product/${rows.id}.htm" class="btn btn-default add-to-cart">Xem Sản Phẩm</a>
+                                            <a href="user/buy/${rows.id}.htm?yeucau=muasp&txtmasp=${rows.id}" class="btn btn-danger add-to-cart"><i class="fa fa-shopping-cart"></i>Mua</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </c:forEach>
+                        </c:forEach>
+                    </form:form>
 
 
                 </div><!--features_items-->

@@ -95,4 +95,59 @@
           class="org.springframework.orm.hibernate4.HibernateTransactionManager" 
           p:sessionFactory-ref="sessionFactory" />
     <tx:annotation-driven transaction-manager="transactionManager" />
+    <mvc:interceptors>  
+        <!-- Lọc tất cả các URL  
+         <bean class="interceptor.LoggerInterceptor" />
+        -->
+        <!-- Chỉ lọc các URL theo path 
+        <mvc:interceptor>
+                <mvc:mapping path="/home/**"/>
+                <mvc:exclude-mapping path="/home/index.htm"/>
+                <bean class="interceptor.LoggerInterceptor" />
+        </mvc:interceptor> 
+        -->
+        <!--   demo    -->
+        <mvc:interceptor>
+            <mvc:mapping path="/user/sas.htm"/>
+            <mvc:exclude-mapping path="/user/login.htm"/>
+            <mvc:exclude-mapping path="/user/cart.htm"/>
+            <mvc:exclude-mapping path="/user/home.htm"/>
+            <mvc:exclude-mapping path="/user/forgot-password.htm"/>
+            <mvc:exclude-mapping path="/user/activate.htm"/>
+            <bean class="interceptor.SecurityInterceptor" />
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/admin/sss.htm"/>
+            <mvc:exclude-mapping path="/admin/login.htm"/>
+            <bean class="interceptor.AdminInterceptor" />
+        </mvc:interceptor>
+        
+    </mvc:interceptors>
+    
+    <!-- Spring Mail Sender -->
+    <bean id="mailSender" 
+          class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <property name="host" value="smtp.gmail.com" />
+        <property name="port" value="587" />	
+        <property name="username" value="diemdnps09660@fpt.edu.vn" />
+        <property name="password" value="0209638001" />
+        <property name="defaultEncoding" value="UTF-8"/> 
+        <property name="javaMailProperties">
+            <props>
+                <prop key="mail.smtp.auth">true</prop>
+                <prop key="mail.smtp.socketFactory.class">javax.net.ssl.SSLSocketFactory</prop>
+                <prop key="mail.smtp.socketFactory.port">465</prop>
+                <prop key="mail.smtp.starttls.enable">false</prop>
+                <prop key="mail.debug">true</prop>
+            </props>
+        </property>	
+    </bean>
+    
+    <bean id="multipartResolver" 
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- maxUploadSize=20MB -->
+        <property name="maxUploadSize" value="3971520"/>
+    </bean>
+        
+     
 </beans>

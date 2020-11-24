@@ -139,10 +139,10 @@
                                 <span>${flower.price}VNĐ</span>
                                 <label>Quantity:</label>
                                 <input type="text" value="1" />
-                                <button type="button" class="btn btn-fefault cart">
+                                <a href="user/buy/${flower.id}.htm?yeucau=muasp&txtmasp=${flower.id}" class="btn btn-fefault cart">
                                     <i class="fa fa-shopping-cart"></i>
-                                    Thêm vào giỏ hàng
-                                </button>
+                                    MUA
+                                </a>
                             </span>
                             <p><b>Tình trạng:</b> Còn hàng</p>
                             <p><b>Trạng thái:</b> New</p>
@@ -171,7 +171,7 @@
                                 <p>${flower.notes}</p>
                             </div>
                             <div class="col-sm-11 text-center">
-                                <img src="images/hoa/${flower.image}" alt="${flower.name}"/>
+                                <img src="images/hoa/${flower.image}" alt="${flower.image}"/>
                             </div>
 
                         </div>
