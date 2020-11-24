@@ -49,6 +49,19 @@ public class CartModel {
         return listItems;
     }
     
+    public void plusProduct(int productid){
+        ItemBean item = cart.get(productid);
+        item.setQuantity(item.getQuantity() + 1);
+    }
+    
+    public void minusProduct(int productid){
+        ItemBean item = cart.get(productid);
+        item.setQuantity(item.getQuantity() - 1);
+        if(item.getQuantity() == 0){
+            cart.remove(productid);
+        }
+    }
+    
      //1. Xóa từng item trong giỏ hàng dựa vào masp
     public void removeProduct(int productid) {
         cart.remove(productid);

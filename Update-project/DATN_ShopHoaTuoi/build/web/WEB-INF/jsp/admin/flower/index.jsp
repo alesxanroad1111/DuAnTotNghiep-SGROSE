@@ -25,6 +25,7 @@
                             <th>Loại hoa</th>
                             <th>Số lượng</th>
                             <th>Giá</th>
+                            <th>Image</th>
                             <th>Ngày tạo</th>
                             <th>Ngày sửa</th>
                             <th></th>
@@ -39,6 +40,7 @@
                                 <td>${f.typeid.name}</td>
                                 <td>${f.amount}</td>
                                 <td>${f.price}</td>
+                                <td><img src="images/hoa/${f.image}" id="blah" width="60"/></td>
                                 <td>${f.createdtime}</td>
                                 <td>${f.updatedtime}</td>
                                 <td><a href="admin/flower/edit/show/${f.id}.htm"><img src="https://img.icons8.com/nolan/50/edit.png" width="31"/></a></td>

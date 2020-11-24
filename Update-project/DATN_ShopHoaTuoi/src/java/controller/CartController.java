@@ -5,6 +5,7 @@
  */
 package controller;
 
+import bean.ItemBean;
 import entity.Flower;
 import entity.Order;
 import entity.OrdersDetail;
@@ -36,9 +37,9 @@ public class CartController {
 
     @Autowired
     SessionFactory factory;
-    
+
     CartModel cartmodel = new CartModel();
-    
+
     @RequestMapping("cart")
     public String cart(ModelMap model) {
 
@@ -54,36 +55,29 @@ public class CartController {
 
     }
 
-//    @RequestMapping("buy/{id}")
-//    public String Buy(ModelMap model, HttpSession httpsession) {
-//        model.addAttribute("flower", new Flower());
-//        model.addAttribute("flowers", GetFlower());
-//        
-//        return "user/cart";
-//    }
-//    @RequestMapping(value = "buy", params = "btnBuy")
-//    public String GetFlower(ModelMap model,HttpServletRequest request, HttpSession httpsession) {
-//        
-//        String yeucau = request.getParameter("yeucau");
-//        int masp = 0;
-//        if (request.getParameter("txtmasp") != null) {
-//            masp = Integer.parseInt(request.getParameter("txtmasp"));
-//            System.out.println(masp);
-//        }
-//        if (yeucau.equals("muasp")) {
-//            cartmodel.addProduct(masp); // thêm vào giỏ hàng
-//        }
-//        request.setAttribute("giohang", cartmodel.getListItems());
-//        request.setAttribute("total", cartmodel.getTotal());
-//        
-//
-//        return "user/cart";
-//    }
+    @RequestMapping(value = "buy/{id}")
+    public String GetFlower(ModelMap model, HttpServletRequest request, HttpSession httpsession, @PathVariable("id") String id) {
+        String yeucau = request.getParameter("yeucau");
+        int masp = 0;
+        if (id != null) {
+            masp = Integer.parseInt(id);
+        }
+        if (yeucau.equals("muasp")) {
+            cartmodel.addProduct(masp); // thêm vào giỏ hàng
+        } else if (yeucau.equals("bosp")) {
+            cartmodel.removeProduct(masp);
+        } else if (yeucau.equals("plus")) {
+            cartmodel.plusProduct(masp);
+        } else if (yeucau.equals("minus")) {
+            cartmodel.minusProduct(masp);
+        } else if (yeucau.equals("deleteall")) {
+            cartmodel.removeAllProduct();
+        }
 
-    @RequestMapping(params = "btnInsert")
-    public String insert(ModelMap model, @RequestParam("pid") String id, @RequestParam("pname") String name, @RequestParam("pprice") int price) {
+        request.setAttribute("giohang", cartmodel.getListItems());
+        request.setAttribute("total", cartmodel.getTotal());
 
-        return "student";
+        return "user/cart";
     }
 
     @SuppressWarnings("unchecker")

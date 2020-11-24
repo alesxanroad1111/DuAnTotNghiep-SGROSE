@@ -41,21 +41,22 @@ public class orderController {
         model.addAttribute("orders", getOrders());
         return "admin/order/index";
     }
-    
+
     @RequestMapping("update")
     public String insert(ModelMap model) {
-        model.addAttribute("insertorder", new Order());
+        model.addAttribute("order", new Order());
         return "admin/order/update";
     }
 
     @RequestMapping(value = "insert", method = RequestMethod.POST)
-    public String insert(ModelMap model, @ModelAttribute("insertorder") Order order) {
+    public String insert(ModelMap model, @ModelAttribute("order") Order order) {
         Session session = factory.openSession();
         Transaction t = session.beginTransaction();
         try {
             session.save(order);
             t.commit();
             model.addAttribute("message", "Thêm mới thành công !");
+            return "redirect:/admin/order/index.htm";
         } catch (Exception e) {
             t.rollback();
             e.printStackTrace();
@@ -64,7 +65,7 @@ public class orderController {
             session.close();
         }
         model.addAttribute("orders", getOrders());
-        return "admin/order/index";
+        return "admin/order/update";
     }
 //    
 
@@ -76,8 +77,7 @@ public class orderController {
         return "redirect:/admin/order/index.htm";
 
     }
-
-    @RequestMapping(value = "edit", method = RequestMethod.GET, params = "btnUpdate")
+    @RequestMapping(value = "edit", method = RequestMethod.POST)
     public String update(ModelMap model, @ModelAttribute("order") Order order) {
         Session session = factory.openSession();
         Transaction t = session.beginTransaction();
@@ -85,7 +85,7 @@ public class orderController {
             session.update(order);
             t.commit();
             model.addAttribute("message", "Cập nhật thành công !");
-//            return "redirect:/admin/order/index.htm";
+            return "redirect:/admin/order/index.htm";
         } catch (Exception e) {
             t.rollback();
             model.addAttribute("message", "Cập nhật thất bại !");
@@ -95,7 +95,6 @@ public class orderController {
         model.addAttribute("orders", getOrders());
         return "admin/order/edit";
     }
-
     @RequestMapping(value = "edit", method = RequestMethod.GET, params = "btnReset")
     public String reset1(ModelMap model, Order order) {
         Session session = factory.openSession();
@@ -108,7 +107,6 @@ public class orderController {
         model.addAttribute("orders", getOrders());
         return "admin/order/edit";
     }
-
     @RequestMapping("/edit/show/{id}")
     public String edit1(ModelMap model, @PathVariable("id") int id) {
         Session session = factory.getCurrentSession();
@@ -136,23 +134,24 @@ public class orderController {
         List<OrdersDetail> list = query.list();
         return list;
     }
-    @ModelAttribute("Ispaid")
+
+    @ModelAttribute("Ispaids")
     @SuppressWarnings("unchecked")
-    public List<Ispaid> getIspaids(){
+    public List<Ispaid> getIspaids() {
         Session session = factory.getCurrentSession();
-         String hql = "FROM Ispaid";
-         Query query = session.createQuery(hql);
-         List<Ispaid> list = query.list();
+        String hql = "FROM Ispaid";
+        Query query = session.createQuery(hql);
+        List<Ispaid> list = query.list();
         return list;
     }
-    
-    @ModelAttribute("OrderStatus")
+
+    @ModelAttribute("OrderStatuss")
     @SuppressWarnings("unchecked")
-    public List<OrderStatus> getOrderStatuss(){
+    public List<OrderStatus> getOrderStatuss() {
         Session session = factory.getCurrentSession();
-         String hql = "FROM OrderStatus";
-         Query query = session.createQuery(hql);
-         List<OrderStatus> list = query.list();
+        String hql = "FROM OrderStatus";
+        Query query = session.createQuery(hql);
+        List<OrderStatus> list = query.list();
         return list;
     }
 }

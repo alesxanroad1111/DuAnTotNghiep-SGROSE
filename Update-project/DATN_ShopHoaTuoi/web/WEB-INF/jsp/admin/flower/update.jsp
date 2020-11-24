@@ -13,7 +13,7 @@
                         <p class="card-category">Form here</p>
                     </div>
                     <div class="card-body">
-                        <form:form action="admin/flower/insert.htm" modelAttribute="flower" method="POST">
+                        <form:form action="${pageContext.request.contextPath}/admin/flower/insert.htm" modelAttribute="flower" method="POST" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="form-group center">
                                     <form:hidden path="id" class="form-control"/>
@@ -64,22 +64,35 @@
                     </div>
                 </div>
                 <div class="col-md-4">
+                    <link rel="stylesheet" href="assets/js/js.css">
                     <div class="card card-profile">
                         <div class="card-body">
                             <h6 class="card-category">Ảnh sản phẩm</h6>
-                            <img src="images/hoa/${flower.image}" width="100%"/>
-                            <div class="custom-file overflow-hidden rounded-pill mb-5">
-                                <input id="customFile" type="file" name="image" accept="image/*" size="50" multiple class="btn btn-primary custom-file-input rounded-pill">
-                                <label for="customFile" class="custom-file-label rounded-pill">Chọn Hình Ảnh</label>
-                            </div>
+                            <img id="blah" src="images/logo/new.png" alt="your image"/>
+                            <label for="fileUpload"
+                                   class="file-upload btn btn-primary btn-block rounded-pill shadow"><i
+                                    class="fa fa-upload mr-2"></i>Tải Hình Ảnh
+                                <form:input  path="image" type="file" name="image" accept="image/*" onchange="readURL(this);" id="fileUpload"/>
+                            </label>
                         </div>
                     </div>
                 </div>
             </form:form>
-
-
         </div>
-
     </div>
-
 </div>
+<script>
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#blah')
+                        .attr('src', e.target.result)
+                        .width(200);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>

@@ -7,7 +7,10 @@ package controller;
 
 import entity.Flower;
 import entity.TypesOfFlower;
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
+import javax.servlet.ServletContext;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -23,6 +26,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  *
@@ -35,6 +39,9 @@ public class productsmanageController {
 
     @Autowired
     SessionFactory factory;
+    
+    @Autowired
+    ServletContext context;
 
     @RequestMapping("index")
     public String products(ModelMap model) {
@@ -52,14 +59,26 @@ public class productsmanageController {
     
 
     @RequestMapping(value = "insert", method = RequestMethod.POST)
-    public String insert(ModelMap model, @ModelAttribute("flower") Flower flower) {
+    public String insert(ModelMap model, @ModelAttribute("flower") Flower flower, BindingResult result, @RequestParam("image") MultipartFile image) throws IOException {
 
         Session session = factory.openSession();
         Transaction t = session.beginTransaction();
+        if (result.hasErrors()) {
+            System.out.println("Result Error Occured" + result.getAllErrors());
+        }
         try {
+            
+            String path = context.getRealPath("/images/hoa/" + image.getOriginalFilename());
+            image.transferTo(new File(path));
+            String images = image.getOriginalFilename();
+            if (images != null && images.length() > 0) {
+                flower.setImage(images);
+            }
             session.save(flower);
             t.commit();
+            
             model.addAttribute("message", "them ok!");
+            return "redirect:/admin/flower/index.htm";
         } catch (Exception e) {
             t.rollback();
             e.printStackTrace();
@@ -68,7 +87,7 @@ public class productsmanageController {
             session.close();
         }
         model.addAttribute("flowers", getFlowers());
-        return "admin/flower/index";
+        return "admin/flower/update";
     }
 
     @RequestMapping("/edit/delete/{id}")

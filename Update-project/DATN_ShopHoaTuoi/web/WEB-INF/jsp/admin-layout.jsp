@@ -17,7 +17,7 @@
     <head>
         <title> Admin SG-Rose</title>
         <base href="${pageContext.servletContext.contextPath}/">
-        <link rel="shortcut icon" href="assets/img/new.ico"/>
+        <link rel="shortcut icon" href="images/icon/new.ico"/>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />

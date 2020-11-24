@@ -3,6 +3,7 @@ package controller;
 import entity.Flower;
 import entity.TypesOfFlower;
 import dao.FlowerDAO;
+import java.lang.reflect.Method;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -51,25 +52,6 @@ public class HomeController {
 
         return "user/product_details";
     }
-    
-    @RequestMapping(value = "buy/{id}")
-    public String GetFlower(ModelMap model,HttpServletRequest request, HttpSession httpsession, @PathVariable("id") String id) {
-        String yeucau = request.getParameter("yeucau");
-        int masp = 0;
-        if (id != null) {
-            masp = Integer.parseInt(id);
-        }
-        if (yeucau.equals("muasp")) {
-            cartmodel.addProduct(masp); // thêm vào giỏ hàng
-        } else if (yeucau.equals("bosp")) {
-            cartmodel.removeProduct(masp);
-        }
-        request.setAttribute("giohang", cartmodel.getListItems());
-        request.setAttribute("total", cartmodel.getTotal());
-        
-
-        return "user/cart";
-    }
 
     @SuppressWarnings("unchecked")
     public List<Flower> getFlowers() {
@@ -96,3 +78,4 @@ public class HomeController {
 
     
 }
+    

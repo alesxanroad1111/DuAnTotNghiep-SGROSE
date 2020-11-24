@@ -35,6 +35,7 @@ public class Order {
     @ManyToOne
     @JoinColumn(name = "status")
     private OrderStatus status;
+    
     @ManyToOne
     @JoinColumn(name = "ispaid")
     private Ispaid ispaid;
@@ -49,7 +50,7 @@ public class Order {
     @UpdateTimestamp
     private Date updatedtime;
 
-    
+    private String name;
     
     @OneToMany(mappedBy = "orderid", fetch = FetchType.EAGER)
     private Collection<OrdersDetail> ordersdetails;
@@ -108,6 +109,14 @@ public class Order {
 
     public void setUpdatedtime(Date updatedtime) {
         this.updatedtime = updatedtime;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public User getUserid() {
