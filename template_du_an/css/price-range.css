@@ -121,3 +121,17 @@
 .slider-handle.triangle {
   background: transparent none;
 }
+p.alignRight {
+  text-align: right;
+  color: red;
+  ;
+}
+p.alignRight1 {
+  text-align: right;
+  ;
+}
+p.align0 {
+  color: red
+  
+  ;
+}
