@@ -135,3 +135,10 @@ p.align0 {
   
   ;
 }
+p.alignLeft {
+  text-align: left;
+  ;
+}
+p.alignCenter {
+  text-align: center;
+}
