@@ -135,7 +135,6 @@ a#scrollUp i {
 }
 
 .header-middle .container .row {
-    border-bottom: 1px solid #f5f5f5;
     margin-left: 0;
     margin-right: 0;
     padding-bottom: 20px;
@@ -218,8 +217,7 @@ a#scrollUp i {
 }
 
 .header-bottom {
-    padding-bottom: 30px;
-    padding-top: 30px;
+    
 }
 
 .navbar-collapse.collapse {
@@ -1416,9 +1414,9 @@ h2.title {
 
 #form {
     display: block;
-    margin-bottom: 185px;
-    margin-top: 185px;
+    margin-bottom: 50px;
     overflow: hidden;
+    margin-top: 50px;
 }
 
 .login-form {}
@@ -2485,6 +2483,7 @@ textarea {
 }
 .form-control{
     background: #F0F0E9;
+    border-radius: 0;
 }
 .col-sm-3 .padding-left{
     width: 100px;
@@ -2506,10 +2505,98 @@ textarea {
     border-bottom: 1px;
 }
 .profilepic img{
-    height: 55px;
-    width: 45px;
+    height: 50px;
+    width: 35px;
 }
 .text-right{
     margin-right: 110px;
     line-height: 30px;
+}
+.avatar-uploader button, .form-horizontal button{
+    background: #FE980F;
+    border-radius: 0;
+    color: #FFFFFF;
+}
+*[role="form"] h2 { 
+    font-family: 'Open Sans' , sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    color: #000000;
+    margin-top: 5%;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+*[role="form"] {
+    max-width: 530px;
+    padding: 15px;
+    margin: 0 auto;
+    border-radius: 0.3em;
+    background-color: #f2f2f2;
+}
+.preorder_info{
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid #a09ea0;
+    border-radius: 15px;
+}
+.btn btn-return {
+    background: #464646;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 4px;
+    border: none;
+    padding: 8px 20px;
+    float: left;
+    margin: 20px auto;
+}
+.cart_price {
+    padding: 5px 0;
+}
+.cart_item{
+    padding: 6px 0;
+}
+.item_price {
+    overflow: auto;
+    font-size: 16px;
+}
+.item_title_price{
+    width: 30%;
+    float: left;
+}
+.item_content_price{
+    width: 70%;
+    float: right;
+    text-align: right;
+}
+.cart_total {
+    border-top: 1px solid #a09ea0;
+    border-bottom: 1px solid #f8af6f;
+    padding: 10px 0;
+}
+.price_total{
+    overflow: auto;
+    font-size: 16px;
+}
+.price_title_total{
+    width: 30%;
+    float: left;
+}
+.price_content_total{
+    width: 70%;
+    float: right;
+    text-align: right;
+}
+.row-payment-total{
+    font-size: 22px;
+}
+.notice{
+    margin: 20px 0;
+}
+.notice p{
+    text-align: justify;
+}
+.attention{
+    color: #df0024;
+    font-weight: bold;
 }
