@@ -15,7 +15,8 @@
 
                                     </td>
                                     <td>
-                                        <h3>Đặt hàng thành công </h3>
+                                        <h3>${dathang} </h3>
+                                        <p style="color: red;">${message}</p>
                                         <p>Mã đơn hàng <span  style="color: orange;">#${idorder.id}</span></p>
                                         <p>Cảm ơn bạn đã đặt đơn hàng tại <span  style="color: orange;">#SG-ROSE</span></p>
                                         <p>Hotline hỗ trợ(miễn phí) <span  style="color: orange;">#0829069648</span></p>

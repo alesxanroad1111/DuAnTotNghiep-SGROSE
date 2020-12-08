@@ -23,14 +23,14 @@
     <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
         <property name="mappings">
             <props>
-                <prop key="index.htm">indexController</prop>
+                <prop key="index">indexController</prop>
             </props>
         </property>
     </bean>
     
     <!-- Spring MVC Annotation -->
     <context:annotation-config />
-    <mvc:resources mapping="/resources/**" location="/resources/" />
+    <mvc:resources mapping="/**" location="/" />
     <mvc:annotation-driven/>
         
     <!-- Cấu hình package chứa các controller -->
