@@ -27,9 +27,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import validate.ValidateUser;
 
 @Transactional
 @Controller
@@ -60,6 +62,8 @@ public class LoginController {
                     httpsession.setAttribute("idstaff", staff.getId());
                     httpsession.setAttribute("rolestaff", staff.getRole());
                     return "redirect:/admin/dashboardmanage.htm";
+                } else if(staff.getPassword().trim().length()==0 || staff.getPhone().trim().length()==0){
+                    model.addAttribute("message", "Vui lòng nhập tài khoản và mật khẩu!");
                 } else {
                     model.addAttribute("message", "Sai tài khoản hoặc mật khẩu!");
                 }
@@ -75,7 +79,9 @@ public class LoginController {
                 if (user.getPassword().equals(password)) {
                     httpsession.setAttribute("user", user);
                     httpsession.setAttribute("iduser", user.getId());
-                    return "redirect:/user/home.htm";
+                    return "redirect:/home.htm";
+                } else if(user.getPassword().trim().length()==0 || user.getEmail().trim().length()==0){
+                    model.addAttribute("message", "Vui lòng nhập tài khoản và mật khẩu!");
                 } else {
                     model.addAttribute("message", "Sai tài khoản hoặc mật khẩu!");
                 }
@@ -88,46 +94,62 @@ public class LoginController {
         return "login";
     }
 
-        @RequestMapping("register")
-    public String register(ModelMap model){
+    @RequestMapping("register")
+    public String register(ModelMap model) {
         model.addAttribute("user", new User());
         model.addAttribute("users", getUsers());
         return "register";
     }
-    
+
     @RequestMapping(value = "reg", method = RequestMethod.POST)
-    public String reg(ModelMap model, @ModelAttribute("user") User user){
+    public String reg(ModelMap model, @ModelAttribute("user") User user, @RequestParam("repassword")String repassword) {
         Session session = factory.openSession();
         Transaction t = session.beginTransaction();
-        try {
-            session.save(user);
-            t.commit();
-            model.addAttribute("message", "Đăng Ký Thành Công!");
-            return "redirect:/login.htm";
-        } catch (Exception e) {
-            t.rollback();
-            e.printStackTrace();
-            model.addAttribute("message", "Thêm mới thất bại!");
-        } finally {
-            session.close();
+        if(!user.getEmail().matches("^[a-zA-Z][\\w-]+@([\\w]+\\.[\\w]+|[\\w]+\\.[\\w]{2,}\\.[\\w]{2,})$")){
+            model.addAttribute("message", "Sai định dạng email!");
+        } else if (!vaidateReg(user.getEmail()).isEmpty()) {
+            model.addAttribute("message", "Email này đã có người sử dụng!");
+        } else if (!user.getPhone().matches("[0-9]{10}")){
+            model.addAttribute("message", "Số điện thoại phải nhập 10 chữ số!");
+        } else if(!vaidateRegPhone(user.getPhone()).isEmpty()){
+            model.addAttribute("message", "Số điện thoại đã tồn tại!");
+        } else if(user.getPassword().trim().length() < 6 ){
+            model.addAttribute("message", "Mật khẩu ít nhất phải là 6 chữ số!");
+        } else if(!user.getPassword().equals(repassword)){
+            model.addAttribute("message", "Xác nhận mật khẩu không chính xác!");
+        } else {
+            try {
+                user.setAvatar("user-image.jpg");
+                session.save(user);
+                t.commit();
+                model.addAttribute("message", "Đăng Ký Thành Công!");
+                return "redirect:/login.htm";
+            } catch (Exception e) {
+                t.rollback();
+                e.printStackTrace();
+                model.addAttribute("message", "Thêm mới thất bại!");
+            } finally {
+                session.close();
+            }
         }
         return "register";
     }
-    
-    
+
     public static boolean isNumeric(String str) {
         NumberFormat formatter = NumberFormat.getInstance();
         ParsePosition pos = new ParsePosition(0);
         formatter.parse(str, pos);
         return str.length() == pos.getIndex();
     }
+
     @RequestMapping("logoff")
     public String logoff(HttpSession httpSession) {
         httpSession.removeAttribute("user");
         httpSession.removeAttribute("staff");
-        return "redirect:/user/login.htm";
+        return "redirect:/login.htm";
     }
- @ModelAttribute("genders")
+
+    @ModelAttribute("genders")
     @SuppressWarnings("unchecked")
     public List<Gender> getGenders() {
         Session session = factory.getCurrentSession();
@@ -136,12 +158,36 @@ public class LoginController {
         List<Gender> list = query.list();
         return list;
     }
-    
+
     @SuppressWarnings("unchecked")
     public List<User> getUsers() {
         Session session = factory.getCurrentSession();
         String hql = "FROM User";
         Query query = session.createQuery(hql);
+        List<User> list = query.list();
+        return list;
+    }
+    
+    /////////////////////Validate///////////////////////
+
+    @SuppressWarnings("unchecked")
+    public List<User> vaidateReg(String email) {
+        Session session = factory.getCurrentSession();
+        String hql = "FROM User where email = :email";
+        
+        Query query = session.createQuery(hql);
+        query.setParameter("email", email);
+        List<User> list = query.list();
+        return list;
+    }
+    
+    @SuppressWarnings("unchecked")
+    public List<User> vaidateRegPhone(String phone) {
+        Session session = factory.getCurrentSession();
+        String hql = "FROM User where phone = :phone";
+        
+        Query query = session.createQuery(hql);
+        query.setParameter("phone", phone);
         List<User> list = query.list();
         return list;
     }

@@ -115,7 +115,6 @@
                                 <div class="col-sm-8 shopper-info">
                                     <form:hidden path="id" class="form-control"/>
                                     <form:hidden path="password" class="form-control"/>
-                                    <form:hidden path="avatar" class="form-control"/>
                                     <form:hidden path="address" class="form-control"/>
                                     <form:hidden path="isactive.id" class="form-control"/>
                                     <label class="input-text">${user.id}</label>
@@ -153,6 +152,8 @@
                                     <form:input path="birthday" name="birthday" type="text" id="birthDate" class="form-control"/>
                                 </div>
                             </div>
+                            <p style="color: #FF4518;">${message}</p>
+
                             <div class="form-group row">
                                 <div class="control-label col-sm-offset-3 col-sm-9">
                                     <button type="submit" class="btn btn-default check_out" style="margin-left: 0px; margin-top: 0px;">Lưu thông tin</button>
@@ -161,12 +162,18 @@
 
                         </div>
                         <div class="col-sm-6"  style="border-left: 1px solid #f2f2f2">
-                            <div class="form-group">
-                                <div class="text-center">
-                                    <img src="img/faces/${user.avatar}" width="150">
+                            <link rel="stylesheet" href="assets/js/js.css">
+                            <div class="form-group card card-profile">
+                                <div class="text-center card-body">
+                                    <img id="blah"  src="img/faces/${user.avatar}" width="150" alt="your image"/>
+                                    <input name="avatar2" value="${user.avatar}" hidden>
                                 </div>
                                 <div class="text-center" style="margin-top: 20px;">
-                                    <button type="submit" style="margin-left: 0px; margin-top: 0px;" class="btn btn-default check_out">Chọn ảnh</button>
+                                    
+                                    <label for="fileUpload" style="width: 150px;"
+                                           class="file-upload btn btn-default check_out rounded-pill shadow">Chọn Ảnh
+                                        <form:input  path="avatar" type="file" name="image" accept="image/*" style="margin-left: 0px; margin-top: 0px;" onchange="readURL(this);" id="fileUpload"/>
+                                    </label>
                                 </div>
                             </div>
                         </div>
@@ -187,4 +194,19 @@
         border-radius: 0px;
     }
 </style>
+<script>
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#blah')
+                        .attr('src', e.target.result)
+                        .width(200);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
 

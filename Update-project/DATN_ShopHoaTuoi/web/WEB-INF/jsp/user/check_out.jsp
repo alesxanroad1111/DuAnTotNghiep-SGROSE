@@ -16,7 +16,7 @@
         </div><!--/checkout-options-->
 
         <div class="register-req">
-            <p>Vui lòng sử dụng Tài Khoản và Thanh toán để dễ dàng truy cập vào lịch sử đơn đặt hàng của bạn hoặc sử dụng Thanh toán với tư cách Khách.</p>
+            <p>${message}</p>
         </div><!--/register-req-->
         ${thongbao}
         <div class="shopper-informations">
@@ -29,7 +29,7 @@
                             <form:input path="numberphone" name="txtnumberphone" type="text" value="${user.phone}" placeholder="Số Điện Thoại"/>
                             <form:input path="email" name="txtemail" type="email" value="${user.email}" placeholder="Email"/>
                             <form:input path="address" name="txtaddress" value="${user.address}" placeholder="Địa Chỉ"/>
-                            <input class="btn btn-primary" type="submit" value="Thanh Toán">
+                            <button class="btn btn-primary">Thanh Toán</button>
                         </form:form>
 
                     </div>
