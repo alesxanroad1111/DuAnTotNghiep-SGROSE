@@ -70,7 +70,7 @@
                     <div class="row">
                         <div class="col-md-4 clearfix">
                             <div class="logo pull-left">
-                                <a href="home.htm"><img src="images/logo/new.png" alt="Logo_shop"
+                                <a href="home"><img src="images/logo/new.png" alt="Logo_shop"
                                                         /></a>
                             </div>
 
@@ -86,9 +86,9 @@
                                             <li><a href="logoff.htm">Đăng Xuất</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="user/checkouts.htm"><i class="fa fa-crosshairs"></i> Checkout</a></li>
+                                    <li><a href="user/checkouts"><i class="fa fa-crosshairs"></i> Checkout</a></li>
                                     <li><a href="user/cart.htm?yeucau="><i class="fa fa-shopping-cart"></i> Cart</a></li>
-                                    <li><a href="login.htm"><i class="fa fa-lock"></i> Login</a></li>
+                                    <li><a href="login"><i class="fa fa-lock"></i> Login</a></li>
                                 </ul>
                             </div>
                         </div>

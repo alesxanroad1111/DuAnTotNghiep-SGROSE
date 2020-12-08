@@ -36,7 +36,7 @@
                     
                     <form:form class="form-horizontal" action="reg.htm" modelAttribute="user" method="POST">
                         <span class="login100-form-title">
-                            Member SG-ROSE Register
+                            SG-ROSÉ REGISTER
                         </span>
                         ${message}
                         <div class="wrap-input100 validate-input" data-validate = "Email is required">
@@ -62,7 +62,7 @@
                             </span>
                         </div>
                         <div class="wrap-input100 validate-input" data-validate = "Password is required">
-                            <input type="password" id="password" class="input100" placeholder="Enter the Password" />
+                            <input type="password" id="password" class="input100" name="repassword" placeholder="Enter the Password" />
                             <span class="focus-input100"></span>
                             <span class="symbol-input100">
                                 <i class="fa fa-lock" aria-hidden="true"></i>

@@ -40,7 +40,7 @@ public class Staff {
     @JoinColumn(name = "gender")
     private Gender gender;
     
-    private int phone;
+    private String phone;
     
     @ManyToOne
     @JoinColumn(name = "role")
@@ -120,13 +120,15 @@ public class Staff {
         this.gender = gender;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
+
+    
 
     public Role getRole() {
         return role;

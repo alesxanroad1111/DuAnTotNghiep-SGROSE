@@ -154,13 +154,9 @@
                         <h2>Hàng Hot</h2>
                         <div class="brands-name">
                             <ul class="nav nav-pills nav-stacked">
-                                <li><a href="#"> <span class="pull-right">(50)</span>Hoa hồng đỏ</a></li>
-                                <li><a href="#"> <span class="pull-right">(56)</span>Hoa tulip</a></li>
-                                <li><a href="#"> <span class="pull-right">(27)</span>Hoa hồng vàng</a></li>
-                                <li><a href="#"> <span class="pull-right">(32)</span>Gấu siêu to khổng lồ</a></li>
-                                <li><a href="#"> <span class="pull-right">(5)</span>Socola tặng gấu</a></li>
-                                <li><a href="#"> <span class="pull-right">(9)</span>Hoa tình yêu lãng mạng</a></li>
-                                <li><a href="#"> <span class="pull-right">(4)</span>Hoa sinh nhật</a></li>
+                                <c:forEach var="a" items="${products}">
+                                    <li><a href="user/product/${a.id}.htm"> <span class="pull-right badge" style="background: yellowgreen;">${a.amount}</span>${a.name}</a></li>
+                                </c:forEach>
                             </ul>
                         </div>
                     </div><!--/brands_products-->

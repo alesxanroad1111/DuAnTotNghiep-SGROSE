@@ -40,13 +40,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 @RequestMapping("/user/")
 public class UserProfileController {
-    
+
     @Autowired
     SessionFactory factory;
-    
-    
+
     @RequestMapping("profile/{id}")
-    public String profile(ModelMap model, HttpSession httpsession){
+    public String profile(ModelMap model, HttpSession httpsession) {
         Session session = factory.getCurrentSession();
         int id = Integer.parseInt(httpsession.getAttribute("iduser").toString());
         User user = (User) session.get(User.class, id);
@@ -55,9 +54,9 @@ public class UserProfileController {
         model.addAttribute("typef", getTypesOfFlowers());
         return "user/profile";
     }
-    
+
     @RequestMapping("purchased")
-    public String purchased(ModelMap model, HttpSession httpsession){
+    public String purchased(ModelMap model, HttpSession httpsession) {
         Session session = factory.getCurrentSession();
         int id = Integer.parseInt(httpsession.getAttribute("iduser").toString());
         User user = (User) session.get(User.class, id);
@@ -67,63 +66,66 @@ public class UserProfileController {
         model.addAttribute("claimed", getPurchaseClaimed(id));
         return "user/purchased";
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     @RequestMapping(value = "update-your-profile", method = RequestMethod.POST)
-    public String updateProfile(ModelMap model, HttpSession httpsession, @ModelAttribute("userr") User user){
+    public String updateProfile(ModelMap model, HttpSession httpsession, @ModelAttribute("userr") User user,
+            @RequestParam("birthday")String birthday,
+            @RequestParam("avatar2")String avatar) {
         Session session = factory.openSession();
         Transaction t = session.beginTransaction();
         int id = Integer.parseInt(httpsession.getAttribute("iduser").toString());
-        try {
-            session.update(user);
-            t.commit();
-            User user2 = (User) session.get(User.class, id);
-            httpsession.setAttribute("user", user2);
-            model.addAttribute("message", "Cập Nhật Thành Công!");
-        } catch (Exception e) {
-            t.rollback();
-            e.printStackTrace();
-            model.addAttribute("message", "Cập Nhật thất bại!");
-        } finally {
-            session.close();
+        if (!user.getName().matches("^[a-zA-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶ" +
+            "ẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợ" +
+            "ụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\\s]+$")) {
+            model.addAttribute("message", "Vui lòng nhập đúng định dạng Họ Tên!");
+        } else if (!birthday.matches("\\d{1,2}/\\d{1,2}/\\d{4}")) {
+            model.addAttribute("message", "Vui lòng nhập đúng định dạng Ngày Sinh!");
+        } else {
+            try {
+                if(user.getAvatar().equals("")){
+                    user.setAvatar(avatar);
+                }
+                session.update(user);
+                t.commit();
+                User user2 = (User) session.get(User.class, id);
+                httpsession.setAttribute("user", user2);
+                model.addAttribute("message", "Cập Nhật Thành Công!");
+            } catch (Exception e) {
+                t.rollback();
+                e.printStackTrace();
+                model.addAttribute("message", "Cập Nhật thất bại!");
+            } finally {
+                session.close();
+            }
         }
+
         return "user/profile";
     }
-    
-    @RequestMapping("register")
-    public String register(ModelMap model){
-        model.addAttribute("user", new User());
-        model.addAttribute("users", getUsers());
-        return "user/register";
-    }
-    
-    @RequestMapping(value = "reg", method = RequestMethod.GET)
-    public String reg(ModelMap model, @ModelAttribute("user") User user){
-        Session session = factory.openSession();
-        Transaction t = session.beginTransaction();
-        try {
-            session.save(user);
-            t.commit();
-            model.addAttribute("message", "Đăng Ký Thành Công!");
-            return "redirect:/login.htm";
-        } catch (Exception e) {
-            t.rollback();
-            e.printStackTrace();
-            model.addAttribute("message", "Thêm mới thất bại!");
-        } finally {
-            session.close();
-        }
-        return "user/register";
-    }
-    
+
+//    @RequestMapping("register")
+//    public String register(ModelMap model){
+//        model.addAttribute("user", new User());
+//        model.addAttribute("users", getUsers());
+//        return "user/register";
+//    }
+//    @RequestMapping(value = "reg", method = RequestMethod.GET)
+//    public String reg(ModelMap model, @ModelAttribute("user") User user){
+//        Session session = factory.openSession();
+//        Transaction t = session.beginTransaction();
+//        try {
+//            session.save(user);
+//            t.commit();
+//            model.addAttribute("message", "Đăng Ký Thành Công!");
+//            return "redirect:/login.htm";
+//        } catch (Exception e) {
+//            t.rollback();
+//            e.printStackTrace();
+//            model.addAttribute("message", "Thêm mới thất bại!");
+//        } finally {
+//            session.close();
+//        }
+//        return "user/register";
+//    }
     @ModelAttribute("genders")
     @SuppressWarnings("unchecked")
     public List<Gender> getGenders() {
@@ -133,7 +135,7 @@ public class UserProfileController {
         List<Gender> list = query.list();
         return list;
     }
-    
+
     @SuppressWarnings("unchecked")
     public List<User> getUsers() {
         Session session = factory.getCurrentSession();
@@ -142,41 +144,43 @@ public class UserProfileController {
         List<User> list = query.list();
         return list;
     }
-    
+
     @SuppressWarnings("unchecked")
-    public List<OrdersDetail> getPurchase(Integer id){
+    public List<OrdersDetail> getPurchase(Integer id) {
         Session session = factory.getCurrentSession();
-        String hql = "FROM OrdersDetail " + "where orderid.userid = "+id;
+        String hql = "FROM OrdersDetail " + "where orderid.userid = " + id;
         Query query = session.createQuery(hql);
         List<OrdersDetail> list = query.list();
         return list;
     }
-    
+
     @SuppressWarnings("unchecked")
-    public List<OrdersDetail> getPurchaseWaitForShipping(Integer id){
+    public List<OrdersDetail> getPurchaseWaitForShipping(Integer id) {
         Session session = factory.getCurrentSession();
-        String hql = "FROM OrdersDetail " + "where orderid.status = 1 and orderid.userid = "+id;
+        String hql = "FROM OrdersDetail " + "where orderid.status = 1 and orderid.userid = " + id;
         Query query = session.createQuery(hql);
         List<OrdersDetail> list = query.list();
         return list;
     }
+
     @SuppressWarnings("unchecked")
-    public List<OrdersDetail> getPurchaseShipping(Integer id){
+    public List<OrdersDetail> getPurchaseShipping(Integer id) {
         Session session = factory.getCurrentSession();
-        String hql = "FROM OrdersDetail " + "where orderid.status = 2 and orderid.userid = "+id;
+        String hql = "FROM OrdersDetail " + "where orderid.status = 2 and orderid.userid = " + id;
         Query query = session.createQuery(hql);
         List<OrdersDetail> list = query.list();
         return list;
     }
+
     @SuppressWarnings("unchecked")
-    public List<OrdersDetail> getPurchaseClaimed(Integer id){
+    public List<OrdersDetail> getPurchaseClaimed(Integer id) {
         Session session = factory.getCurrentSession();
-        String hql = "FROM OrdersDetail " + "where orderid.status = 3 and orderid.userid = "+id;
+        String hql = "FROM OrdersDetail " + "where orderid.status = 3 and orderid.userid = " + id;
         Query query = session.createQuery(hql);
         List<OrdersDetail> list = query.list();
         return list;
     }
-    
+
     @ModelAttribute("typesofflowers")
     @SuppressWarnings("unchecked")
     public List<TypesOfFlower> getTypesOfFlowers() {

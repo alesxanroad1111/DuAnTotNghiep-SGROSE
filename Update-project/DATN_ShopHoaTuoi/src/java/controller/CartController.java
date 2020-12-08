@@ -59,6 +59,7 @@ public class CartController {
         request.setAttribute("total", cartmodel.getTotal());
         return "user/cart";
     }
+
     @ModelAttribute("typesofflowers")
     @SuppressWarnings("unchecked")
     public List<TypesOfFlower> getTypesOfFlowers() {
@@ -76,13 +77,14 @@ public class CartController {
             model.addAttribute("nameuser", "Bạn đã có tài khoản?");
         }
         model.addAttribute("order", new Order());
+        model.addAttribute("message", "Vui lòng sử dụng Tài Khoản và Thanh toán để dễ dàng truy cập vào lịch sử đơn đặt hàng của bạn hoặc sử dụng Thanh toán với tư cách Khách.");
         request.setAttribute("giohang", cartmodel.getListItems());
         request.setAttribute("total", cartmodel.getTotal());
         return "user/check_out";
     }
-    
+
     @RequestMapping(value = "order-success")
-    public String orderSuccess(ModelMap model, HttpServletRequest request, HttpSession httpsession){
+    public String orderSuccess(ModelMap model, HttpServletRequest request, HttpSession httpsession) {
         request.setAttribute("giohang", cartmodel.getListItems());
         request.setAttribute("total", cartmodel.getTotal());
         return "user/order-success";
@@ -115,9 +117,25 @@ public class CartController {
     //////////////////CHECKOUTS//////////////////////////
     @RequestMapping(value = "dat-hang-thanh-cong", method = RequestMethod.POST)
     public String checkouts(ModelMap model, HttpServletResponse resp, HttpSession httpsession, HttpServletRequest request, @ModelAttribute("order") Order order) {
-       
-        dathang(model, resp, httpsession, request, order);
-        
+        Session session = factory.openSession();
+        Transaction t = session.beginTransaction();
+        if (order.getName().trim().length() == 0 || order.getNumberphone().trim().length() == 0 || order.getEmail().trim().length() == 0 || order.getAddress().trim().length() == 0) {
+            model.addAttribute("dathang", "Đặt Hàng Thất Bại!");
+            model.addAttribute("message", "Vui lòng quay lại và nhập đầy đủ thông tin của bạn!");
+        } else if (order.getName().matches("[0-9]")) {
+            model.addAttribute("dathang", "Đặt Hàng Thất Bại!");
+            model.addAttribute("message", "Vui lòng quay lại và nhập đúng định dạng Họ Tên!");
+        } else if (order.getNumberphone().trim().length() == 0 || !order.getNumberphone().matches("[0-9]{10}")) {
+            model.addAttribute("dathang", "Đặt Hàng Thất Bại!");
+            model.addAttribute("message", "Vui lòng quay lại và nhập đúng số điện thoại!");
+        } else if (!order.getEmail().matches("^[a-zA-Z][\\w-]+@([\\w]+\\.[\\w]+|[\\w]+\\.[\\w]{2,}\\.[\\w]{2,})$")) {
+            model.addAttribute("dathang", "Đặt Hàng Thất Bại!");
+            model.addAttribute("message", "Sai định dạng email! Vui lòng quay lại và nhập đúng địa chỉ email!");
+        } else {
+            dathang(model, resp, httpsession, request, order);
+            model.addAttribute("dathang", "Đặt Hàng Thành Công!");
+        }
+
         return "user/order-success";
     }
 
@@ -134,7 +152,7 @@ public class CartController {
         model.addAttribute("satus", "Đang chờ lấy hàng");
         model.addAttribute("total", cartmodel.getTotal());
         if (httpsession.getAttribute("user") == null) {
-            ///order
+
             order.setTotalmoney(Total);
             order.setStatus(ors);
             order.setIspaid(isp);
@@ -143,7 +161,9 @@ public class CartController {
             t.commit();
             ///orderdetail
             Isorderdetail();
+
         } else {
+
             String Id = httpsession.getAttribute("iduser").toString();
             int IdUConvert = Integer.parseInt(Id);
             User user = new User(IdUConvert);
@@ -157,8 +177,9 @@ public class CartController {
             t.commit();
             ///orderdetail
             Isorderdetail();
+
         }
-        
+
         return "redirect:/user/home.htm";
     }
 
@@ -180,8 +201,7 @@ public class CartController {
             session.save(ordd);
             t.commit();
         }
-        
-        
+
         cartmodel.removeAllProduct();
         return "redirect:/user/home.htm";
     }

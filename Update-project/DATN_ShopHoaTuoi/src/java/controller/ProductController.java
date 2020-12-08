@@ -52,6 +52,7 @@ public class ProductController {
         model.addAttribute("hoacn", getFlowersChucMung(1, 4));
         model.addAttribute("hoakt", getFlowersKhaiTruong(1, 4));
         model.addAttribute("hoasn", getFlowersSinhNhat(1, 4));
+        model.put("products", getFlowers3(1,9));
         return "home";
     }
 
@@ -272,6 +273,21 @@ public class ProductController {
 
         query.setMaxResults(10);
 
+        List<Flower> list = query.list();
+        return list;
+    }
+    
+    @SuppressWarnings("unchecked")
+    public List<Flower> getFlowers3(Integer first, Integer count) {
+        Session session = factory.getCurrentSession();
+        String hql = "FROM Flower fl WHERE fl.id NOT IN(SELECT p.flowerId FROM FlowerPromotionProgram p)";
+        Query query = session.createQuery(hql);
+        if (first != null) {
+            query.setFirstResult(first);
+        }
+        if (count != null) {
+            query.setMaxResults(count);
+        }
         List<Flower> list = query.list();
         return list;
     }

@@ -27,7 +27,7 @@
             <div class="container-login100">
                 <div class="wrap-login100">
                     <div class="login100-pic js-tilt" data-tilt>
-                        <a href="user/home.htm"><img src="csslogin/images/img-01.png" alt="IMG" height="200"/></a>
+                        <a href="home.htm"><img src="csslogin/images/img-01.png" alt="IMG" height="200"/></a>
                     </div>
                     <form class="login100-form " action="login.htm" method="post">
                         <span class="login100-form-title">
@@ -35,7 +35,7 @@
                         </span>
                         ${message}
                         <div class="wrap-input100 validate-input" data-validate = "Email is required">
-                            <input class="input100"  name="id" type="text" id="inputEmail" placeholder="Email" autofocus>
+                            <input class="input100"  name="id" type="text" id="inputEmail" placeholder="Email" autofocus required>
                             <span class="focus-input100"></span>
                             <span class="symbol-input100">
                                 <i class="fa fa-envelope" aria-hidden="true"></i>
