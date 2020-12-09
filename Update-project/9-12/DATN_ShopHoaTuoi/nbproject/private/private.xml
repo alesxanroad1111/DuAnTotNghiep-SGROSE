@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+        <file>
+            <url>src/java/controller/HomeController.java</url>
+            <bookmark id="1">
+                <name/>
+                <line>194</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/D:/CNTT/duan/DATN_ShopHoaTuoi/src/java/controller/checkoutController.java</file>
+            <file>file:/D:/CNTT/duan/DATN_ShopHoaTuoi/src/java/controller/productsmanageController.java</file>
+            <file>file:/D:/CNTT/duan/DATN_ShopHoaTuoi/src/java/dao/myConnection.java</file>
+            <file>file:/D:/CNTT/duan/DATN_ShopHoaTuoi/src/java/controller/UserProfileController.java</file>
+            <file>file:/D:/CNTT/duan/DATN_ShopHoaTuoi/src/java/controller/IspaidController.java</file>
+            <file>file:/D:/CNTT/duan/DATN_ShopHoaTuoi/src/java/controller/orderController.java</file>
+            <file>file:/D:/CNTT/duan/DATN_ShopHoaTuoi/src/java/dao/userDAO.java</file>
+            <file>file:/D:/CNTT/duan/DATN_ShopHoaTuoi/src/java/model/OrderModel.java</file>
+            <file>file:/D:/CNTT/duan/DATN_ShopHoaTuoi/src/java/controller/ReportController.java</file>
+            <file>file:/D:/CNTT/duan/DATN_ShopHoaTuoi/web/WEB-INF/jsp/layout.jsp</file>
+            <file>file:/D:/CNTT/duan/DATN_ShopHoaTuoi/src/java/dao/FlowerDAO.java</file>
+            <file>file:/D:/CNTT/duan/DATN_ShopHoaTuoi/src/java/controller/companyController.java</file>
+            <file>file:/D:/CNTT/duan/DATN_ShopHoaTuoi/src/java/model/FlowerModel.java</file>
+            <file>file:/D:/CNTT/duan/DATN_ShopHoaTuoi/src/java/dao/ReportDAO.java</file>
+            <file>file:/D:/CNTT/duan/DATN_ShopHoaTuoi/src/java/bean/ItemBean.java</file>
+            <file>file:/D:/CNTT/duan/DATN_ShopHoaTuoi/src/java/controller/UserController.java</file>
+            <file>file:/D:/CNTT/duan/DATN_ShopHoaTuoi/src/java/controller/ProductController.java</file>
+            <file>file:/D:/CNTT/duan/DATN_ShopHoaTuoi/src/java/model/MyConnect.java</file>
+            <file>file:/D:/CNTT/duan/DATN_ShopHoaTuoi/src/java/model/CartModel.java</file>
+            <file>file:/D:/CNTT/duan/DATN_ShopHoaTuoi/src/java/bean/Employee.java</file>
+            <file>file:/D:/CNTT/duan/DATN_ShopHoaTuoi/src/java/dao/PaginationDAO.java</file>
+            <file>file:/D:/CNTT/duan/DATN_ShopHoaTuoi/src/java/controller/TypesOfFlowerController.java</file>
+            <file>file:/D:/CNTT/duan/DATN_ShopHoaTuoi/src/java/controller/staffController.java</file>
+            <file>file:/D:/CNTT/duan/DATN_ShopHoaTuoi/src/java/controller/HomeController.java</file>
+        </group>
+    </open-files>
+</project-private>
