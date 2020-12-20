@@ -18,7 +18,7 @@
                 <div class="card-footer">
                     <div class="stats">
                         <i class="material-icons text-warning">check</i>
-                        <a href="admin/flower/index.htm" class="warning-link"><strong>Xem chi tiết</strong></a>
+                        <a href="admin/flower/index" class="warning-link"><strong>Xem chi tiết</strong></a>
                     </div>
                 </div>
             </div>
@@ -35,7 +35,7 @@
                 <div class="card-footer">
                     <div class="stats">
                         <i class="material-icons text-warning">check</i>
-                        <a href="admin/order/index.htm" class="warning-link"><strong>Xem chi tiết</strong></a>
+                        <a href="admin/order/index" class="warning-link"><strong>Xem chi tiết</strong></a>
                     </div>
                 </div>
             </div>
@@ -52,7 +52,7 @@
                 <div class="card-footer">
                     <div class="stats">
                         <i class="material-icons text-warning">check</i>
-                        <a href="admin/staffmanage.htm" class="warning-link"><strong>Xem chi tiết</strong></a>
+                        <a href="admin/staffmanage" class="warning-link"><strong>Xem chi tiết</strong></a>
                     </div>
                 </div>
             </div>
@@ -69,7 +69,7 @@
                 <div class="card-footer">
                     <div class="stats">
                         <i class="material-icons text-warning">check</i>
-                        <a href="admin/ordersmanage.htm" class="warning-link"><strong>Xem chi tiết</strong></a>
+                        <a href="admin/ordersmanage" class="warning-link"><strong>Xem chi tiết</strong></a>
                     </div>
                 </div>
             </div>

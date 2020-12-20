@@ -78,16 +78,15 @@
                         <div class="col-md-8 clearfix">
                             <div class="shop-menu mainmenu clearfix pull-right">
                                 <ul class="nav navbar-nav collapse navbar-collapse">
-                                    <li class="dropdown"><a href="user/profile/${user.id}.htm" name="user"><i class="fa fa-user"></i> ${user.name}</a>
+                                    <li class="dropdown"><a href="user/profile/${user.id}" name="user"><i class="fa fa-user"></i> ${user.name}</a>
                                         <ul role="menu" class="sub-menu">
-                                            <li><a href="user/profile/${user.id}.htm">Thông Tin Cá Nhân</a></li>
-                                            <li><a href="user/purchased.htm">Lịch Sử Mua Hàng</a></li>
-                                            <li><a href="#">Đổi Mật Khẩu</a></li>
-                                            <li><a href="logoff.htm">Đăng Xuất</a></li>
+                                            <li><a href="user/profile/${user.id}">Thông Tin Cá Nhân</a></li>
+                                            <li><a href="user/purchased">Lịch Sử Mua Hàng</a></li>
+                                            <li><a href="user/changepassword">Đổi Mật Khẩu</a></li>
+                                            <li><a href="logoff">Đăng Xuất</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="user/checkouts"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-                                    <li><a href="user/cart.htm?yeucau="><i class="fa fa-shopping-cart"></i> Cart</a></li>
+                                    <li><a href="user/cart?yeucau="><i class="fa fa-shopping-cart"></i> Cart</a></li>
                                     <li><a href="login"><i class="fa fa-lock"></i> Login</a></li>
                                 </ul>
                             </div>
@@ -113,13 +112,13 @@
                             </div>
                             <div class="mainmenu pull-left">
                                 <ul class="nav navbar-nav collapse navbar-collapse">
-                                    <li><a href="home.htm">Home</a></li>
-                                    <li><a href="home/5.htm">Hoa Sinh Nhật</a></li>
-                                    <li><a href="home/4.htm">Hoa Khai Trương</a></li>
+                                    <li><a href="home">Home</a></li>
+                                    <li><a href="home/5">Hoa Sinh Nhật</a></li>
+                                    <li><a href="home/4">Hoa Khai Trương</a></li>
                                     <li class="dropdown"><a href="#">Chủ đề hoa<i class="fa fa-angle-down"></i></a>
                                         <ul role="menu" class="sub-menu">
                                             <c:forEach var="type" items="${typef}">
-                                                <li><a href="home/${type.id}.htm">${type.name}</a></li>
+                                                <li><a href="home/${type.id}">${type.name}</a></li>
                                                 </c:forEach>
                                         </ul>
                                     </li>
@@ -157,7 +156,7 @@
                                 <div class="video-gallery text-center">
                                     <a href="#">
                                         <div class="iframe-img">
-                                            <img src="images/home/iframe1.png" alt="" />
+                                            <img src="images/avatar/diem.jpg" style="height: 56px;width: auto;" alt="" />
                                         </div>
                                         <div class="overlay-icon">
                                             <i class="fa fa-play-circle-o"></i>
@@ -171,7 +170,7 @@
                                 <div class="video-gallery text-center">
                                     <a href="#">
                                         <div class="iframe-img">
-                                            <img src="images/ceo/ctruyen.jpg" alt="" style="width: 40px;" />
+                                            <img src="images/avatar/truyen.jpg" alt="" style="height: 56px;width: auto;" />
                                         </div>
                                         <div class="overlay-icon">
                                             <i class="fa fa-play-circle-o"></i>
@@ -185,7 +184,7 @@
                                 <div class="video-gallery text-center">
                                     <a href="#">
                                         <div class="iframe-img">
-                                            <img src="images/home/iframe2.png" alt="" />
+                                            <img src="images/avatar/hoa.jpg" alt="" style="height: 56px;width: auto;"/>
                                         </div>
                                         <div class="overlay-icon">
                                             <i class="fa fa-play-circle-o"></i>
@@ -200,7 +199,7 @@
                                 <div class="video-gallery text-center">
                                     <a href="#">
                                         <div class="iframe-img">
-                                            <img src="images/home/iframe3.png" alt="" />
+                                            <img src="images/avatar/long.jpg" alt="" style="height: 56px;width: auto;"/>
                                         </div>
                                         <div class="overlay-icon">
                                             <i class="fa fa-play-circle-o"></i>
@@ -215,7 +214,7 @@
                                 <div class="video-gallery text-center">
                                     <a href="#">
                                         <div class="iframe-img">
-                                            <img src="images/home/iframe4.png" alt="" />
+                                            <img src="images/avatar/hung.jpg" alt="" style="height: 56px; width: auto;"/>
                                         </div>
                                         <div class="overlay-icon">
                                             <i class="fa fa-play-circle-o"></i>
@@ -329,7 +328,7 @@
             <c:forEach var="f" items="${httpflower}">
                         {
 
-                            value: "user/product/${f.id}.htm",
+                            value: "user/product/${f.id}",
                             label: "${f.name}",
                             img: "images/hoa/${f.image}",
                             label2: "Giá: <fmt:setLocale value = 'en_US'/><fmt:formatNumber value = '${f.price}' type = 'number'/>₫"

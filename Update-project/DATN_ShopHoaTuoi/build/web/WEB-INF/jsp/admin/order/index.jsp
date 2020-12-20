@@ -7,7 +7,7 @@
 
     <div class="col-md-12 row">
         <div class="container-fluid">
-            <a class="btn btn-success" href="admin/order/update.htm">add</a>
+            <a class="btn btn-success" href="admin/order/update">add</a>
             <div class="card">
                 ${message}
                 <div class="card-header card-header-success">
@@ -56,9 +56,9 @@
                                             <td>${rows.ispaid.name}</td>
                                             <td>${rows.createdtime}</td>
                                             <td>${rows.updatedtime}</td>
-                                            <td><a href="admin/order/edit/show/${rows.id}.htm"><img src="https://img.icons8.com/nolan/50/edit.png" width="31"/></a></td>
-                                            <td><a href="admin/order/edit/delete1/${rows.id}.htm"><img src="https://img.icons8.com/nolan/64/delete-sign.png" width="31"/></td>
-                                            <td><a href="admin/order/details/${rows.id}.htm"><img src="https://img.icons8.com/flat_round/64/000000/info.png" width="31" /></a></td>
+                                            <td><a href="admin/order/edit/show/${rows.id}"><img src="https://img.icons8.com/nolan/50/edit.png" width="31"/></a></td>
+                                            <td><a href="admin/order/edit/delete1/${rows.id}"><img src="https://img.icons8.com/nolan/64/delete-sign.png" width="31"/></td>
+                                            <td><a href="admin/order/details/${rows.id}"><img src="https://img.icons8.com/flat_round/64/000000/info.png" width="31" /></a></td>
                                         </tr>
                                     </c:forEach>
                                 </tbody>

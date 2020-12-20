@@ -6,7 +6,7 @@
 <div class="content">
     <div class="col-md-12 row">
         <div class="container-fluid">
-            <a class="btn btn-success btn-hover" href="admin/promotion/update.htm">add</a>
+            <a class="btn btn-success btn-hover" href="admin/promotion/update">add</a>
             <div class="card">
                 
                 <div class="card-header card-header-success">
@@ -40,8 +40,8 @@
                                     <td>${p.typePercent}</td>
                                     <td>${p.typeprice}</td>
                                     <td>${p.amount}</td>
-                                    <td><a href="admin/promotion/show/view/${p.id}.htm"><img src="https://img.icons8.com/nolan/50/edit.png" width="31"/></a></td>
-                                    <td><a href="admin/promotion/show/delete/${p.id}.htm"><img src="https://img.icons8.com/nolan/64/delete-sign.png" width="31"/></td>
+                                    <td><a href="admin/promotion/show/view/${p.id}"><img src="https://img.icons8.com/nolan/50/edit.png" width="31"/></a></td>
+                                    <td><a href="admin/promotion/show/delete/${p.id}"><img src="https://img.icons8.com/nolan/64/delete-sign.png" width="31"/></td>
                                 </tr>
                             </c:forEach>
                         </tbody>

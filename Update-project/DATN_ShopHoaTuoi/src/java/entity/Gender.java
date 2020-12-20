@@ -31,6 +31,13 @@ public class Gender {
     @OneToMany(mappedBy = "gender", fetch = FetchType.EAGER)
     private Collection<Staff> staffs;
 
+    public Gender(){}
+    
+    public Gender(int id) {
+        this.id = id;
+    }
+
+    
     public int getId() {
         return id;
     }

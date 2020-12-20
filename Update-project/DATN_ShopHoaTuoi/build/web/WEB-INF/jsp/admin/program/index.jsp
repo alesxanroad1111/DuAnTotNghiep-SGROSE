@@ -6,7 +6,7 @@
 <div class="content">
     <div class="col-md-12 row">
         <div class="container-fluid">
-            <a class="btn btn-success btn-hover" href="admin/program/insert.htm">add</a>
+            <a class="btn btn-success btn-hover" href="admin/program/insertÁo">add</a>
             <div class="card">
                 <div class="card-header card-header-success">
                     <h4 class="card-title ">Discount Programs</h4>
@@ -35,8 +35,8 @@
                                     <td>${pr.name}</td>
                                     <td>${pr.dateStart}</td>
                                     <td>${pr.dateEnd}</td>
-                                    <td><a href="admin/program/show/view/${pr.id}.htm"><img src="https://img.icons8.com/nolan/50/edit.png" width="31"/></a></td>
-                                    <td><a href="admin/program/show/delete/${pr.id}.htm"><img src="https://img.icons8.com/nolan/64/delete-sign.png" width="31"/></td>
+                                    <td><a href="admin/program/show/view/${pr.id}"><img src="https://img.icons8.com/nolan/50/edit.png" width="31"/></a></td>
+                                    <td><a href="admin/program/show/delete/${pr.id}"><img src="https://img.icons8.com/nolan/64/delete-sign.png" width="31"/></td>
                                 </tr>
                             </c:forEach>
                         </tbody>

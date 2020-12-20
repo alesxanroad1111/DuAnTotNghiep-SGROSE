@@ -44,56 +44,56 @@
                 <div class="sidebar-wrapper">
                     <ul class="nav">
                         <li class="nav-item active ">
-                            <a class="nav-link" href="admin/dashboardmanage.htm">
+                            <a class="nav-link" href="admin/dashboardmanage">
                                 <i class="material-icons">dashboard</i>
                                 <p>Thông tin</p>
                             </a>
                         </li>   
                         <li class="nav-item active  ">
-                            <a class="nav-link" href="admin/flower/index.htm">
+                            <a class="nav-link" href="admin/flower/index">
                                 <i class="material-icons">local_florist</i>
                                 <p>Quản lý sản phẩm</p>
                             </a>
                         </li>
                         <li class="nav-item active  ">
-                            <a class="nav-link" href="admin/staff/index.htm">
+                            <a class="nav-link" href="admin/staff/index">
                                 <i class="material-icons">face</i>
                                 <p>Quản lý nhân viên</p>
                             </a>
                         </li>
                         <li class="nav-item active  ">
-                            <a class="nav-link" href="admin/user/index.htm">
+                            <a class="nav-link" href="admin/user/index">
                                 <i class="material-icons">perm_identity</i>
                                 <p>Quản lý tài khoản</p>
                             </a>
                         </li>
                         <li class="nav-item active  ">
-                            <a class="nav-link" href="admin/order/index.htm">
+                            <a class="nav-link" href="admin/order/index">
                                 <i class="material-icons">library_books</i>
                                 <p>Quản lý hóa đơn</p>
                             </a>
                         </li>
                         <li class="nav-item active  ">
-                            <a class="nav-link" href="admin/report.htm">
+                            <a class="nav-link" href="admin/report">
                                 <i class="material-icons">bar_chart</i>
                                 <p>Quản lý doanh thu</p>
                             </a>
                         </li>
                         <li class="nav-item active  ">
-                            <a class="nav-link" href="admin/company.htm">
+                            <a class="nav-link" href="admin/company">
                                 <i class="material-icons">how_to_reg</i>
                                 <p>Quản lý đối tác</p>
                             </a>
                         </li>
 
                         <li class="nav-item active  ">
-                            <a class="nav-link" href="admin/promotion/index.htm">
+                            <a class="nav-link" href="admin/promotion/index">
                                 <i class="material-icons">multiline_chart</i>
                                 <p>Hoa khuyến mãi</p>
                             </a>
                         </li>
                         <li class="nav-item active  ">
-                            <a class="nav-link" href="admin/program/index.htm">
+                            <a class="nav-link" href="admin/program/index">
                                 <i class="material-icons">add_task</i>
                                 <p>Chương trình khuyến mãi</p>
                             </a>
@@ -174,7 +174,7 @@
                 <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
                     <div class="container-fluid">
                         <div class="navbar-wrapper">
-                            <a class="navbar-brand" href="admin/dashboardmanage.htm">Admin Manage</a>
+                            <a class="navbar-brand" href="admin/dashboardmanage">Admin Manage</a>
                         </div>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index"
                                 aria-expanded="false" aria-label="Toggle navigation">
@@ -191,7 +191,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">
+                                    <a class="nav-link" href="logoff">
                                         <i class="material-icons">exit_to_app</i>
                                     </a>
                                 </li>

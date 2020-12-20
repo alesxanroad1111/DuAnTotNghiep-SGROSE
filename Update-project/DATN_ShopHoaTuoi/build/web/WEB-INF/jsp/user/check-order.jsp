@@ -9,7 +9,7 @@
                     <h2><img src="https://img.icons8.com/plasticine/100/000000/check.png" width="35px" />
                         Kiểm tra đơn hàng</h2>
                 </div>
-                <form action="user/kiem-tra-don-hang.htm" method="GET">
+                <form action="user/kiem-tra-don-hang" method="GET">
                     <div class="form-group">
                         <label for="usr">Số điện thoại</label>
                         <input name="phone" type="text" class="form-control" id="usr">

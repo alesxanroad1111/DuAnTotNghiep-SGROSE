@@ -74,7 +74,7 @@
                 <h2 class="font-weight-bold text-primary">Thông tin chi tiết</h2>
             </div>
             <div class="col-md-12 row"><div class="col-md-2"></div>
-                <form:form action="${pageContext.request.contextPath}/admin/usersmanage.htm" modelAttribute="user" method="get" class="col-md-7">
+                <form:form action="${pageContext.request.contextPath}/admin/usersmanage" modelAttribute="user" method="get" class="col-md-7">
 
                     <div class="form-group center">
                         <form:hidden path="id" class="form-control"/>

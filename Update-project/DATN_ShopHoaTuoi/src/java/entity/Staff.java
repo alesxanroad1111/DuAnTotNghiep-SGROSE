@@ -7,6 +7,7 @@ package entity;
 
 import java.util.Date;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -25,7 +26,8 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Entity
 @Table(name = "Staffs")
 public class Staff {
-@Id
+    @Id
+    @GeneratedValue
     private int id;
     private String name;
     private String email;

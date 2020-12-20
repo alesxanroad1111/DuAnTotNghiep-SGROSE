@@ -180,7 +180,7 @@
             <div class="col-sm-9 padding-right">
                 <div class="features_items" id="data-container"><!--features_items-->
                     <h2 class="title text-center">Danh Mục Hoa</h2>
-                    <form:form action="user/cart.htm" method="GET">
+                    <form:form action="user/cart" method="GET">
                         <c:forEach var="rows" items="${flowertype}">
                             <div class="col-sm-4">
                                 <div class="product-image-wrapper">

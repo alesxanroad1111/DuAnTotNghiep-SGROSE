@@ -103,34 +103,38 @@
         <!-- Chỉ lọc các URL theo path 
         <mvc:interceptor>
                 <mvc:mapping path="/home/**"/>
-                <mvc:exclude-mapping path="/home/index.htm"/>
+                <mvc:exclude-mapping path="/home/index"/>
                 <bean class="interceptor.LoggerInterceptor" />
         </mvc:interceptor> 
         -->
         <!--   demo    -->
         <mvc:interceptor>
-            <mvc:mapping path="/user/*.htm"/>
-            <mvc:mapping path="/user/profile/*.htm"/>
-            <mvc:exclude-mapping path="/login.htm"/>
-            <mvc:exclude-mapping path="/user/dat-hang-thanh-cong.htm"/>
-            <mvc:exclude-mapping path="/user/cart.htm"/>
-            <mvc:exclude-mapping path="/user/checkouts.htm"/>
-            <mvc:exclude-mapping path="/user/register.htm"/>
-            <mvc:exclude-mapping path="/user/check-order.htm"/>
-            <mvc:exclude-mapping path="/user/kiem-tra-don-hang.htm"/>
-            <mvc:exclude-mapping path="/user/forgot-password.htm"/>
-            <mvc:exclude-mapping path="/user/activate.htm"/>
+            <mvc:mapping path="/user/*"/>
+            <mvc:mapping path="/user/profile/*"/>
+            <mvc:exclude-mapping path="/login"/>
+            <mvc:exclude-mapping path="/user/dat-hang-thanh-cong"/>
+            <mvc:exclude-mapping path="/user/cart"/>
+            <mvc:exclude-mapping path="/user/checkouts"/>
+            <mvc:exclude-mapping path="/user/register"/>
+            <mvc:exclude-mapping path="/user/check-order"/>
+            <mvc:exclude-mapping path="/user/kiem-tra-don-hang"/>
+            <mvc:exclude-mapping path="/user/forgot-password"/>
+            <mvc:exclude-mapping path="/user/activate"/>
             <bean class="interceptor.SecurityInterceptor" />
         </mvc:interceptor>
         <mvc:interceptor>
-            <mvc:mapping path="/admin/*.htm"/>
-            <mvc:mapping path="/admin/flower/*.htm"/>
-            <mvc:mapping path="/admin/order/*.htm"/>
-            <mvc:mapping path="/admin/staff/*.htm"/>
-            <mvc:mapping path="/admin/user/*.htm"/>
+            <mvc:mapping path="/admin/*"/>
+            <mvc:mapping path="/admin/flower/*"/>
+            <mvc:mapping path="/admin/order/*"/>
+            <mvc:mapping path="/admin/staff/*"/>
+            <mvc:mapping path="/admin/user/*"/>
             <bean class="interceptor.AdminInterceptor" />
         </mvc:interceptor>
-        
+        <mvc:interceptor>
+            <mvc:mapping path="/user/cart"/>
+            <mvc:mapping path="/user/checkouts"/>
+            <bean class="interceptor.CartInterceptor" />
+        </mvc:interceptor>
     </mvc:interceptors>
     
     <!-- Spring Mail Sender -->

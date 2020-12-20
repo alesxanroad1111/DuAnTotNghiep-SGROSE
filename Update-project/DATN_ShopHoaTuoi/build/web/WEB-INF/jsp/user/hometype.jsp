@@ -180,7 +180,7 @@
             <div class="col-sm-9 padding-right">
                 <div class="features_items" id="data-container"><!--features_items-->
                     <h2 class="title text-center">Danh Mục Hoa</h2>
-                    <form:form action="user/cart.htm" method="GET">
+                    <form:form action="user/cart" method="GET">
                         <c:forEach var="rows" items="${flowertype}">
                             <div class="col-sm-4">
                                 <div class="product-image-wrapper">
@@ -189,11 +189,11 @@
                                             <p class="txtid" hidden>${rows.id}</p>
                                             <p class="pname" hidden>${rows.name}</p>
                                             <p class="pprice" hidden>${rows.price}</p>
-                                            <a href="user/product/${rows.id}.htm"><img src="images/hoa/${rows.image}" alt="" /></a>
+                                            <a href="user/product/${rows.id}"><img src="images/hoa/${rows.image}" alt="" /></a>
                                             <h2 name="txtPrice">${rows.price}₫</h2>
                                             <p name="txtName">${rows.name}</p>
-                                            <a href="user/product/${rows.id}.htm" class="btn btn-default add-to-cart">Xem Sản Phẩm</a>
-                                            <a href="user/buy/${rows.id}.htm?yeucau=muasp&txtmasp=${rows.id}" class="btn btn-danger add-to-cart"><i class="fa fa-shopping-cart"></i>Mua</a>
+                                            <a href="user/product/${rows.id}" class="btn btn-default add-to-cart">Xem Sản Phẩm</a>
+                                            <a href="user/buy/${rows.id}?yeucau=muasp&txtmasp=${rows.id}" class="btn btn-danger add-to-cart"><i class="fa fa-shopping-cart"></i>Mua</a>
                                         </div>
                                     </div>
                                 </div>

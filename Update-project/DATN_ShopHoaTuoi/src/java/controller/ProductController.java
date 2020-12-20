@@ -43,7 +43,7 @@ public class ProductController {
     @RequestMapping("home")
     public String Home(ModelMap model, HttpSession httpsession) {
         model.addAttribute("flower", new Flower());
-        model.addAttribute("flowers", getFlowers());
+        model.addAttribute("flowers", getFlowers(1,12));
         model.addAttribute("promotion", getFlowersPromotion());
         httpsession.setAttribute("httpflower", getFlowers2());
         httpsession.setAttribute("typef", getTypesOfFlowers());
@@ -256,10 +256,16 @@ public class ProductController {
     }
     
     @SuppressWarnings("unchecked")
-    public List<Flower> getFlowers() {
+    public List<Flower> getFlowers(Integer first, Integer count) {
         Session session = factory.getCurrentSession();
-        String hql ="FROM Flower fl WHERE fl.id NOT IN(SELECT p.flowerId FROM FlowerPromotionProgram p)";
+        String hql ="FROM Flower fl WHERE fl.id NOT IN(SELECT p.flowerId FROM FlowerPromotionProgram p) order by fl.createdtime desc";
         Query query = session.createQuery(hql);
+        if (first != null) {
+            query.setFirstResult(first);
+        }
+        if (count != null) {
+            query.setMaxResults(count);
+        }
         List<Flower> list = query.list();
         return list;
     }
@@ -270,8 +276,6 @@ public class ProductController {
 
         String hql = "FROM Flower fl WHERE fl.id NOT IN(SELECT p.flowerId FROM FlowerPromotionProgram p)";
         Query query = session.createQuery(hql);
-
-        query.setMaxResults(10);
 
         List<Flower> list = query.list();
         return list;

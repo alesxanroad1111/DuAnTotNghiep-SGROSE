@@ -1,6 +1,8 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="rt" %>
+<%@taglib  uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
 <section id="cart_items">
     <div class="container">
@@ -24,7 +26,7 @@
                 <div class="col-sm-3">
                     <div class="shopper-info">
                         <p>Thông Tin Liên Hệ</p>
-                        <form:form action="user/dat-hang-thanh-cong.htm" modelAttribute="order" method="POST" >
+                        <form:form action="user/dat-hang-thanh-cong" modelAttribute="order" method="POST" >
                             <form:input path="name" name="txtname" type="text" value="${user.name}" placeholder="Họ Và Tên"/>
                             <form:input path="numberphone" name="txtnumberphone" type="text" value="${user.phone}" placeholder="Số Điện Thoại"/>
                             <form:input path="email" name="txtemail" type="email" value="${user.email}" placeholder="Email"/>
@@ -57,24 +59,24 @@
                                                 <a href=""><img src="images/hoa/${o.product.image}" width="120" alt=""></a>
                                             </td>
                                             <td class="cart_description">
-                                                <h4><a href="user/product/${o.product.id}.htm">${o.product.name}</a></h4>
+                                                <h4><a href="user/product/${o.product.id}">${o.product.name}</a></h4>
                                                 <p>ID: ${o.product.id}</p>
                                             </td>
                                             <td class="cart_price">
-                                                <p>${o.product.price}₫</p>
+                                                <p><fmt:formatNumber value = "${o.product.price}" type = "number"/>₫</p>
                                             </td>
                                             <td class="cart_quantity">
                                                 <div class="cart_quantity_button">
-                                                    <a class="cart_quantity_up" href="user/buy/${o.product.id}.htm?yeucau=minus&txtmasp=${o.product.id}"> - </a>
+                                                    <a class="cart_quantity_up" href="user/buy/${o.product.id}?yeucau=minus&txtmasp=${o.product.id}"> - </a>
                                                     <input class="cart_quantity_input" type="text" name="quantity" value="${o.quantity}" autocomplete="off" size="2">
-                                                    <a class="cart_quantity_up" href="user/buy/${o.product.id}.htm?yeucau=plus&txtmasp=${o.product.id}"> + </a>
+                                                    <a class="cart_quantity_up" href="user/buy/${o.product.id}?yeucau=plus&txtmasp=${o.product.id}"> + </a>
                                                 </div>
                                             </td>
                                             <td class="cart_total">
-                                                <p class="cart_total_price">${o.product.price * o.quantity}₫</p>
+                                                <p class="cart_total_price"><fmt:formatNumber value = "${o.product.price * o.quantity}" type = "number"/>₫</p>
                                             </td>
                                             <td class="cart_delete">
-                                                <a class="cart_quantity_delete" href="user/cart.htm?yeucau=bosp&txtmasp=${o.product.id}"><i class="fa fa-times"></i></a>
+                                                <a class="cart_quantity_delete" href="user/cart?yeucau=bosp&txtmasp=${o.product.id}"><i class="fa fa-times"></i></a>
                                             </td>
                                         </tr>
                                     </c:forEach>
@@ -83,8 +85,8 @@
                                         <td colspan="2">
                                             <table class="table table-condensed total-result">
                                                 <tr>
-                                                    <td><a class="btn btn-default add-to-cart" href="home.htm">Tiếp Tục Mua Hàng</a></td>
-                                                    <td><a class="btn btn-default add-to-cart" href="user/cart.htm?yeucau=deleteall">Xóa Tất Cả</a></td>
+                                                    <td><a class="btn btn-default add-to-cart" href="home">Tiếp Tục Mua Hàng</a></td>
+                                                    <td><a class="btn btn-default add-to-cart" href="user/cart?yeucau=deleteall">Xóa Tất Cả</a></td>
                                                 </tr>
                                             </table>
                                         </td>
@@ -95,7 +97,7 @@
                                             <table class="table table-condensed total-result">
                                                 <tr>
                                                     <td>Tổng Tiền Của Tất Cả Hàng</td>
-                                                    <td>${total}₫</td>
+                                                    <td><fmt:formatNumber value = "${total}" type = "number"/>₫</td>
                                                 </tr>
                                                 <tr class="shipping-cost">
                                                     <td>Phí Ship</td>
@@ -103,7 +105,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td>Tổng</td>
-                                                    <td><span>${total}₫</span></td>
+                                                    <td><span><fmt:formatNumber value = "${total}" type = "number"/>₫</span></td>
                                                 </tr>
                                             </table>
                                         </td>

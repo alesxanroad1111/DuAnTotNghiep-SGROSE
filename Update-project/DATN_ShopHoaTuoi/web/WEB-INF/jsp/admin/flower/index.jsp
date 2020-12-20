@@ -8,7 +8,7 @@
 <div class="content">       
     <div class="col-md-12 row">
         <div class="container-fluid">
-            <a class="btn btn-success btn-hover" href="admin/flower/update.htm">add</a>
+            <a class="btn btn-success btn-hover" href="admin/flower/update">add</a>
             <div class="card">
                 <div class="card-header card-header-success">
                     <h4 class="card-title ">Flowers Manager</h4>
@@ -45,8 +45,8 @@
                                     <td><img src="images/hoa/${f.image}" id="blah" width="60"/></td>
                                     <td>${f.createdtime}</td>
                                     <td>${f.updatedtime}</td>
-                                   <td><a href="admin/flower/edit/show/${f.id}.htm"><img src="https://img.icons8.com/nolan/50/edit.png" width="31"/></a></td>
-                                    <td><a href="admin/flower/edit/delete/${f.id}.htm"><img src="https://img.icons8.com/nolan/64/delete-sign.png" width="31"/></td>
+                                   <td><a href="admin/flower/edit/show/${f.id}"><img src="https://img.icons8.com/nolan/50/edit.png" width="31"/></a></td>
+                                    <td><a href="admin/flower/edit/delete/${f.id}"><img src="https://img.icons8.com/nolan/64/delete-sign.png" width="31"/></td>
                                   </tr>
                             </c:forEach>
                         </tbody>

@@ -14,7 +14,7 @@
                         <p class="card-category">Form here</p>
                     </div>
                     <div class="card-body">
-                        <form:form action="${pageContext.request.contextPath}/admin/flower/edit.htm" modelAttribute="flower" method="POST" enctype="multipart/form-data">
+                        <form:form action="${pageContext.request.contextPath}/admin/flower/edit" modelAttribute="flower" method="POST" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="form-group center">
                                     <form:hidden path="id" class="form-control"/>
@@ -60,7 +60,7 @@
                             </div>
                             <button class="btn btn-success">Update</button>
                             <!--                            <input name="btnUpdate" class="btn btn-success" type="submit" value="Update" />-->
-                            <a class="btn btn-success" href="admin/flower/index.htm"><img src="https://img.icons8.com/fluent/48/000000/assignment-return.png" width="18px"/></a>
+                            <a class="btn btn-success" href="admin/flower/index"><img src="https://img.icons8.com/fluent/48/000000/assignment-return.png" width="18px"/></a>
                             <div class="clearfix"></div>
                         </div>
                     </div>

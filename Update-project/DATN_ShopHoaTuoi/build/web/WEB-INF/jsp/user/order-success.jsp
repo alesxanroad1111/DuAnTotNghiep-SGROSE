@@ -1,6 +1,8 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="rt" %>
+<%@taglib  uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
 <section id="slider" style="margin-top: 50px; margin-bottom: 20px;">
     <div class="container">
@@ -41,10 +43,10 @@
             </div>
             <div class="col-xs-12">
                 <div class="col-xs-6">
-                    <a href="user/check-order.htm" class="btn btn-primary btn-block">Theo dõi đơn hàng</a>
+                    <a href="user/check-order" class="btn btn-primary btn-block">Theo dõi đơn hàng</a>
                 </div>
                 <div class="col-xs-6">
-                    <a href="home.htm" class="btn btn-primary btn-block">Quay lại trang chủ</a>
+                    <a href="home" class="btn btn-primary btn-block">Quay lại trang chủ</a>
                 </div>
             </div>
         </div>
@@ -55,7 +57,7 @@
                         <div class="cart_item">
                             <div class="item_price">
                                 <div class="item_title_price">Tạm tính</div>
-                                <div class="item_content_price" style="color: orange;">${total} đ</div>
+                                <div class="item_content_price" style="color: orange;"><fmt:formatNumber value = "${total}" type = "number"/>₫</div>
                             </div>
                         </div>
                         <div class="cart_item">
@@ -76,7 +78,7 @@
                             <div class="price_title_total">Tổng cộng</div>
                             <div class="price_content_total">
                                 <div class="row-payment-total">
-                                    <span class="payment" style="color: orange;">${total} đ</span>
+                                    <span class="payment" style="color: orange;"><fmt:formatNumber value = "${total}" type = "number"/>₫</span>
                                 </div>
                             </div>
                         </div>

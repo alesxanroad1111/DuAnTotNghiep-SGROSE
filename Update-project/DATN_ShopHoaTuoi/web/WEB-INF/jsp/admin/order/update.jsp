@@ -16,7 +16,7 @@
                         <p class="card-category">Form here</p>
                     </div>
                     <div class="card-body">
-                        <form:form action="admin/order/insert.htm" modelAttribute="order" method="POST">
+                        <form:form action="admin/order/insertÁo" modelAttribute="order" method="POST">
                             <div class="form-group center">
                                 <form:hidden path="id" class="form-control"/>
                             </div>
@@ -66,7 +66,7 @@
                                 </div>
                             </div>
                             <button class="btn btn-success">Insert </button>
-                            <a class="btn btn-success" href="admin/order/index.htm"><img src="https://img.icons8.com/fluent/48/000000/assignment-return.png" width="18px"/></a>
+                            <a class="btn btn-success" href="admin/order/indexÁo"><img src="https://img.icons8.com/fluent/48/000000/assignment-return.png" width="18px"/></a>
                             <div class="clearfix"></div>
                         </form:form>  
                     </div>

@@ -13,7 +13,7 @@
                         <p class="card-category">Form here</p>
                     </div>
                     <<div class="card-body">
-                        <form:form action="admin/order/details.htm" modelAttribute="order" method="POST">
+                        <form:form action="admin/order/details" modelAttribute="order" method="POST">
                         <div class="row">
                             <div class="col-md-6">
                                 <label>Mã hóa đơn</label>
@@ -84,7 +84,7 @@
 
                                 </div>
                             </div>                           
-                            <a class="btn btn-success" href="admin/order/index.htm">Cancel</a>
+                            <a class="btn btn-success" href="admin/order/index">Cancel</a>
                             <div class="clearfix"></div>
                         </form:form>  
                     </div>

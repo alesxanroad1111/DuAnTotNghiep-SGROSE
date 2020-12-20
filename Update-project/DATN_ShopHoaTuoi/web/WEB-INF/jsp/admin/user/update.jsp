@@ -13,7 +13,7 @@
                         <p class="card-category">Form here</p>
                     </div>
                     <div class="card-body">
-                        <form:form action="${pageContext.request.contextPath}/admin/user/insert.htm" modelAttribute="user" method="POST" enctype="multipart/form-data">
+                        <form:form action="${pageContext.request.contextPath}/admin/user/insert" modelAttribute="user" method="POST" enctype="multipart/form-data">
                                <div class="row">
                             <div class="form-group center">
                                 <form:hidden path="id" cssClass="form-control"  />
@@ -83,7 +83,7 @@
 
 
                             <button class="btn btn-success">Insert </button>
-                            <a class="btn btn-success" href="admin/user/index.htm"><img src="https://img.icons8.com/fluent/48/000000/assignment-return.png" width="18px"/></a>
+                            <a class="btn btn-success" href="admin/user/index"><img src="https://img.icons8.com/fluent/48/000000/assignment-return.png" width="18px"/></a>
                             <div class="clearfix"></div>
                         </div> 
                     </div>

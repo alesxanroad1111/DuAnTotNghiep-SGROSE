@@ -53,7 +53,7 @@ public class FlowerPromotionController {
             session.save(promotion);
             t.commit();
             model.addAttribute("message", "Thêm mới thành công !");
-            return "redirect:/admin/promotion/index.htm";
+            return "redirect:/admin/promotion/index";
         } catch (Exception e) {
             t.rollback();
             e.printStackTrace();
@@ -73,7 +73,7 @@ public class FlowerPromotionController {
             session.update(promotion);
             t.commit();
             model.addAttribute("message", "Cập nhật thành công !");
-            return "redirect:/admin/promotion/index.htm";
+            return "redirect:/admin/promotion/index";
         } catch (Exception e) {
             t.rollback();
             e.printStackTrace();
@@ -89,7 +89,7 @@ public class FlowerPromotionController {
         Session session = factory.getCurrentSession();
         FlowerPromotionProgram promotion = (FlowerPromotionProgram) session.get(FlowerPromotionProgram.class, id);
         session.delete(promotion);
-        return "redirect:/admin/promotion/index.htm";
+        return "redirect:/admin/promotion/index";
 
     }
 

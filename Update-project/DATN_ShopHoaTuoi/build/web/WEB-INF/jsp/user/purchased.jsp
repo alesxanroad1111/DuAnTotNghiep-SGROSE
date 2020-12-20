@@ -10,13 +10,13 @@
                     <div class="row" style="margin-bottom: 10px">
                         <div class="col-sm-3">
                             <div class="picture">
-                                <img src="img/faces/${user.avatar}" height="50">
+                                <img src="images/avatar/${user.avatar}" height="50">
                             </div>
                         </div>
                         <div class="col sm-9">
                             <div class="input-text">${user.name}</div>
                             <div>
-                                <a class="text-right_edit" href="user/profile.htm">
+                                <a class="text-right_edit" href="user/profile/${user.id}">
                                     Sửa hồ sơ
                                 </a>
                             </div>
@@ -39,10 +39,8 @@
                             <div id="sportswear" class="panel-collapse collapse">
                                 <div class="panel-body">
                                     <ul>
-                                        <li><a href="#">Hồ sơ</a></li>
-                                        <li><a href="#">Thay đổi số điện thoại</a></li>
-                                        <li><a href="#">Thay đổi Email</a></li>
-                                        <li><a href="#">Đổi mật khẩu</a></li>
+                                        <li><a href="user/profile/${user.id}">Hồ sơ</a></li>
+                                        <li><a href="user/changepassword">Đổi mật khẩu</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -50,7 +48,7 @@
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordian" href="#mens">
+                                    <a href="user/purchased">
                                         <span class="badge pull-right"><i class="fa fa-plus"></i></span>
                                         <img src="https://img.icons8.com/cotton/24/000000/note--v2.png" width="25px" />
                                         Đơn mua
@@ -138,7 +136,7 @@
                             </div>
                         </c:forEach>
                     </div>
-                    <div class="tab-pane fade active in" id="waitforship" >
+                    <div class="tab-pane fade in" id="waitforship" >
                         <c:forEach var="p" items="${waitforship}">
                             <div  class="col-md-12 row" style="background: #FFF; margin-top: 10px;">
 
@@ -164,7 +162,7 @@
                             </div>
                         </c:forEach>
                     </div>
-                    <div class="tab-pane fade active in" id="shipping" >
+                    <div class="tab-pane fade in" id="shipping" >
                         <c:forEach var="p" items="${shipping}">
                             <div  class="col-md-12 row" style="background: #FFF; margin-top: 10px;">
 
@@ -190,7 +188,7 @@
                             </div>
                         </c:forEach>
                     </div>
-                    <div class="tab-pane fade active in" id="claimed" >
+                    <div class="tab-pane fade in" id="claimed" >
                         <c:forEach var="p" items="${claimed}">
                             <div  class="col-md-12 row" style="background: #FFF; margin-top: 10px;">
 

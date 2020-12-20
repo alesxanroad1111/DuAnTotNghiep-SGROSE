@@ -27,13 +27,13 @@
             <div class="container-login100">
                 <div class="wrap-login100">
                     <div class="login100-pic js-tilt" data-tilt>
-                        <a href="home.htm"><img src="csslogin/images/img-01.png" alt="IMG" height="200"/></a>
+                        <a href="home"><img src="csslogin/images/img-01.png" alt="IMG" height="200"/></a>
                     </div>
-                    <form class="login100-form " action="login.htm" method="post">
+                    <form class="login100-form " action="login" method="post">
                         <span class="login100-form-title">
                             Member SG-ROSE Login
                         </span>
-                        ${message}
+                        
                         <div class="wrap-input100 validate-input" data-validate = "Email is required">
                             <input class="input100"  name="id" type="text" id="inputEmail" placeholder="Email" autofocus required>
                             <span class="focus-input100"></span>
@@ -49,7 +49,7 @@
                                 <i class="fa fa-lock" aria-hidden="true"></i>
                             </span>
                         </div>
-
+                        <span class="text-danger">${message}</span>
                         <div class="container-login100-form-btn">
                             <button class="login100-form-btn" >
                                 Login
@@ -66,7 +66,7 @@
                         </div>
 
                         <div class="text-center p-t-136">
-                            <a class="txt2" href="register.htm">
+                            <a class="txt2" href="register">
                                 Create your Account
                                 <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
                             </a>

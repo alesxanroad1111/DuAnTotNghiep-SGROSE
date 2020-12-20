@@ -5,6 +5,7 @@
  */
 package controller;
 
+import entity.Active;
 import entity.Gender;
 import entity.Staff;
 import entity.User;
@@ -61,7 +62,7 @@ public class LoginController {
                     httpsession.setAttribute("staff", staff);
                     httpsession.setAttribute("idstaff", staff.getId());
                     httpsession.setAttribute("rolestaff", staff.getRole());
-                    return "redirect:/admin/dashboardmanage.htm";
+                    return "redirect:/admin/dashboardmanage";
                 } else if(staff.getPassword().trim().length()==0 || staff.getPhone().trim().length()==0){
                     model.addAttribute("message", "Vui lòng nhập tài khoản và mật khẩu!");
                 } else {
@@ -69,17 +70,19 @@ public class LoginController {
                 }
             } catch (Exception e) {
                 System.out.println(e);
-                model.addAttribute("message", e);
+                model.addAttribute("message", "Tài khoản không tồn tại!");
             }
         } else {
             try {
                 String hql = "FROM User where email='" + id + "'";
                 Query query = session.createQuery(hql);
                 User user = (User) query.list().get(0);
-                if (user.getPassword().equals(password)) {
+                if(user.getIsactive().getId() == 2){
+                    model.addAttribute("message", "Tài khoản của bạn đã bị khóa!");
+                } else if (user.getPassword().equals(password)) {
                     httpsession.setAttribute("user", user);
                     httpsession.setAttribute("iduser", user.getId());
-                    return "redirect:/home.htm";
+                    return "redirect:/home";
                 } else if(user.getPassword().trim().length()==0 || user.getEmail().trim().length()==0){
                     model.addAttribute("message", "Vui lòng nhập tài khoản và mật khẩu!");
                 } else {
@@ -87,7 +90,7 @@ public class LoginController {
                 }
             } catch (Exception e) {
                 System.out.println(e);
-                model.addAttribute("message", e);
+                model.addAttribute("message", "Tài khoản không tồn tại!");
             }
         }
 
@@ -119,11 +122,16 @@ public class LoginController {
             model.addAttribute("message", "Xác nhận mật khẩu không chính xác!");
         } else {
             try {
+                Active avt = new Active(1);
+                Gender gd = new Gender(1);
+                user.setName("Bạn");
                 user.setAvatar("user-image.jpg");
+                user.setIsactive(avt);
+                user.setGender(gd);
                 session.save(user);
                 t.commit();
                 model.addAttribute("message", "Đăng Ký Thành Công!");
-                return "redirect:/login.htm";
+                return "redirect:/login";
             } catch (Exception e) {
                 t.rollback();
                 e.printStackTrace();
@@ -146,7 +154,7 @@ public class LoginController {
     public String logoff(HttpSession httpSession) {
         httpSession.removeAttribute("user");
         httpSession.removeAttribute("staff");
-        return "redirect:/login.htm";
+        return "redirect:/login";
     }
 
     @ModelAttribute("genders")

@@ -68,7 +68,7 @@ public class orderController {
                 session.save(order);
                 t.commit();
                 model.addAttribute("message", "Thêm mới thành công !");
-                return "redirect:/admin/order/index.htm";
+                return "redirect:/admin/order/index";
             } catch (Exception e) {
                 t.rollback();
                 e.printStackTrace();
@@ -87,7 +87,7 @@ public class orderController {
         Session session = factory.getCurrentSession();
         Order order = (Order) session.get(Order.class, id);
         session.delete(order);
-        return "redirect:/admin/order/index.htm";
+        return "redirect:/admin/order/index";
 
     }
 
@@ -99,7 +99,7 @@ public class orderController {
             session.update(order);
             t.commit();
             model.addAttribute("message", "Cập nhật thành công !");
-            return "redirect:/admin/order/index.htm";
+            return "redirect:/admin/order/index";
         } catch (Exception e) {
             t.rollback();
             model.addAttribute("message", "Cập nhật thất bại !");

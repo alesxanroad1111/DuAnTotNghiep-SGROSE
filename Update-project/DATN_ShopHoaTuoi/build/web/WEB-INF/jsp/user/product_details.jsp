@@ -146,7 +146,7 @@
                                     </span>
                                 </div>
                                 <div class="col-sm-4">
-                                    <a href="user/buy/${flower.id}.htm?yeucau=muasp&txtmasp=${flower.id}" class="btn btn-fefault cart">
+                                    <a href="user/buy/${flower.id}?yeucau=muasp&txtmasp=${flower.id}" class="btn btn-fefault cart">
                                         <i class="fa fa-shopping-cart"></i>
                                         MUA
                                     </a>

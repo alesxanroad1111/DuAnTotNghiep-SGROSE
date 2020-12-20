@@ -7,7 +7,7 @@
     <div class="container">
         <div class="breadcrumbs">
             <ol class="breadcrumb">
-                <li><a href="home.htm">Home</a></li>
+                <li><a href="home">Home</a></li>
                 <li class="active">Giỏ Hàng</li>
             </ol>
         </div>
@@ -30,7 +30,7 @@
                                 <a href=""><img src="images/hoa/${o.product.image}" width="120" alt=""></a>
                             </td>
                             <td class="cart_description">
-                                <h4><a href="user/product/${o.product.id}.htm">${o.product.name}</a></h4>
+                                <h4><a href="user/product/${o.product.id}">${o.product.name}</a></h4>
                                 <p>ID: ${o.product.id}</p>
                             </td>
                             <td class="cart_price">
@@ -39,16 +39,16 @@
                             </td>
                             <td class="cart_quantity">
                                 <div class="cart_quantity_button">
-                                    <a class="cart_quantity_up" href="user/buy/${o.product.id}.htm?yeucau=minus&txtmasp=${o.product.id}"> - </a>
+                                    <a class="cart_quantity_up" href="user/buy/${o.product.id}?yeucau=minus&txtmasp=${o.product.id}"> - </a>
                                     <input class="cart_quantity_input" type="text" name="quantity" value="${o.quantity}" autocomplete="off" size="2">
-                                    <a class="cart_quantity_up" href="user/buy/${o.product.id}.htm?yeucau=plus&txtmasp=${o.product.id}"> + </a>
+                                    <a class="cart_quantity_up" href="user/buy/${o.product.id}?yeucau=plus&txtmasp=${o.product.id}"> + </a>
                                 </div>
                             </td>
                             <td class="cart_total">
                                 <p class="cart_total_price"><fmt:formatNumber value = "${o.product.price * o.quantity}" type = "number"/>₫</p>
                             </td>
                             <td class="cart_delete">
-                                <a class="cart_quantity_delete" href="user/buy/${o.product.id}.htm?yeucau=bosp&txtmasp=${o.product.id}"><i class="fa fa-times"></i></a>
+                                <a class="cart_quantity_delete" href="user/buy/${o.product.id}?yeucau=bosp&txtmasp=${o.product.id}"><i class="fa fa-times"></i></a>
                             </td>
                         </tr>
                     </c:forEach>
@@ -57,8 +57,8 @@
                         <td colspan="2">
                             <table class="table table-condensed total-result">
                                 <tr>
-                                    <td><a class="btn btn-default add-to-cart" href="home.htm">Tiếp Tục Mua Hàng</a></td>
-                                    <td><a class="btn btn-default add-to-cart" href="user/cart.htm?yeucau=deleteall">Xóa Tất Cả</a></td>
+                                    <td><a class="btn btn-default add-to-cart" href="home">Tiếp Tục Mua Hàng</a></td>
+                                    <td><a class="btn btn-default add-to-cart" href="user/cart?yeucau=deleteall">Xóa Tất Cả</a></td>
                                 </tr>
                             </table>
                         </td>
@@ -69,7 +69,7 @@
                             <table class="table table-condensed total-result">
                                 <tr>
                                     <td>Tổng Tiền Của Tất Cả Hàng</td>
-                                    <td>${total}₫</td>
+                                    <td><fmt:formatNumber value = "${total}" type = "number"/>₫</td>
                                 </tr>
                                 <tr class="shipping-cost">
                                     <td>Phí Ship</td>
@@ -77,7 +77,7 @@
                                 </tr>
                                 <tr>
                                     <td>Tổng</td>
-                                    <td><span>${total}₫</span></td>
+                                    <td><span><fmt:formatNumber value = "${total}" type = "number"/>₫</span></td>
                                 </tr>
                             </table>
                         </td>
@@ -101,10 +101,10 @@
                 <div class="total_area">
                     <ul>
                         <li>Phí Ship Hàng <span>Free</span></li>
-                        <li>Tổng Tiền <span>${total} VNĐ</span></li>
+                        <li>Tổng Tiền <span><fmt:formatNumber value = "${total}" type = "number"/> VNĐ</span></li>
                     </ul>
                     <a class="btn btn-default update" href="">Cập Nhật</a>
-                    <a class="btn btn-default check_out" href="user/checkouts.htm">Thanh Toán</a>
+                    <a class="btn btn-default check_out" href="user/checkouts">Thanh Toán</a>
                 </div>
             </div>
         </div>

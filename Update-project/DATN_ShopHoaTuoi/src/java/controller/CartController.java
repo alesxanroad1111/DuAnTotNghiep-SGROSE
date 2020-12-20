@@ -109,6 +109,7 @@ public class CartController {
         }
 
         request.setAttribute("giohang", cartmodel.getListItems());
+        httpsession.setAttribute("giohang", cartmodel.getListItems());
         request.setAttribute("total", cartmodel.getTotal());
 
         return "user/cart";
@@ -131,6 +132,9 @@ public class CartController {
         } else if (!order.getEmail().matches("^[a-zA-Z][\\w-]+@([\\w]+\\.[\\w]+|[\\w]+\\.[\\w]{2,}\\.[\\w]{2,})$")) {
             model.addAttribute("dathang", "Đặt Hàng Thất Bại!");
             model.addAttribute("message", "Sai định dạng email! Vui lòng quay lại và nhập đúng địa chỉ email!");
+        } else if(httpsession.getAttribute("giohang")==null){
+            model.addAttribute("dathang", "Đặt Hàng Thất Bại!");
+            model.addAttribute("message", "Giỏ hàng trống!");
         } else {
             dathang(model, resp, httpsession, request, order);
             model.addAttribute("dathang", "Đặt Hàng Thành Công!");
@@ -180,7 +184,7 @@ public class CartController {
 
         }
 
-        return "redirect:/user/home.htm";
+        return "redirect:/user/home";
     }
 
     public String Isorderdetail() {
@@ -203,7 +207,7 @@ public class CartController {
         }
 
         cartmodel.removeAllProduct();
-        return "redirect:/user/home.htm";
+        return "redirect:/user/home";
     }
 
     ////////////////////SHOW/////////////////////////

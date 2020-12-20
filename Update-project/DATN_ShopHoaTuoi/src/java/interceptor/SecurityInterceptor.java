@@ -13,7 +13,7 @@ public class SecurityInterceptor extends HandlerInterceptorAdapter {
             HttpServletResponse response, Object handler) throws Exception {
         HttpSession session = request.getSession();
         if (session.getAttribute("user") == null) {
-            response.sendRedirect(request.getContextPath() + "/login.htm");
+            response.sendRedirect(request.getContextPath() + "/login");
             return false;
         }
         return true;

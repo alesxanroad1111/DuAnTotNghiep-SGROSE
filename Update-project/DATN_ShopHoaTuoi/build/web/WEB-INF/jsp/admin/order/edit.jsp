@@ -14,7 +14,7 @@
                         <p class="card-category">Form here</p>
                     </div>
                     <div class="card-body">
-                        <form:form action="admin/order/edit.htm" modelAttribute="order" method="POST">
+                        <form:form action="admin/order/edit" modelAttribute="order" method="POST">
                             <div class="form-group center">
                                 <form:hidden path="id" class="form-control"/>
                             </div>
@@ -65,7 +65,7 @@
                             </div>                            
 
                             <button class="btn btn-success">Update </button>
-                            <a class="btn btn-success" href="admin/order/index.htm">Cancel</a>
+                            <a class="btn btn-success" href="admin/order/index">Cancel</a>
                             <div class="clearfix"></div>
                         </form:form>  
                     </div>

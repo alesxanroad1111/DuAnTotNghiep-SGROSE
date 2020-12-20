@@ -76,7 +76,7 @@ public class productsmanageController {
             t.commit();
 
             model.addAttribute("message", "them ok!");
-            return "redirect:/admin/flower/index.htm";
+            return "redirect:/admin/flower/index";
         } catch (Exception e) {
             t.rollback();
             e.printStackTrace();
@@ -93,7 +93,7 @@ public class productsmanageController {
         Session session = factory.getCurrentSession();
         Flower flower = (Flower) session.get(Flower.class, id);
         session.delete(flower);
-        return "redirect:/admin/flower/index.htm";
+        return "redirect:/admin/flower/index";
 
     }
 
@@ -105,7 +105,7 @@ public class productsmanageController {
             session.update(flower);
             t.commit();
             model.addAttribute("message", "Cập nhật thành công !");
-            return "redirect:/admin/flower/index.htm";
+            return "redirect:/admin/flower/index";
         } catch (Exception e) {
             t.rollback();
             model.addAttribute("message", "Cập nhật thất bại !");

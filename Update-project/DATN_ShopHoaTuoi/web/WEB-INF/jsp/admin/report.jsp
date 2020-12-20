@@ -3,7 +3,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <div class="content">
-    <a href="admin/reportChart.htm" class="btn btn-success">Biểu đồ </a>
+    <a href="admin/reportChart" class="btn btn-success">Biểu đồ </a>
     <div class="row">
         <div class=" col-md-12">
             <div class="card">

@@ -31,10 +31,10 @@
             <div class="container-login100">
                 <div class="wrap-login100">
                     <div class="login100-pic js-tilt" data-tilt>
-                        <a href="user/home.htm"><img src="csslogin/images/img-01.png" alt="IMG" height="200"/></a>
+                        <a href="user/home"><img src="csslogin/images/img-01.png" alt="IMG" height="200"/></a>
                     </div>
                     
-                    <form:form class="form-horizontal" action="reg.htm" modelAttribute="user" method="POST">
+                    <form:form class="form-horizontal" action="reg" modelAttribute="user" method="POST">
                         <span class="login100-form-title">
                             SG-ROSÉ REGISTER
                         </span>
@@ -73,7 +73,7 @@
                             <button class="btn-success btn" >
                                 Register
                             </button>
-                            <a class=" btn" href="login.htm">Cancel</a> 
+                            <a class=" btn" href="login">Cancel</a> 
                         </div>
                     </form:form>
                 </div>

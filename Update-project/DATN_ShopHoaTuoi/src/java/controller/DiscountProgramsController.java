@@ -52,7 +52,7 @@ public class DiscountProgramsController {
             session.save(program);
             t.commit();
             model.addAttribute("message", "Thêm mới thành công !");
-            return "redirect:/admin/program/index.htm";
+            return "redirect:/admin/program/index";
         } catch (Exception e) {
             t.rollback();
             e.printStackTrace();
@@ -69,7 +69,7 @@ public class DiscountProgramsController {
         Session session = factory.getCurrentSession();
         DiscountProgram program = (DiscountProgram) session.get(DiscountProgram.class, id);
         session.delete(program);
-        return "redirect:/admin/program/index.htm";
+        return "redirect:/admin/program/index";
 
     }
 

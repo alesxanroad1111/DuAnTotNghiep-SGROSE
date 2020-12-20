@@ -2,44 +2,45 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <base href="${pageContext.servletContext.contextPath}/">
-<section id="slide" style="margin-top: 30px;">
+<section id="slide" style="background: #FAFAFA;">
     <div class="container">
-        <div class="row">
+        <div class="row" style=" margin-top: 20px;"> 
             <div class="col-sm-3">
-                <div class="row" style="margin-bottom: 10px">
-                    <div class="col-sm-3">
-                        <div class="picture">
-                            <img src="img/faces/${user.avatar}" height="50">
+                <div class="left-sidebar">
+                    <div class="row" style="margin-bottom: 10px">
+                        <div class="col-sm-3">
+                            <div class="picture">
+                                <img src="images/avatar/${user.avatar}" height="50">
+                            </div>
+                        </div>
+                        <div class="col sm-9">
+                            <div class="input-text">${user.name}</div>
+                            <div>
+                                <a class="text-right_edit" href="user/profile/${user.id}">
+                                    Sửa hồ sơ
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="col sm-9">
-                        <div class="input-text">${user.name}</div>
-                        <div>
-                            <a class="text-right_edit" href="user/profile.htm">
-                                Sửa hồ sơ
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
                     <div class="panel-group category-products" id="accordian" style="border: none;">
+                        <!--category-productsr-->
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordian" href="#taikhoancuatoi">
-                                        <span class="badge pull-left"><img
-                                                src="https://img.icons8.com/fluent/24/000000/guest-male.png" /></span>
+                                    <a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
+                                        <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                        <td>
+                                            <img src="https://img.icons8.com/fluent/24/000000/guest-male.png" />
+                                        </td>
                                         Tài khoản của tôi
                                     </a>
                                 </h4>
                             </div>
-                            <div id="taikhoancuatoi" class="panel-collapse collapse">
+                            <div id="sportswear" class="panel-collapse collapse">
                                 <div class="panel-body">
                                     <ul>
-                                        <li><a href="">Hồ sơ </a></li>
-                                        <li><a href="">Ngân hàng </a></li>
-                                        <li><a href="">Địa chỉ </a></li>
-                                        <li><a href="">Thêm mật khẩu</a></li>
+                                        <li><a href="user/profile/${user.id}">Hồ sơ</a></li>
+                                        <li><a href="user/changepassword">Đổi mật khẩu</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -47,43 +48,33 @@
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordian" href="#donmua">
-                                        <span class="badge pull-left"><img
-                                                src="https://img.icons8.com/cotton/24/000000/note--v2.png" /></span>
+                                    <a href="user/purchased">
+                                        <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                        <img src="https://img.icons8.com/cotton/24/000000/note--v2.png" width="25px" />
                                         Đơn mua
                                     </a>
                                 </h4>
                             </div>
-                            <div id="donmua" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <ul>
-                                        <li><a href="">Tất cả </a></li>
-                                        <li><a href="">Chờ xác nhận </a></li>
-                                        <li><a href="">Chờ lấy hàng </a></li>
-                                        <li><a href="">Đang giao</a></li>
-                                        <li><a href="">Đã giao</a></li>
-                                        <li><a href="">Đã hủy</a></li>
-                                    </ul>
-                                </div>
-                            </div>
+
                         </div>
+
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordian" href="#thongbao">
-                                        <span class="badge pull-left"><img
-                                                src="https://img.icons8.com/flat_round/24/000000/bell.png" /></span>
+                                    <a data-toggle="collapse" data-parent="#accordian" href="#womens">
+                                        <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                        <img src="https://img.icons8.com/flat_round/24/000000/bell.png" width="25px" />
                                         Thông báo
                                     </a>
                                 </h4>
                             </div>
-                            <div id="thongbao" class="panel-collapse collapse">
+                            <div id="womens" class="panel-collapse collapse">
                                 <div class="panel-body">
                                     <ul>
-                                        <li><a href="">Cập nhật đơn hàng </a></li>
-                                        <li><a href="">Khuyến mãi </a></li>
-                                        <li><a href="">Cập nhật ví </a></li>
-                                        <li><a href="">Hoạt động</a></li>
+                                        <li><a href="#">Cập nhật đơn hàng</a></li>
+                                        <li><a href="#">Khuyến mãi</a></li>
+                                        <li><a href="#">Cập nhật ví</a></li>
+                                        <li><a href="#">Hoạt động</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -91,15 +82,20 @@
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordian" href="#visgrose">
-                                        <span class="badge pull-left"><img
-                                                src="https://img.icons8.com/doodle/24/000000/wallet-app.png" /></span>
+                                    <a data-toggle="collapse" data-parent="#accordian" href="#mens">
+                                        <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                        <img src="https://img.icons8.com/doodle/24/000000/wallet-app.png" width="25px" />
                                         Ví SG-Rose
                                     </a>
                                 </h4>
                             </div>
+
                         </div>
+
                     </div>
+                    <!--/category-products-->
+
+
                 </div>
             </div>
             <div class="col-sm-9" style="margin-bottom: 100px;">
@@ -107,7 +103,7 @@
                     <div class=" col-sm-12">
                         <h2 class="title text-center">Hồ Sơ Của Tôi</h2>
                     </div>
-                    <form:form class="form-horizontal" action="user/update-your-profile.htm" modelAttribute="userr" method="POST">
+                    <form:form class="form-horizontal" action="user/update-your-profile" modelAttribute="userr" method="POST" enctype="multipart/form-data">
                         <div class="col-sm-6">
 
                             <div class="form-group row">
@@ -165,14 +161,14 @@
                             <link rel="stylesheet" href="assets/js/js.css">
                             <div class="form-group card card-profile">
                                 <div class="text-center card-body">
-                                    <img id="blah"  src="img/faces/${user.avatar}" width="150" alt="your image"/>
+                                    <img id="blah"  src="images/avatar/${user.avatar}" width="150" alt="your image"/>
                                     <input name="avatar2" value="${user.avatar}" hidden>
                                 </div>
                                 <div class="text-center" style="margin-top: 20px;">
                                     
                                     <label for="fileUpload" style="width: 150px;"
                                            class="file-upload btn btn-default check_out rounded-pill shadow">Chọn Ảnh
-                                        <form:input  path="avatar" type="file" name="image" accept="image/*" style="margin-left: 0px; margin-top: 0px;" onchange="readURL(this);" id="fileUpload"/>
+                                        <form:input  path="avatar" type="file" name="avatar" accept="image/*" style="margin-left: 0px; margin-top: 0px;" onchange="readURL(this);" id="fileUpload"/>
                                     </label>
                                 </div>
                             </div>
