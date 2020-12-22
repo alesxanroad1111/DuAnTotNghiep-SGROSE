@@ -103,7 +103,7 @@
                             <a class="btn btn-success" href="admin/user/index"><img src="https://img.icons8.com/fluent/48/000000/assignment-return.png" width="20px"/></a>
 
                             <input name="btnactive" class="btn btn-success" type="submit" value="Active" />  
-                            <input name="btnban" class="btn btn-success" type="submit" value="Ban" />  
+                            <input name="btnban" class="btn btn-success" type="submit" value="Unactive" />  
 
                             <div class="clearfix"></div>
                         </div>

@@ -66,7 +66,7 @@ public class HomeController {
         Session session = factory.getCurrentSession();
         Flower flower = (Flower) session.get(Flower.class, id);
         model.addAttribute("flower", flower);
-
+        model.put("products", getFlowers());
         return "user/product_details";
     }
     
@@ -169,6 +169,7 @@ public class HomeController {
         return list;
     }
 
+    
     public List<Flower> getFlowersChucMung(Integer first,Integer count) {
         Session session = factory.getCurrentSession();
         String hql = "FROM Flower where typeid = 3";

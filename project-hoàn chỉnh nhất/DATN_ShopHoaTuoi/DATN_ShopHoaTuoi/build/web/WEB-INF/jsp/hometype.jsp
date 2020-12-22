@@ -24,33 +24,33 @@
                             </div>
                             <div class="col-sm-6">
                                 <img src="images/home/birthday-flower.png" class="girl img-responsive" alt="" />
-                                <img src="images/home/pricing.png"  class="pricing" alt="" />
+                                <img src=""  class="pricing" alt="" />
                             </div>
                         </div>
                         <div class="item">
                             <div class="col-sm-6">
                                 <h1><span>SG</span>-Rose</h1>
                                 <!--                                <img src="../../../../../../../C:/Users/DiemNgonTrai/AppData/Local/Temp/pricing.png" alt=""/>-->
-                                <h2>100% Responsive Design</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                <button type="button" class="btn btn-default get">Get it now</button>
+                                <h2>Hoa phát tài</h2>
+                                <p>Hoa mang lại nhiều điều may mắn và làm ăn phát tài phát lộc! </p>
+                                <button type="button" class="btn btn-default get">Thử ngay nào</button>
                             </div>
                             <div class="col-sm-6">
-                                <img src="images/home/girl2.jpg" class="girl img-responsive" alt="" />
-                                <img src="images/home/pricing.png"  class="pricing" alt="" />
+                                <img src="images/hoa/Phattai.jpg" class="girl img-responsive" alt="" />
+                                <img src=""  class="pricing" alt="" />
                             </div>
                         </div>
 
                         <div class="item">
                             <div class="col-sm-6">
                                 <h1><span>SG</span>-Rose</h1>
-                                <h2>Free Ecommerce Template</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                <button type="button" class="btn btn-default get">Get it now</button>
+                                <h2>Hoa bên nhau </h2>
+                                <p>Hoa mang lại sự yêu thương và gắn kết cho gia đình, bạn bè, người thân. Ngại gì không mua với giá cực sốc!!! </p>
+                                <button type="button" class="btn btn-default get">Thử ngay nào</button>
                             </div>
                             <div class="col-sm-6">
-                                <img src="images/home/girl3.jpg" class="girl img-responsive" alt="" />
-                                <img src="images/home/pricing.png" class="pricing" alt="" />
+                                <img src="images/hoa/Bennhau.jpg" class="girl img-responsive" alt="" />
+                                <img src="" class="pricing" alt="" />
                             </div>
                         </div>
 
@@ -152,13 +152,9 @@
                         <h2>Hàng Hot</h2>
                         <div class="brands-name">
                             <ul class="nav nav-pills nav-stacked">
-                                <li><a href="#"> <span class="pull-right">(50)</span>Hoa hồng đỏ</a></li>
-                                <li><a href="#"> <span class="pull-right">(56)</span>Hoa tulip</a></li>
-                                <li><a href="#"> <span class="pull-right">(27)</span>Hoa hồng vàng</a></li>
-                                <li><a href="#"> <span class="pull-right">(32)</span>Gấu siêu to khổng lồ</a></li>
-                                <li><a href="#"> <span class="pull-right">(5)</span>Socola tặng gấu</a></li>
-                                <li><a href="#"> <span class="pull-right">(9)</span>Hoa tình yêu lãng mạng</a></li>
-                                <li><a href="#"> <span class="pull-right">(4)</span>Hoa sinh nhật</a></li>
+                                <c:forEach var="a" items="${products}">
+                                    <li><a href="user/product/${a.id}"> <span class="pull-right badge" style="background: yellowgreen;">${a.amount}</span>${a.name}</a></li>
+                                </c:forEach>
                             </ul>
                         </div>
                     </div><!--/brands_products-->

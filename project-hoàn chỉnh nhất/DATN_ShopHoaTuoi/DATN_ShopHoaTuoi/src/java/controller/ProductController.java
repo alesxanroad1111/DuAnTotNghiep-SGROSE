@@ -97,7 +97,7 @@ public class ProductController {
         Session session = factory.getCurrentSession();
         Flower flower = (Flower) session.get(Flower.class, id);
         model.addAttribute("flower", flower);
-
+        model.put("products", getFlowers3(1,9));
         return "product_details";
     }
     @RequestMapping("promotion/{id}")

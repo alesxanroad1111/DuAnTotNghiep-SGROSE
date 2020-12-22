@@ -86,16 +86,16 @@
 
                     <div class="brands_products">
                         <!--brands_products-->
-                        <h2>Brands</h2>
+                        <h2>Hàng Hot</h2>
                         <div class="brands-name">
-                            <ul class="nav nav-pills nav-stacked">
-                                <li><a href=""> <span class="pull-right">(50)</span>Acne</a></li>
-                                <li><a href=""> <span class="pull-right">(56)</span>Grüne Erde</a></li>
-                                <li><a href=""> <span class="pull-right">(27)</span>Albiro</a></li>
-                                <li><a href=""> <span class="pull-right">(32)</span>Ronhill</a></li>
-                                <li><a href=""> <span class="pull-right">(5)</span>Oddmolly</a></li>
-                                <li><a href=""> <span class="pull-right">(9)</span>Boudestijn</a></li>
-                                <li><a href=""> <span class="pull-right">(4)</span>Rösch creative culture</a></li>
+                        <ul class="nav nav-pills nav-stacked">
+                                <li><a href="#"> <span class="pull-right badge">(50)</span>Hoa hồng đỏ</a></li>
+                                <li><a href="#"> <span class="pull-right badge">(56)</span>Hoa tulip</a></li>
+                                <li><a href="#"> <span class="pull-right badge">(27)</span>Hoa hồng vàng</a></li>
+                                <li><a href="#"> <span class="pull-right badge">(32)</span>Gấu siêu to khổng lồ</a></li>
+                                <li><a href="#"> <span class="pull-right badge">(5)</span>Socola tặng gấu</a></li>
+                                <li><a href="#"> <span class="pull-right badge">(9)</span>Hoa tình yêu lãng mạng</a></li>
+                                <li><a href="#"> <span class="pull-right badge">(4)</span>Hoa sinh nhật</a></li>
                             </ul>
                         </div>
                     </div>

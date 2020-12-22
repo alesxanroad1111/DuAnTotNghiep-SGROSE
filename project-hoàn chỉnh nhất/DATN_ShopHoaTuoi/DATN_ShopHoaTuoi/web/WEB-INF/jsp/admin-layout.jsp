@@ -36,7 +36,7 @@
 
     <body class="dark-edition">
         <div class="wrapper ">
-            <div class="sidebar" data-color="green" data-background-color="black" data-image="assets/img/sidebar-2.jpg">
+            <div class="sidebar" data-color="green" data-background-color="black" data-image="img/sidebar-2.jpg">
                 <div class="logo">
                     <a href="admin/dashboardmanage" class="simple-text logo-normal">
                         <img src="assets/img/new.png" height="60px" width="auto">
@@ -126,17 +126,17 @@
                         <li class="header-title">Images</li>
                         <li>
                             <a class="img-holder switch-trigger" href="javascript:void(0)">
-                                <img src="assets/img/sidebar-1.jpg" alt="">
+                                <img src="img/sidebar-1.jpg" alt="">
                             </a>
                         </li>
                         <li class="active">
                             <a class="img-holder switch-trigger" href="javascript:void(0)">
-                                <img src="assets/img/sidebar-2.jpg" alt="">
+                                <img src="img/sidebar-2.jpg" alt="">
                             </a>
                         </li>
                         <li>
                             <a class="img-holder switch-trigger" href="javascript:void(0)">
-                                <img src="assets/img/sidebar-3.jpg" alt="">
+                                <img src="img/sidebar-3.jpg" alt="">
                             </a>
                         </li>
                         <li>
