@@ -1,0 +1,182 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!-- was: <?xml version="1.0" encoding="UTF-8"?> -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+       http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
+
+    <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
+
+    <!--
+    Most controllers will use the ControllerClassNameHandlerMapping above, but
+    for the index controller we are using ParameterizableViewController, so we must
+    define an explicit mapping for it.
+    -->
+    <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>
+                <prop key="index">indexController</prop>
+            </props>
+        </property>
+    </bean>
+    
+    <!-- Spring MVC Annotation -->
+    <context:annotation-config />
+    <mvc:resources mapping="/**" location="/" />
+    <mvc:annotation-driven/>
+        
+    <!-- Cấu hình package chứa các controller -->
+    <context:component-scan base-package="controller, bean" />
+    <!-- Cấu hình view  
+<bean id="viewResolver"
+    class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+    p:prefix="/WEB-INF/jsp/layout.jsp?view="
+    p:suffix=".jsp" />--> 
+    
+    <!--Cấu hình nhiều layout-->  
+    <bean id="viewResolver"     
+          p:prefix="/WEB-INF/jsp/layout-dispatcher.jsp?view=" p:suffix=".jsp"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver"/>
+    <mvc:resources mapping="/**" location="/" />
+    
+    <bean id="messageSource"
+          class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="defaultEncoding" value="UTF-8"/>
+        <property name="basenames">
+            <list>
+                <value>classpath:home.index</value>
+            </list>
+        </property>
+    </bean>
+
+    <!--
+    The index controller.
+    -->
+    <bean name="indexController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="index" />
+    
+    <!-- Kết nối CSDL -->
+    <bean id="dataSource" 
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+          p:driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+          p:url="jdbc:sqlserver://localhost:1433; Database=SG_Rose"
+          p:username="sa"
+          p:password="1234">
+    </bean>
+
+    <!-- Cấu hình Hibernate -->
+    <bean id="sessionFactory" 
+          class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="hibernateProperties">
+            <props>        
+                <prop key="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</prop>          
+                <prop key="hibernate.show_sql">false</prop>
+            </props>
+        </property>
+        <property name="packagesToScan" value="entity"/>
+    </bean>
+    <!--    <dependency>
+        <groupId>javax.validation</groupId>
+        <artifactId>validation-api</artifactId>
+        <version>1.1.0.Final</version>
+    </dependency>-->
+        
+    <!-- Transaction Manager -->
+    <bean id="transactionManager" 
+          class="org.springframework.orm.hibernate4.HibernateTransactionManager" 
+          p:sessionFactory-ref="sessionFactory" />
+    <tx:annotation-driven transaction-manager="transactionManager" />
+    <mvc:interceptors>  
+        <!-- Lọc tất cả các URL  
+         <bean class="interceptor.LoggerInterceptor" />
+        -->
+        <!-- Chỉ lọc các URL theo path 
+        <mvc:interceptor>
+                <mvc:mapping path="/home/**"/>
+                <mvc:exclude-mapping path="/home/index.htm"/>
+                <bean class="interceptor.LoggerInterceptor" />
+        </mvc:interceptor> 
+        -->
+        <!--   demo    -->
+        <mvc:interceptor>
+            <mvc:mapping path="/user/*"/>
+            <mvc:mapping path="/user/profile/*"/>
+            <mvc:exclude-mapping path="/login"/>
+            <mvc:exclude-mapping path="/verify-account"/>
+            <mvc:exclude-mapping path="/user/dat-hang-thanh-cong"/>
+            <mvc:exclude-mapping path="/user/cart"/>
+            <mvc:exclude-mapping path="/user/checkouts"/>
+            <mvc:exclude-mapping path="/user/register"/>
+            <mvc:exclude-mapping path="/user/check-order"/>
+            <mvc:exclude-mapping path="/user/kiem-tra-don-hang"/>
+            <mvc:exclude-mapping path="/user/forgot-password"/>
+            <mvc:exclude-mapping path="/user/activate"/>
+            <bean class="interceptor.SecurityInterceptor" />
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/admin/*"/>
+            <mvc:mapping path="/admin/flower/*"/>
+            <mvc:mapping path="/admin/order/*"/>
+            <mvc:mapping path="/admin/staff/*"/>
+            <mvc:mapping path="/admin/user/index"/>
+            <bean class="interceptor.AdminInterceptor" />
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/admin/user/index"/>
+            <mvc:mapping path="/admin/user/edit"/>
+            <mvc:mapping path="/admin/user/update"/>
+            <mvc:mapping path="/admin/order/index"/>
+            <mvc:mapping path="/admin/order/edit"/>
+            <mvc:mapping path="/admin/order/update"/>
+            <mvc:mapping path="/admin/staff/index"/>
+            <mvc:mapping path="/admin/staff/edit"/>
+            <mvc:mapping path="/admin/staff/update"/>
+<!--            <mvc:mapping path="/admin/flower/index"/>
+            <mvc:mapping path="/admin/flower/edit"/>
+            <mvc:mapping path="/admin/flower/update"/>-->
+            <bean class="interceptor.RoleInterceptor"/>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/verify-account"/>
+            <mvc:mapping path="/verify-account2"/>
+            <bean class="interceptor.VerifyInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+    
+    <!-- Spring Mail Sender -->
+    <bean id="mailSender" 
+	class="org.springframework.mail.javamail.JavaMailSenderImpl">
+	<property name="host" value="smtp.gmail.com" />
+	<property name="port" value="587" />	
+	<property name="username" value="nhophuonhxa@gmail.com" />
+	<property name="password" value="0209638001" />
+ 	<property name="defaultEncoding" value="UTF-8"/> 
+	<property name="javaMailProperties">
+	<props>
+          <prop key="mail.smtp.auth">true</prop>
+          <prop key="mail.smtp.socketFactory.class">javax.net.ssl.SSLSocketFactory</prop>
+              <prop key="mail.smtp.socketFactory.port">465</prop>
+          <prop key="mail.smtp.starttls.enable">false</prop>
+          <prop key="mail.debug">true</prop>
+        </props>
+	</property>	
+    </bean>
+    
+    <bean id="multipartResolver" 
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- maxUploadSize=20MB -->
+        <property name="maxUploadSize" value="3971520"/>
+    </bean>
+        
+     
+</beans>
